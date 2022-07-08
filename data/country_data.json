@@ -1,0 +1,4778 @@
+{
+    "01-01-2021": {
+        "Afghanistan": {
+            "Confirmed": 52513,
+            "Deaths": 2201
+        },
+        "Albania": {
+            "Confirmed": 58316,
+            "Deaths": 1181
+        },
+        "Algeria": {
+            "Confirmed": 99897,
+            "Deaths": 2762
+        },
+        "Andorra": {
+            "Confirmed": 8117,
+            "Deaths": 84
+        },
+        "Angola": {
+            "Confirmed": 17568,
+            "Deaths": 405
+        },
+        "Antarctica": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 159,
+            "Deaths": 5
+        },
+        "Argentina": {
+            "Confirmed": 1629594,
+            "Deaths": 43319
+        },
+        "Armenia": {
+            "Confirmed": 159738,
+            "Deaths": 2828
+        },
+        "Australia": {
+            "Confirmed": 28460,
+            "Deaths": 909
+        },
+        "Austria": {
+            "Confirmed": 358774,
+            "Deaths": 7564
+        },
+        "Azerbaijan": {
+            "Confirmed": 219041,
+            "Deaths": 2670
+        },
+        "Bahamas": {
+            "Confirmed": 7887,
+            "Deaths": 171
+        },
+        "Bahrain": {
+            "Confirmed": 92913,
+            "Deaths": 352
+        },
+        "Bangladesh": {
+            "Confirmed": 514500,
+            "Deaths": 7576
+        },
+        "Barbados": {
+            "Confirmed": 395,
+            "Deaths": 7
+        },
+        "Belarus": {
+            "Confirmed": 196223,
+            "Deaths": 1433
+        },
+        "Belgium": {
+            "Confirmed": 648289,
+            "Deaths": 19581
+        },
+        "Belize": {
+            "Confirmed": 10776,
+            "Deaths": 248
+        },
+        "Benin": {
+            "Confirmed": 3251,
+            "Deaths": 44
+        },
+        "Bhutan": {
+            "Confirmed": 689,
+            "Deaths": 0
+        },
+        "Bolivia": {
+            "Confirmed": 160985,
+            "Deaths": 9175
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 112143,
+            "Deaths": 4086
+        },
+        "Botswana": {
+            "Confirmed": 14805,
+            "Deaths": 42
+        },
+        "Brazil": {
+            "Confirmed": 7703971,
+            "Deaths": 195541
+        },
+        "Brunei": {
+            "Confirmed": 157,
+            "Deaths": 3
+        },
+        "Bulgaria": {
+            "Confirmed": 202540,
+            "Deaths": 7604
+        },
+        "Burkina Faso": {
+            "Confirmed": 6828,
+            "Deaths": 85
+        },
+        "Burma": {
+            "Confirmed": 125042,
+            "Deaths": 2697
+        },
+        "Burundi": {
+            "Confirmed": 822,
+            "Deaths": 2
+        },
+        "Cabo Verde": {
+            "Confirmed": 11872,
+            "Deaths": 113
+        },
+        "Cambodia": {
+            "Confirmed": 379,
+            "Deaths": 0
+        },
+        "Cameroon": {
+            "Confirmed": 26848,
+            "Deaths": 448
+        },
+        "Canada": {
+            "Confirmed": 596582,
+            "Deaths": 16764
+        },
+        "Central African Republic": {
+            "Confirmed": 4963,
+            "Deaths": 63
+        },
+        "Chad": {
+            "Confirmed": 2141,
+            "Deaths": 104
+        },
+        "Chile": {
+            "Confirmed": 612564,
+            "Deaths": 16660
+        },
+        "China": {
+            "Confirmed": 102649,
+            "Deaths": 4783
+        },
+        "Colombia": {
+            "Confirmed": 1654880,
+            "Deaths": 43495
+        },
+        "Comoros": {
+            "Confirmed": 823,
+            "Deaths": 10
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 7107,
+            "Deaths": 108
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 17849,
+            "Deaths": 591
+        },
+        "Costa Rica": {
+            "Confirmed": 169321,
+            "Deaths": 2185
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 22563,
+            "Deaths": 138
+        },
+        "Croatia": {
+            "Confirmed": 212007,
+            "Deaths": 3961
+        },
+        "Cuba": {
+            "Confirmed": 12056,
+            "Deaths": 146
+        },
+        "Cyprus": {
+            "Confirmed": 23108,
+            "Deaths": 126
+        },
+        "Czechia": {
+            "Confirmed": 732022,
+            "Deaths": 11711
+        },
+        "Denmark": {
+            "Confirmed": 166567,
+            "Deaths": 1322
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 5840,
+            "Deaths": 61
+        },
+        "Dominica": {
+            "Confirmed": 88,
+            "Deaths": 0
+        },
+        "Dominican Republic": {
+            "Confirmed": 172218,
+            "Deaths": 2416
+        },
+        "Ecuador": {
+            "Confirmed": 213378,
+            "Deaths": 14051
+        },
+        "Egypt": {
+            "Confirmed": 139471,
+            "Deaths": 7687
+        },
+        "El Salvador": {
+            "Confirmed": 46515,
+            "Deaths": 1327
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 5277,
+            "Deaths": 86
+        },
+        "Eritrea": {
+            "Confirmed": 1320,
+            "Deaths": 3
+        },
+        "Estonia": {
+            "Confirmed": 28406,
+            "Deaths": 234
+        },
+        "Eswatini": {
+            "Confirmed": 9482,
+            "Deaths": 216
+        },
+        "Ethiopia": {
+            "Confirmed": 124652,
+            "Deaths": 1937
+        },
+        "Fiji": {
+            "Confirmed": 49,
+            "Deaths": 2
+        },
+        "Finland": {
+            "Confirmed": 36676,
+            "Deaths": 598
+        },
+        "France": {
+            "Confirmed": 2697014,
+            "Deaths": 64891
+        },
+        "Gabon": {
+            "Confirmed": 9571,
+            "Deaths": 64
+        },
+        "Gambia": {
+            "Confirmed": 3800,
+            "Deaths": 124
+        },
+        "Georgia": {
+            "Confirmed": 228410,
+            "Deaths": 2528
+        },
+        "Germany": {
+            "Confirmed": 1762504,
+            "Deaths": 34150
+        },
+        "Ghana": {
+            "Confirmed": 54930,
+            "Deaths": 335
+        },
+        "Greece": {
+            "Confirmed": 139447,
+            "Deaths": 4881
+        },
+        "Grenada": {
+            "Confirmed": 127,
+            "Deaths": 0
+        },
+        "Guatemala": {
+            "Confirmed": 138236,
+            "Deaths": 4820
+        },
+        "Guinea": {
+            "Confirmed": 13738,
+            "Deaths": 81
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 2452,
+            "Deaths": 45
+        },
+        "Guyana": {
+            "Confirmed": 6348,
+            "Deaths": 164
+        },
+        "Haiti": {
+            "Confirmed": 10015,
+            "Deaths": 236
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 122974,
+            "Deaths": 3160
+        },
+        "Hungary": {
+            "Confirmed": 325278,
+            "Deaths": 9667
+        },
+        "Iceland": {
+            "Confirmed": 5754,
+            "Deaths": 29
+        },
+        "India": {
+            "Confirmed": 10305788,
+            "Deaths": 149218
+        },
+        "Indonesia": {
+            "Confirmed": 751270,
+            "Deaths": 22329
+        },
+        "Iran": {
+            "Confirmed": 1231429,
+            "Deaths": 55337
+        },
+        "Iraq": {
+            "Confirmed": 596193,
+            "Deaths": 12824
+        },
+        "Ireland": {
+            "Confirmed": 93532,
+            "Deaths": 2248
+        },
+        "Israel": {
+            "Confirmed": 428510,
+            "Deaths": 3356
+        },
+        "Italy": {
+            "Confirmed": 2129376,
+            "Deaths": 74621
+        },
+        "Jamaica": {
+            "Confirmed": 12915,
+            "Deaths": 303
+        },
+        "Japan": {
+            "Confirmed": 239005,
+            "Deaths": 3541
+        },
+        "Jordan": {
+            "Confirmed": 295765,
+            "Deaths": 3851
+        },
+        "Kazakhstan": {
+            "Confirmed": 202060,
+            "Deaths": 2749
+        },
+        "Kenya": {
+            "Confirmed": 96614,
+            "Deaths": 1681
+        },
+        "Kiribati": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 62593,
+            "Deaths": 942
+        },
+        "Kosovo": {
+            "Confirmed": 51502,
+            "Deaths": 1336
+        },
+        "Kuwait": {
+            "Confirmed": 150869,
+            "Deaths": 936
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 81156,
+            "Deaths": 1356
+        },
+        "Laos": {
+            "Confirmed": 41,
+            "Deaths": 0
+        },
+        "Latvia": {
+            "Confirmed": 41615,
+            "Deaths": 644
+        },
+        "Lebanon": {
+            "Confirmed": 183888,
+            "Deaths": 1479
+        },
+        "Lesotho": {
+            "Confirmed": 3206,
+            "Deaths": 51
+        },
+        "Liberia": {
+            "Confirmed": 1800,
+            "Deaths": 83
+        },
+        "Libya": {
+            "Confirmed": 100744,
+            "Deaths": 1487
+        },
+        "Liechtenstein": {
+            "Confirmed": 2245,
+            "Deaths": 44
+        },
+        "Lithuania": {
+            "Confirmed": 147862,
+            "Deaths": 1841
+        },
+        "Luxembourg": {
+            "Confirmed": 46415,
+            "Deaths": 495
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 17714,
+            "Deaths": 261
+        },
+        "Malawi": {
+            "Confirmed": 6684,
+            "Deaths": 191
+        },
+        "Malaysia": {
+            "Confirmed": 115078,
+            "Deaths": 474
+        },
+        "Maldives": {
+            "Confirmed": 13804,
+            "Deaths": 48
+        },
+        "Mali": {
+            "Confirmed": 7203,
+            "Deaths": 271
+        },
+        "Malta": {
+            "Confirmed": 12909,
+            "Deaths": 219
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 14581,
+            "Deaths": 349
+        },
+        "Mauritius": {
+            "Confirmed": 527,
+            "Deaths": 10
+        },
+        "Mexico": {
+            "Confirmed": 1437185,
+            "Deaths": 126507
+        },
+        "Moldova": {
+            "Confirmed": 145258,
+            "Deaths": 3004
+        },
+        "Monaco": {
+            "Confirmed": 885,
+            "Deaths": 3
+        },
+        "Mongolia": {
+            "Confirmed": 1220,
+            "Deaths": 1
+        },
+        "Montenegro": {
+            "Confirmed": 48589,
+            "Deaths": 684
+        },
+        "Morocco": {
+            "Confirmed": 440970,
+            "Deaths": 7425
+        },
+        "Mozambique": {
+            "Confirmed": 18794,
+            "Deaths": 167
+        },
+        "Namibia": {
+            "Confirmed": 24545,
+            "Deaths": 208
+        },
+        "Nepal": {
+            "Confirmed": 261019,
+            "Deaths": 1864
+        },
+        "Netherlands": {
+            "Confirmed": 816616,
+            "Deaths": 11624
+        },
+        "New Zealand": {
+            "Confirmed": 2162,
+            "Deaths": 25
+        },
+        "Nicaragua": {
+            "Confirmed": 4829,
+            "Deaths": 165
+        },
+        "Niger": {
+            "Confirmed": 3403,
+            "Deaths": 106
+        },
+        "Nigeria": {
+            "Confirmed": 88587,
+            "Deaths": 1294
+        },
+        "North Macedonia": {
+            "Confirmed": 83743,
+            "Deaths": 2510
+        },
+        "Norway": {
+            "Confirmed": 49803,
+            "Deaths": 436
+        },
+        "Oman": {
+            "Confirmed": 128867,
+            "Deaths": 1499
+        },
+        "Pakistan": {
+            "Confirmed": 484362,
+            "Deaths": 10258
+        },
+        "Palau": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 249733,
+            "Deaths": 4064
+        },
+        "Papua New Guinea": {
+            "Confirmed": 780,
+            "Deaths": 9
+        },
+        "Paraguay": {
+            "Confirmed": 108349,
+            "Deaths": 2262
+        },
+        "Peru": {
+            "Confirmed": 1015137,
+            "Deaths": 93231
+        },
+        "Philippines": {
+            "Confirmed": 475820,
+            "Deaths": 9248
+        },
+        "Poland": {
+            "Confirmed": 1305774,
+            "Deaths": 28956
+        },
+        "Portugal": {
+            "Confirmed": 420629,
+            "Deaths": 6972
+        },
+        "Qatar": {
+            "Confirmed": 144042,
+            "Deaths": 245
+        },
+        "Romania": {
+            "Confirmed": 636201,
+            "Deaths": 15841
+        },
+        "Russia": {
+            "Confirmed": 3153960,
+            "Deaths": 56798
+        },
+        "Rwanda": {
+            "Confirmed": 8460,
+            "Deaths": 94
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 32,
+            "Deaths": 0
+        },
+        "Saint Lucia": {
+            "Confirmed": 353,
+            "Deaths": 5
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 121,
+            "Deaths": 0
+        },
+        "Samoa": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 2384,
+            "Deaths": 59
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 1022,
+            "Deaths": 17
+        },
+        "Saudi Arabia": {
+            "Confirmed": 362878,
+            "Deaths": 6230
+        },
+        "Senegal": {
+            "Confirmed": 19364,
+            "Deaths": 410
+        },
+        "Serbia": {
+            "Confirmed": 339997,
+            "Deaths": 3250
+        },
+        "Seychelles": {
+            "Confirmed": 267,
+            "Deaths": 0
+        },
+        "Sierra Leone": {
+            "Confirmed": 2635,
+            "Deaths": 76
+        },
+        "Singapore": {
+            "Confirmed": 58629,
+            "Deaths": 29
+        },
+        "Slovakia": {
+            "Confirmed": 285079,
+            "Deaths": 2250
+        },
+        "Slovenia": {
+            "Confirmed": 123950,
+            "Deaths": 2728
+        },
+        "Solomon Islands": {
+            "Confirmed": 17,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 4714,
+            "Deaths": 130
+        },
+        "South Africa": {
+            "Confirmed": 1073887,
+            "Deaths": 28887
+        },
+        "South Sudan": {
+            "Confirmed": 3558,
+            "Deaths": 63
+        },
+        "Spain": {
+            "Confirmed": 1928265,
+            "Deaths": 50837
+        },
+        "Sri Lanka": {
+            "Confirmed": 43856,
+            "Deaths": 208
+        },
+        "Sudan": {
+            "Confirmed": 25730,
+            "Deaths": 1468
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 6277,
+            "Deaths": 123
+        },
+        "Sweden": {
+            "Confirmed": 437379,
+            "Deaths": 8727
+        },
+        "Switzerland": {
+            "Confirmed": 452296,
+            "Deaths": 7948
+        },
+        "Syria": {
+            "Confirmed": 11526,
+            "Deaths": 717
+        },
+        "Taiwan*": {
+            "Confirmed": 802,
+            "Deaths": 7
+        },
+        "Tajikistan": {
+            "Confirmed": 13665,
+            "Deaths": 90
+        },
+        "Tanzania": {
+            "Confirmed": 509,
+            "Deaths": 21
+        },
+        "Thailand": {
+            "Confirmed": 7163,
+            "Deaths": 63
+        },
+        "Timor-Leste": {
+            "Confirmed": 44,
+            "Deaths": 0
+        },
+        "Togo": {
+            "Confirmed": 3662,
+            "Deaths": 68
+        },
+        "Tonga": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 7158,
+            "Deaths": 127
+        },
+        "Tunisia": {
+            "Confirmed": 140557,
+            "Deaths": 4730
+        },
+        "Turkey": {
+            "Confirmed": 2220855,
+            "Deaths": 21093
+        },
+        "US": {
+            "Confirmed": 20370200,
+            "Deaths": 353342
+        },
+        "Uganda": {
+            "Confirmed": 35511,
+            "Deaths": 265
+        },
+        "Ukraine": {
+            "Confirmed": 1096855,
+            "Deaths": 19437
+        },
+        "United Arab Emirates": {
+            "Confirmed": 209678,
+            "Deaths": 671
+        },
+        "United Kingdom": {
+            "Confirmed": 2549671,
+            "Deaths": 74235
+        },
+        "Uruguay": {
+            "Confirmed": 19753,
+            "Deaths": 193
+        },
+        "Uzbekistan": {
+            "Confirmed": 77182,
+            "Deaths": 614
+        },
+        "Vanuatu": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Venezuela": {
+            "Confirmed": 113884,
+            "Deaths": 1030
+        },
+        "Vietnam": {
+            "Confirmed": 1474,
+            "Deaths": 35
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 139223,
+            "Deaths": 1418
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 2101,
+            "Deaths": 610
+        },
+        "Zambia": {
+            "Confirmed": 20997,
+            "Deaths": 390
+        },
+        "Zimbabwe": {
+            "Confirmed": 14084,
+            "Deaths": 369
+        }
+    },
+    "01-01-2022": {
+        "Afghanistan": {
+            "Confirmed": 158107,
+            "Deaths": 7356
+        },
+        "Albania": {
+            "Confirmed": 210224,
+            "Deaths": 3217
+        },
+        "Algeria": {
+            "Confirmed": 218818,
+            "Deaths": 6284
+        },
+        "Andorra": {
+            "Confirmed": 23740,
+            "Deaths": 140
+        },
+        "Angola": {
+            "Confirmed": 82398,
+            "Deaths": 1772
+        },
+        "Antarctica": {
+            "Confirmed": 11,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 4283,
+            "Deaths": 119
+        },
+        "Argentina": {
+            "Confirmed": 5674428,
+            "Deaths": 117181
+        },
+        "Armenia": {
+            "Confirmed": 344980,
+            "Deaths": 7975
+        },
+        "Australia": {
+            "Confirmed": 462955,
+            "Deaths": 2257
+        },
+        "Austria": {
+            "Confirmed": 1274628,
+            "Deaths": 16845
+        },
+        "Azerbaijan": {
+            "Confirmed": 617311,
+            "Deaths": 8365
+        },
+        "Bahamas": {
+            "Confirmed": 24476,
+            "Deaths": 717
+        },
+        "Bahrain": {
+            "Confirmed": 282677,
+            "Deaths": 1394
+        },
+        "Bangladesh": {
+            "Confirmed": 1585909,
+            "Deaths": 28076
+        },
+        "Barbados": {
+            "Confirmed": 28810,
+            "Deaths": 262
+        },
+        "Belarus": {
+            "Confirmed": 700421,
+            "Deaths": 5594
+        },
+        "Belgium": {
+            "Confirmed": 2105343,
+            "Deaths": 28331
+        },
+        "Belize": {
+            "Confirmed": 32840,
+            "Deaths": 602
+        },
+        "Benin": {
+            "Confirmed": 24935,
+            "Deaths": 161
+        },
+        "Bhutan": {
+            "Confirmed": 2660,
+            "Deaths": 3
+        },
+        "Bolivia": {
+            "Confirmed": 599753,
+            "Deaths": 19680
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 291313,
+            "Deaths": 13442
+        },
+        "Botswana": {
+            "Confirmed": 219509,
+            "Deaths": 2444
+        },
+        "Brazil": {
+            "Confirmed": 22295621,
+            "Deaths": 619367
+        },
+        "Brunei": {
+            "Confirmed": 15470,
+            "Deaths": 98
+        },
+        "Bulgaria": {
+            "Confirmed": 748184,
+            "Deaths": 30983
+        },
+        "Burkina Faso": {
+            "Confirmed": 17632,
+            "Deaths": 318
+        },
+        "Burma": {
+            "Confirmed": 530946,
+            "Deaths": 19272
+        },
+        "Burundi": {
+            "Confirmed": 27366,
+            "Deaths": 38
+        },
+        "Cabo Verde": {
+            "Confirmed": 42463,
+            "Deaths": 352
+        },
+        "Cambodia": {
+            "Confirmed": 120507,
+            "Deaths": 3012
+        },
+        "Cameroon": {
+            "Confirmed": 109367,
+            "Deaths": 1851
+        },
+        "Canada": {
+            "Confirmed": 2256747,
+            "Deaths": 30616
+        },
+        "Central African Republic": {
+            "Confirmed": 12163,
+            "Deaths": 101
+        },
+        "Chad": {
+            "Confirmed": 6183,
+            "Deaths": 184
+        },
+        "Chile": {
+            "Confirmed": 1808398,
+            "Deaths": 39140
+        },
+        "China": {
+            "Confirmed": 128132,
+            "Deaths": 4849
+        },
+        "Colombia": {
+            "Confirmed": 5169855,
+            "Deaths": 129986
+        },
+        "Comoros": {
+            "Confirmed": 6688,
+            "Deaths": 157
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 20089,
+            "Deaths": 367
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 74793,
+            "Deaths": 1205
+        },
+        "Costa Rica": {
+            "Confirmed": 570556,
+            "Deaths": 7353
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 71815,
+            "Deaths": 718
+        },
+        "Croatia": {
+            "Confirmed": 720538,
+            "Deaths": 12571
+        },
+        "Cuba": {
+            "Confirmed": 966473,
+            "Deaths": 8323
+        },
+        "Cyprus": {
+            "Confirmed": 169159,
+            "Deaths": 638
+        },
+        "Czechia": {
+            "Confirmed": 2480736,
+            "Deaths": 36182
+        },
+        "Denmark": {
+            "Confirmed": 831974,
+            "Deaths": 3287
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 13668,
+            "Deaths": 189
+        },
+        "Dominica": {
+            "Confirmed": 6862,
+            "Deaths": 47
+        },
+        "Dominican Republic": {
+            "Confirmed": 419927,
+            "Deaths": 4247
+        },
+        "Ecuador": {
+            "Confirmed": 551620,
+            "Deaths": 33682
+        },
+        "Egypt": {
+            "Confirmed": 386358,
+            "Deaths": 21768
+        },
+        "El Salvador": {
+            "Confirmed": 121945,
+            "Deaths": 3824
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 13710,
+            "Deaths": 175
+        },
+        "Eritrea": {
+            "Confirmed": 8026,
+            "Deaths": 76
+        },
+        "Estonia": {
+            "Confirmed": 242123,
+            "Deaths": 1938
+        },
+        "Eswatini": {
+            "Confirmed": 66241,
+            "Deaths": 1308
+        },
+        "Ethiopia": {
+            "Confirmed": 424340,
+            "Deaths": 6947
+        },
+        "Fiji": {
+            "Confirmed": 54147,
+            "Deaths": 700
+        },
+        "Finland": {
+            "Confirmed": 277700,
+            "Deaths": 1728
+        },
+        "France": {
+            "Confirmed": 10296909,
+            "Deaths": 124839
+        },
+        "Gabon": {
+            "Confirmed": 41798,
+            "Deaths": 288
+        },
+        "Gambia": {
+            "Confirmed": 10170,
+            "Deaths": 343
+        },
+        "Georgia": {
+            "Confirmed": 936844,
+            "Deaths": 13860
+        },
+        "Germany": {
+            "Confirmed": 7196154,
+            "Deaths": 112157
+        },
+        "Ghana": {
+            "Confirmed": 143997,
+            "Deaths": 1298
+        },
+        "Greece": {
+            "Confirmed": 1240862,
+            "Deaths": 20849
+        },
+        "Grenada": {
+            "Confirmed": 6299,
+            "Deaths": 200
+        },
+        "Guatemala": {
+            "Confirmed": 628589,
+            "Deaths": 16108
+        },
+        "Guinea": {
+            "Confirmed": 32448,
+            "Deaths": 391
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 6484,
+            "Deaths": 149
+        },
+        "Guyana": {
+            "Confirmed": 39779,
+            "Deaths": 1054
+        },
+        "Haiti": {
+            "Confirmed": 25985,
+            "Deaths": 766
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 379402,
+            "Deaths": 10433
+        },
+        "Hungary": {
+            "Confirmed": 1256415,
+            "Deaths": 39186
+        },
+        "Iceland": {
+            "Confirmed": 27059,
+            "Deaths": 37
+        },
+        "India": {
+            "Confirmed": 34889132,
+            "Deaths": 481770
+        },
+        "Indonesia": {
+            "Confirmed": 4262994,
+            "Deaths": 144096
+        },
+        "Iran": {
+            "Confirmed": 6195403,
+            "Deaths": 131639
+        },
+        "Iraq": {
+            "Confirmed": 2093891,
+            "Deaths": 24163
+        },
+        "Ireland": {
+            "Confirmed": 811840,
+            "Deaths": 5912
+        },
+        "Israel": {
+            "Confirmed": 1390053,
+            "Deaths": 8244
+        },
+        "Italy": {
+            "Confirmed": 6266939,
+            "Deaths": 137513
+        },
+        "Jamaica": {
+            "Confirmed": 94649,
+            "Deaths": 2476
+        },
+        "Japan": {
+            "Confirmed": 1732752,
+            "Deaths": 18389
+        },
+        "Jordan": {
+            "Confirmed": 1064277,
+            "Deaths": 12684
+        },
+        "Kazakhstan": {
+            "Confirmed": 1072999,
+            "Deaths": 18211
+        },
+        "Kenya": {
+            "Confirmed": 297155,
+            "Deaths": 5381
+        },
+        "Kiribati": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 639083,
+            "Deaths": 5694
+        },
+        "Kosovo": {
+            "Confirmed": 161531,
+            "Deaths": 2991
+        },
+        "Kuwait": {
+            "Confirmed": 417723,
+            "Deaths": 2468
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 184748,
+            "Deaths": 2802
+        },
+        "Laos": {
+            "Confirmed": 112083,
+            "Deaths": 374
+        },
+        "Latvia": {
+            "Confirmed": 276841,
+            "Deaths": 4577
+        },
+        "Lebanon": {
+            "Confirmed": 731288,
+            "Deaths": 9136
+        },
+        "Lesotho": {
+            "Confirmed": 29652,
+            "Deaths": 671
+        },
+        "Liberia": {
+            "Confirmed": 6278,
+            "Deaths": 287
+        },
+        "Libya": {
+            "Confirmed": 388734,
+            "Deaths": 5710
+        },
+        "Liechtenstein": {
+            "Confirmed": 6167,
+            "Deaths": 69
+        },
+        "Lithuania": {
+            "Confirmed": 526628,
+            "Deaths": 7412
+        },
+        "Luxembourg": {
+            "Confirmed": 103766,
+            "Deaths": 915
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 50279,
+            "Deaths": 1027
+        },
+        "Malawi": {
+            "Confirmed": 75828,
+            "Deaths": 2368
+        },
+        "Malaysia": {
+            "Confirmed": 2761472,
+            "Deaths": 31513
+        },
+        "Maldives": {
+            "Confirmed": 95891,
+            "Deaths": 262
+        },
+        "Mali": {
+            "Confirmed": 21378,
+            "Deaths": 668
+        },
+        "Malta": {
+            "Confirmed": 53503,
+            "Deaths": 477
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 41867,
+            "Deaths": 870
+        },
+        "Mauritius": {
+            "Confirmed": 68552,
+            "Deaths": 786
+        },
+        "Mexico": {
+            "Confirmed": 3988916,
+            "Deaths": 299525
+        },
+        "Micronesia": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Moldova": {
+            "Confirmed": 376434,
+            "Deaths": 10284
+        },
+        "Monaco": {
+            "Confirmed": 4985,
+            "Deaths": 39
+        },
+        "Mongolia": {
+            "Confirmed": 693119,
+            "Deaths": 2060
+        },
+        "Montenegro": {
+            "Confirmed": 171873,
+            "Deaths": 2414
+        },
+        "Morocco": {
+            "Confirmed": 965420,
+            "Deaths": 14851
+        },
+        "Mozambique": {
+            "Confirmed": 191722,
+            "Deaths": 2012
+        },
+        "Namibia": {
+            "Confirmed": 148839,
+            "Deaths": 3645
+        },
+        "Nepal": {
+            "Confirmed": 828773,
+            "Deaths": 11594
+        },
+        "Netherlands": {
+            "Confirmed": 3200168,
+            "Deaths": 21419
+        },
+        "New Zealand": {
+            "Confirmed": 14257,
+            "Deaths": 51
+        },
+        "Nicaragua": {
+            "Confirmed": 13563,
+            "Deaths": 217
+        },
+        "Niger": {
+            "Confirmed": 7438,
+            "Deaths": 276
+        },
+        "Nigeria": {
+            "Confirmed": 242877,
+            "Deaths": 3033
+        },
+        "North Macedonia": {
+            "Confirmed": 225484,
+            "Deaths": 7969
+        },
+        "Norway": {
+            "Confirmed": 396415,
+            "Deaths": 1305
+        },
+        "Oman": {
+            "Confirmed": 305489,
+            "Deaths": 4116
+        },
+        "Pakistan": {
+            "Confirmed": 1296527,
+            "Deaths": 28941
+        },
+        "Palau": {
+            "Confirmed": 12,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 497808,
+            "Deaths": 7430
+        },
+        "Papua New Guinea": {
+            "Confirmed": 36158,
+            "Deaths": 590
+        },
+        "Paraguay": {
+            "Confirmed": 466101,
+            "Deaths": 16624
+        },
+        "Peru": {
+            "Confirmed": 2301177,
+            "Deaths": 202741
+        },
+        "Philippines": {
+            "Confirmed": 2847486,
+            "Deaths": 51545
+        },
+        "Poland": {
+            "Confirmed": 4120248,
+            "Deaths": 97559
+        },
+        "Portugal": {
+            "Confirmed": 1412936,
+            "Deaths": 18976
+        },
+        "Qatar": {
+            "Confirmed": 251361,
+            "Deaths": 618
+        },
+        "Romania": {
+            "Confirmed": 1810342,
+            "Deaths": 58779
+        },
+        "Russia": {
+            "Confirmed": 10340011,
+            "Deaths": 303496
+        },
+        "Rwanda": {
+            "Confirmed": 112654,
+            "Deaths": 1351
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 3043,
+            "Deaths": 28
+        },
+        "Saint Lucia": {
+            "Confirmed": 13640,
+            "Deaths": 301
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 5850,
+            "Deaths": 81
+        },
+        "Samoa": {
+            "Confirmed": 3,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 8202,
+            "Deaths": 100
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 3903,
+            "Deaths": 57
+        },
+        "Saudi Arabia": {
+            "Confirmed": 557082,
+            "Deaths": 8878
+        },
+        "Senegal": {
+            "Confirmed": 75337,
+            "Deaths": 1890
+        },
+        "Serbia": {
+            "Confirmed": 1300949,
+            "Deaths": 12739
+        },
+        "Seychelles": {
+            "Confirmed": 24788,
+            "Deaths": 134
+        },
+        "Sierra Leone": {
+            "Confirmed": 7114,
+            "Deaths": 123
+        },
+        "Singapore": {
+            "Confirmed": 279861,
+            "Deaths": 829
+        },
+        "Slovakia": {
+            "Confirmed": 1374354,
+            "Deaths": 16665
+        },
+        "Slovenia": {
+            "Confirmed": 465711,
+            "Deaths": 5597
+        },
+        "Solomon Islands": {
+            "Confirmed": 24,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 23532,
+            "Deaths": 1333
+        },
+        "South Africa": {
+            "Confirmed": 3468079,
+            "Deaths": 91198
+        },
+        "South Sudan": {
+            "Confirmed": 15242,
+            "Deaths": 135
+        },
+        "Spain": {
+            "Confirmed": 6294745,
+            "Deaths": 89405
+        },
+        "Sri Lanka": {
+            "Confirmed": 587596,
+            "Deaths": 14997
+        },
+        "Sudan": {
+            "Confirmed": 46518,
+            "Deaths": 3331
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 865,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 52612,
+            "Deaths": 1190
+        },
+        "Sweden": {
+            "Confirmed": 1314784,
+            "Deaths": 15310
+        },
+        "Switzerland": {
+            "Confirmed": 1332615,
+            "Deaths": 12220
+        },
+        "Syria": {
+            "Confirmed": 50310,
+            "Deaths": 2901
+        },
+        "Taiwan*": {
+            "Confirmed": 17050,
+            "Deaths": 850
+        },
+        "Tajikistan": {
+            "Confirmed": 17493,
+            "Deaths": 125
+        },
+        "Tanzania": {
+            "Confirmed": 29306,
+            "Deaths": 737
+        },
+        "Thailand": {
+            "Confirmed": 2226446,
+            "Deaths": 21708
+        },
+        "Timor-Leste": {
+            "Confirmed": 19839,
+            "Deaths": 122
+        },
+        "Togo": {
+            "Confirmed": 30163,
+            "Deaths": 248
+        },
+        "Tonga": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 92201,
+            "Deaths": 2883
+        },
+        "Tunisia": {
+            "Confirmed": 727843,
+            "Deaths": 25576
+        },
+        "Turkey": {
+            "Confirmed": 9519281,
+            "Deaths": 82506
+        },
+        "US": {
+            "Confirmed": 55024198,
+            "Deaths": 826342
+        },
+        "Uganda": {
+            "Confirmed": 142604,
+            "Deaths": 3297
+        },
+        "Ukraine": {
+            "Confirmed": 3852397,
+            "Deaths": 102300
+        },
+        "United Arab Emirates": {
+            "Confirmed": 764493,
+            "Deaths": 2165
+        },
+        "United Kingdom": {
+            "Confirmed": 13174530,
+            "Deaths": 149251
+        },
+        "Uruguay": {
+            "Confirmed": 414294,
+            "Deaths": 6172
+        },
+        "Uzbekistan": {
+            "Confirmed": 199030,
+            "Deaths": 1485
+        },
+        "Vanuatu": {
+            "Confirmed": 7,
+            "Deaths": 1
+        },
+        "Venezuela": {
+            "Confirmed": 444828,
+            "Deaths": 5331
+        },
+        "Vietnam": {
+            "Confirmed": 1746092,
+            "Deaths": 32610
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 469748,
+            "Deaths": 4919
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 10127,
+            "Deaths": 1984
+        },
+        "Zambia": {
+            "Confirmed": 257948,
+            "Deaths": 3740
+        },
+        "Zimbabwe": {
+            "Confirmed": 214214,
+            "Deaths": 5017
+        }
+    },
+    "01-02-2021": {
+        "Afghanistan": {
+            "Confirmed": 52586,
+            "Deaths": 2211
+        },
+        "Albania": {
+            "Confirmed": 58991,
+            "Deaths": 1190
+        },
+        "Algeria": {
+            "Confirmed": 100159,
+            "Deaths": 2769
+        },
+        "Andorra": {
+            "Confirmed": 8166,
+            "Deaths": 84
+        },
+        "Angola": {
+            "Confirmed": 17608,
+            "Deaths": 407
+        },
+        "Antarctica": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 159,
+            "Deaths": 5
+        },
+        "Argentina": {
+            "Confirmed": 1634834,
+            "Deaths": 43375
+        },
+        "Armenia": {
+            "Confirmed": 159798,
+            "Deaths": 2836
+        },
+        "Australia": {
+            "Confirmed": 28484,
+            "Deaths": 909
+        },
+        "Austria": {
+            "Confirmed": 360777,
+            "Deaths": 7637
+        },
+        "Azerbaijan": {
+            "Confirmed": 219462,
+            "Deaths": 2703
+        },
+        "Bahamas": {
+            "Confirmed": 7887,
+            "Deaths": 171
+        },
+        "Bahrain": {
+            "Confirmed": 93184,
+            "Deaths": 352
+        },
+        "Bangladesh": {
+            "Confirmed": 515184,
+            "Deaths": 7599
+        },
+        "Barbados": {
+            "Confirmed": 395,
+            "Deaths": 7
+        },
+        "Belarus": {
+            "Confirmed": 198125,
+            "Deaths": 1442
+        },
+        "Belgium": {
+            "Confirmed": 649169,
+            "Deaths": 19644
+        },
+        "Belize": {
+            "Confirmed": 10807,
+            "Deaths": 249
+        },
+        "Benin": {
+            "Confirmed": 3251,
+            "Deaths": 44
+        },
+        "Bhutan": {
+            "Confirmed": 710,
+            "Deaths": 0
+        },
+        "Bolivia": {
+            "Confirmed": 162055,
+            "Deaths": 9186
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 112143,
+            "Deaths": 4086
+        },
+        "Botswana": {
+            "Confirmed": 14805,
+            "Deaths": 42
+        },
+        "Brazil": {
+            "Confirmed": 7719324,
+            "Deaths": 195834
+        },
+        "Brunei": {
+            "Confirmed": 157,
+            "Deaths": 3
+        },
+        "Bulgaria": {
+            "Confirmed": 202880,
+            "Deaths": 7644
+        },
+        "Burkina Faso": {
+            "Confirmed": 6940,
+            "Deaths": 86
+        },
+        "Burma": {
+            "Confirmed": 125616,
+            "Deaths": 2711
+        },
+        "Burundi": {
+            "Confirmed": 822,
+            "Deaths": 2
+        },
+        "Cabo Verde": {
+            "Confirmed": 11883,
+            "Deaths": 113
+        },
+        "Cambodia": {
+            "Confirmed": 381,
+            "Deaths": 0
+        },
+        "Cameroon": {
+            "Confirmed": 26848,
+            "Deaths": 448
+        },
+        "Canada": {
+            "Confirmed": 602396,
+            "Deaths": 16877
+        },
+        "Central African Republic": {
+            "Confirmed": 4963,
+            "Deaths": 63
+        },
+        "Chad": {
+            "Confirmed": 2169,
+            "Deaths": 104
+        },
+        "Chile": {
+            "Confirmed": 615902,
+            "Deaths": 16724
+        },
+        "China": {
+            "Confirmed": 102731,
+            "Deaths": 4784
+        },
+        "Colombia": {
+            "Confirmed": 1666408,
+            "Deaths": 43765
+        },
+        "Comoros": {
+            "Confirmed": 864,
+            "Deaths": 13
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 7107,
+            "Deaths": 108
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 17998,
+            "Deaths": 595
+        },
+        "Costa Rica": {
+            "Confirmed": 169321,
+            "Deaths": 2185
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 22563,
+            "Deaths": 138
+        },
+        "Croatia": {
+            "Confirmed": 212262,
+            "Deaths": 4016
+        },
+        "Cuba": {
+            "Confirmed": 12225,
+            "Deaths": 146
+        },
+        "Cyprus": {
+            "Confirmed": 23275,
+            "Deaths": 128
+        },
+        "Czechia": {
+            "Confirmed": 735469,
+            "Deaths": 11827
+        },
+        "Denmark": {
+            "Confirmed": 168182,
+            "Deaths": 1345
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 5841,
+            "Deaths": 61
+        },
+        "Dominica": {
+            "Confirmed": 88,
+            "Deaths": 0
+        },
+        "Dominican Republic": {
+            "Confirmed": 172965,
+            "Deaths": 2416
+        },
+        "Ecuador": {
+            "Confirmed": 214513,
+            "Deaths": 14059
+        },
+        "Egypt": {
+            "Confirmed": 140878,
+            "Deaths": 7741
+        },
+        "El Salvador": {
+            "Confirmed": 46803,
+            "Deaths": 1327
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 5277,
+            "Deaths": 86
+        },
+        "Eritrea": {
+            "Confirmed": 1320,
+            "Deaths": 3
+        },
+        "Estonia": {
+            "Confirmed": 28789,
+            "Deaths": 241
+        },
+        "Eswatini": {
+            "Confirmed": 9711,
+            "Deaths": 227
+        },
+        "Ethiopia": {
+            "Confirmed": 125049,
+            "Deaths": 1944
+        },
+        "Fiji": {
+            "Confirmed": 49,
+            "Deaths": 2
+        },
+        "Finland": {
+            "Confirmed": 36804,
+            "Deaths": 601
+        },
+        "France": {
+            "Confirmed": 2700480,
+            "Deaths": 65047
+        },
+        "Gabon": {
+            "Confirmed": 9571,
+            "Deaths": 64
+        },
+        "Gambia": {
+            "Confirmed": 3800,
+            "Deaths": 124
+        },
+        "Georgia": {
+            "Confirmed": 228752,
+            "Deaths": 2572
+        },
+        "Germany": {
+            "Confirmed": 1773540,
+            "Deaths": 34480
+        },
+        "Ghana": {
+            "Confirmed": 55064,
+            "Deaths": 335
+        },
+        "Greece": {
+            "Confirmed": 139709,
+            "Deaths": 4921
+        },
+        "Grenada": {
+            "Confirmed": 127,
+            "Deaths": 0
+        },
+        "Guatemala": {
+            "Confirmed": 138316,
+            "Deaths": 4827
+        },
+        "Guinea": {
+            "Confirmed": 13784,
+            "Deaths": 81
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 2452,
+            "Deaths": 45
+        },
+        "Guyana": {
+            "Confirmed": 6351,
+            "Deaths": 164
+        },
+        "Haiti": {
+            "Confirmed": 10015,
+            "Deaths": 236
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 123144,
+            "Deaths": 3173
+        },
+        "Hungary": {
+            "Confirmed": 326688,
+            "Deaths": 9781
+        },
+        "Iceland": {
+            "Confirmed": 5754,
+            "Deaths": 29
+        },
+        "India": {
+            "Confirmed": 10323965,
+            "Deaths": 149435
+        },
+        "Indonesia": {
+            "Confirmed": 758473,
+            "Deaths": 22555
+        },
+        "Iran": {
+            "Confirmed": 1237474,
+            "Deaths": 55438
+        },
+        "Iraq": {
+            "Confirmed": 597033,
+            "Deaths": 12829
+        },
+        "Ireland": {
+            "Confirmed": 96926,
+            "Deaths": 2252
+        },
+        "Israel": {
+            "Confirmed": 434799,
+            "Deaths": 3392
+        },
+        "Italy": {
+            "Confirmed": 2141201,
+            "Deaths": 74985
+        },
+        "Jamaica": {
+            "Confirmed": 12931,
+            "Deaths": 303
+        },
+        "Japan": {
+            "Confirmed": 242076,
+            "Deaths": 3572
+        },
+        "Jordan": {
+            "Confirmed": 296668,
+            "Deaths": 3877
+        },
+        "Kazakhstan": {
+            "Confirmed": 202880,
+            "Deaths": 2749
+        },
+        "Kenya": {
+            "Confirmed": 96678,
+            "Deaths": 1685
+        },
+        "Kiribati": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 63244,
+            "Deaths": 962
+        },
+        "Kosovo": {
+            "Confirmed": 51502,
+            "Deaths": 1336
+        },
+        "Kuwait": {
+            "Confirmed": 151074,
+            "Deaths": 937
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 81214,
+            "Deaths": 1358
+        },
+        "Laos": {
+            "Confirmed": 41,
+            "Deaths": 0
+        },
+        "Latvia": {
+            "Confirmed": 41929,
+            "Deaths": 668
+        },
+        "Lebanon": {
+            "Confirmed": 186408,
+            "Deaths": 1489
+        },
+        "Lesotho": {
+            "Confirmed": 3206,
+            "Deaths": 65
+        },
+        "Liberia": {
+            "Confirmed": 1800,
+            "Deaths": 83
+        },
+        "Libya": {
+            "Confirmed": 100744,
+            "Deaths": 1487
+        },
+        "Liechtenstein": {
+            "Confirmed": 2259,
+            "Deaths": 44
+        },
+        "Lithuania": {
+            "Confirmed": 149105,
+            "Deaths": 1892
+        },
+        "Luxembourg": {
+            "Confirmed": 46415,
+            "Deaths": 495
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 17767,
+            "Deaths": 262
+        },
+        "Malawi": {
+            "Confirmed": 6712,
+            "Deaths": 192
+        },
+        "Malaysia": {
+            "Confirmed": 117373,
+            "Deaths": 483
+        },
+        "Maldives": {
+            "Confirmed": 13834,
+            "Deaths": 48
+        },
+        "Mali": {
+            "Confirmed": 7226,
+            "Deaths": 276
+        },
+        "Malta": {
+            "Confirmed": 12997,
+            "Deaths": 220
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 14677,
+            "Deaths": 353
+        },
+        "Mauritius": {
+            "Confirmed": 527,
+            "Deaths": 10
+        },
+        "Mexico": {
+            "Confirmed": 1443544,
+            "Deaths": 126851
+        },
+        "Moldova": {
+            "Confirmed": 145694,
+            "Deaths": 3020
+        },
+        "Monaco": {
+            "Confirmed": 901,
+            "Deaths": 3
+        },
+        "Mongolia": {
+            "Confirmed": 1242,
+            "Deaths": 1
+        },
+        "Montenegro": {
+            "Confirmed": 48856,
+            "Deaths": 684
+        },
+        "Morocco": {
+            "Confirmed": 442141,
+            "Deaths": 7452
+        },
+        "Mozambique": {
+            "Confirmed": 18968,
+            "Deaths": 168
+        },
+        "Namibia": {
+            "Confirmed": 24654,
+            "Deaths": 213
+        },
+        "Nepal": {
+            "Confirmed": 261438,
+            "Deaths": 1870
+        },
+        "Netherlands": {
+            "Confirmed": 825249,
+            "Deaths": 11660
+        },
+        "New Zealand": {
+            "Confirmed": 2181,
+            "Deaths": 25
+        },
+        "Nicaragua": {
+            "Confirmed": 4829,
+            "Deaths": 165
+        },
+        "Niger": {
+            "Confirmed": 3437,
+            "Deaths": 110
+        },
+        "Nigeria": {
+            "Confirmed": 89163,
+            "Deaths": 1302
+        },
+        "North Macedonia": {
+            "Confirmed": 83789,
+            "Deaths": 2522
+        },
+        "Norway": {
+            "Confirmed": 50266,
+            "Deaths": 436
+        },
+        "Oman": {
+            "Confirmed": 128867,
+            "Deaths": 1499
+        },
+        "Pakistan": {
+            "Confirmed": 486634,
+            "Deaths": 10311
+        },
+        "Palau": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 251764,
+            "Deaths": 4103
+        },
+        "Papua New Guinea": {
+            "Confirmed": 780,
+            "Deaths": 9
+        },
+        "Paraguay": {
+            "Confirmed": 108718,
+            "Deaths": 2279
+        },
+        "Peru": {
+            "Confirmed": 1015137,
+            "Deaths": 93377
+        },
+        "Philippines": {
+            "Confirmed": 476916,
+            "Deaths": 9253
+        },
+        "Poland": {
+            "Confirmed": 1312780,
+            "Deaths": 29058
+        },
+        "Portugal": {
+            "Confirmed": 423870,
+            "Deaths": 7045
+        },
+        "Qatar": {
+            "Confirmed": 144240,
+            "Deaths": 245
+        },
+        "Romania": {
+            "Confirmed": 637395,
+            "Deaths": 15919
+        },
+        "Russia": {
+            "Confirmed": 3179898,
+            "Deaths": 57235
+        },
+        "Rwanda": {
+            "Confirmed": 8567,
+            "Deaths": 98
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 33,
+            "Deaths": 0
+        },
+        "Saint Lucia": {
+            "Confirmed": 353,
+            "Deaths": 5
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 122,
+            "Deaths": 0
+        },
+        "Samoa": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 2428,
+            "Deaths": 59
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 1024,
+            "Deaths": 17
+        },
+        "Saudi Arabia": {
+            "Confirmed": 362979,
+            "Deaths": 6239
+        },
+        "Senegal": {
+            "Confirmed": 19511,
+            "Deaths": 416
+        },
+        "Serbia": {
+            "Confirmed": 341904,
+            "Deaths": 3288
+        },
+        "Seychelles": {
+            "Confirmed": 267,
+            "Deaths": 0
+        },
+        "Sierra Leone": {
+            "Confirmed": 2646,
+            "Deaths": 76
+        },
+        "Singapore": {
+            "Confirmed": 58662,
+            "Deaths": 29
+        },
+        "Slovakia": {
+            "Confirmed": 287405,
+            "Deaths": 2250
+        },
+        "Slovenia": {
+            "Confirmed": 124343,
+            "Deaths": 2774
+        },
+        "Solomon Islands": {
+            "Confirmed": 17,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 4714,
+            "Deaths": 130
+        },
+        "South Africa": {
+            "Confirmed": 1088889,
+            "Deaths": 29175
+        },
+        "South Sudan": {
+            "Confirmed": 3558,
+            "Deaths": 63
+        },
+        "Spain": {
+            "Confirmed": 1928265,
+            "Deaths": 50837
+        },
+        "Sri Lanka": {
+            "Confirmed": 44371,
+            "Deaths": 211
+        },
+        "Sudan": {
+            "Confirmed": 25882,
+            "Deaths": 1468
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 6343,
+            "Deaths": 123
+        },
+        "Sweden": {
+            "Confirmed": 437379,
+            "Deaths": 8727
+        },
+        "Switzerland": {
+            "Confirmed": 452296,
+            "Deaths": 8009
+        },
+        "Syria": {
+            "Confirmed": 11616,
+            "Deaths": 723
+        },
+        "Taiwan*": {
+            "Confirmed": 808,
+            "Deaths": 7
+        },
+        "Tajikistan": {
+            "Confirmed": 13671,
+            "Deaths": 91
+        },
+        "Tanzania": {
+            "Confirmed": 509,
+            "Deaths": 21
+        },
+        "Thailand": {
+            "Confirmed": 7379,
+            "Deaths": 64
+        },
+        "Timor-Leste": {
+            "Confirmed": 44,
+            "Deaths": 0
+        },
+        "Togo": {
+            "Confirmed": 3683,
+            "Deaths": 68
+        },
+        "Tonga": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 7162,
+            "Deaths": 127
+        },
+        "Tunisia": {
+            "Confirmed": 141979,
+            "Deaths": 4765
+        },
+        "Turkey": {
+            "Confirmed": 2232035,
+            "Deaths": 21295
+        },
+        "US": {
+            "Confirmed": 20642478,
+            "Deaths": 355962
+        },
+        "Uganda": {
+            "Confirmed": 35712,
+            "Deaths": 274
+        },
+        "Ukraine": {
+            "Confirmed": 1102256,
+            "Deaths": 19498
+        },
+        "United Arab Emirates": {
+            "Confirmed": 211641,
+            "Deaths": 674
+        },
+        "United Kingdom": {
+            "Confirmed": 2607548,
+            "Deaths": 74682
+        },
+        "Uruguay": {
+            "Confirmed": 20275,
+            "Deaths": 201
+        },
+        "Uzbekistan": {
+            "Confirmed": 77182,
+            "Deaths": 614
+        },
+        "Vanuatu": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Venezuela": {
+            "Confirmed": 114083,
+            "Deaths": 1032
+        },
+        "Vietnam": {
+            "Confirmed": 1482,
+            "Deaths": 35
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 140287,
+            "Deaths": 1446
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 2101,
+            "Deaths": 610
+        },
+        "Zambia": {
+            "Confirmed": 21230,
+            "Deaths": 392
+        },
+        "Zimbabwe": {
+            "Confirmed": 14491,
+            "Deaths": 377
+        }
+    },
+    "01-02-2022": {
+        "Afghanistan": {
+            "Confirmed": 158189,
+            "Deaths": 7361
+        },
+        "Albania": {
+            "Confirmed": 210885,
+            "Deaths": 3220
+        },
+        "Algeria": {
+            "Confirmed": 219159,
+            "Deaths": 6291
+        },
+        "Andorra": {
+            "Confirmed": 23740,
+            "Deaths": 140
+        },
+        "Angola": {
+            "Confirmed": 82920,
+            "Deaths": 1772
+        },
+        "Antarctica": {
+            "Confirmed": 11,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 4283,
+            "Deaths": 119
+        },
+        "Argentina": {
+            "Confirmed": 5694930,
+            "Deaths": 117204
+        },
+        "Armenia": {
+            "Confirmed": 345007,
+            "Deaths": 7977
+        },
+        "Australia": {
+            "Confirmed": 492563,
+            "Deaths": 2266
+        },
+        "Austria": {
+            "Confirmed": 1278327,
+            "Deaths": 16859
+        },
+        "Azerbaijan": {
+            "Confirmed": 617679,
+            "Deaths": 8375
+        },
+        "Bahamas": {
+            "Confirmed": 25285,
+            "Deaths": 717
+        },
+        "Bahrain": {
+            "Confirmed": 283344,
+            "Deaths": 1395
+        },
+        "Bangladesh": {
+            "Confirmed": 1586466,
+            "Deaths": 28077
+        },
+        "Barbados": {
+            "Confirmed": 28960,
+            "Deaths": 262
+        },
+        "Belarus": {
+            "Confirmed": 701192,
+            "Deaths": 5609
+        },
+        "Belgium": {
+            "Confirmed": 2105343,
+            "Deaths": 28331
+        },
+        "Belize": {
+            "Confirmed": 32840,
+            "Deaths": 602
+        },
+        "Benin": {
+            "Confirmed": 24935,
+            "Deaths": 161
+        },
+        "Bhutan": {
+            "Confirmed": 2660,
+            "Deaths": 3
+        },
+        "Bolivia": {
+            "Confirmed": 611031,
+            "Deaths": 19722
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 291313,
+            "Deaths": 13442
+        },
+        "Botswana": {
+            "Confirmed": 219509,
+            "Deaths": 2444
+        },
+        "Brazil": {
+            "Confirmed": 22297427,
+            "Deaths": 619401
+        },
+        "Brunei": {
+            "Confirmed": 15470,
+            "Deaths": 98
+        },
+        "Bulgaria": {
+            "Confirmed": 749540,
+            "Deaths": 31027
+        },
+        "Burkina Faso": {
+            "Confirmed": 17632,
+            "Deaths": 318
+        },
+        "Burma": {
+            "Confirmed": 531025,
+            "Deaths": 19274
+        },
+        "Burundi": {
+            "Confirmed": 27366,
+            "Deaths": 38
+        },
+        "Cabo Verde": {
+            "Confirmed": 42811,
+            "Deaths": 352
+        },
+        "Cambodia": {
+            "Confirmed": 120510,
+            "Deaths": 3013
+        },
+        "Cameroon": {
+            "Confirmed": 109367,
+            "Deaths": 1851
+        },
+        "Canada": {
+            "Confirmed": 2286735,
+            "Deaths": 30667
+        },
+        "Central African Republic": {
+            "Confirmed": 12163,
+            "Deaths": 101
+        },
+        "Chad": {
+            "Confirmed": 6183,
+            "Deaths": 184
+        },
+        "Chile": {
+            "Confirmed": 1810302,
+            "Deaths": 39162
+        },
+        "China": {
+            "Confirmed": 128259,
+            "Deaths": 4849
+        },
+        "Colombia": {
+            "Confirmed": 5181173,
+            "Deaths": 130026
+        },
+        "Comoros": {
+            "Confirmed": 6835,
+            "Deaths": 158
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 20089,
+            "Deaths": 367
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 74793,
+            "Deaths": 1205
+        },
+        "Costa Rica": {
+            "Confirmed": 570556,
+            "Deaths": 7353
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 72352,
+            "Deaths": 720
+        },
+        "Croatia": {
+            "Confirmed": 720951,
+            "Deaths": 12609
+        },
+        "Cuba": {
+            "Confirmed": 966942,
+            "Deaths": 8324
+        },
+        "Cyprus": {
+            "Confirmed": 172697,
+            "Deaths": 639
+        },
+        "Czechia": {
+            "Confirmed": 2481832,
+            "Deaths": 36219
+        },
+        "Denmark": {
+            "Confirmed": 839952,
+            "Deaths": 3302
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 13685,
+            "Deaths": 189
+        },
+        "Dominica": {
+            "Confirmed": 6862,
+            "Deaths": 47
+        },
+        "Dominican Republic": {
+            "Confirmed": 421953,
+            "Deaths": 4249
+        },
+        "Ecuador": {
+            "Confirmed": 552324,
+            "Deaths": 33683
+        },
+        "Egypt": {
+            "Confirmed": 387159,
+            "Deaths": 21797
+        },
+        "El Salvador": {
+            "Confirmed": 121945,
+            "Deaths": 3825
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 13710,
+            "Deaths": 175
+        },
+        "Eritrea": {
+            "Confirmed": 8049,
+            "Deaths": 76
+        },
+        "Estonia": {
+            "Confirmed": 242552,
+            "Deaths": 1938
+        },
+        "Eswatini": {
+            "Confirmed": 66286,
+            "Deaths": 1310
+        },
+        "Ethiopia": {
+            "Confirmed": 426656,
+            "Deaths": 6958
+        },
+        "Fiji": {
+            "Confirmed": 54147,
+            "Deaths": 700
+        },
+        "Finland": {
+            "Confirmed": 281702,
+            "Deaths": 1739
+        },
+        "France": {
+            "Confirmed": 10355341,
+            "Deaths": 124930
+        },
+        "Gabon": {
+            "Confirmed": 41798,
+            "Deaths": 288
+        },
+        "Gambia": {
+            "Confirmed": 10170,
+            "Deaths": 343
+        },
+        "Georgia": {
+            "Confirmed": 937640,
+            "Deaths": 13905
+        },
+        "Germany": {
+            "Confirmed": 7208790,
+            "Deaths": 112161
+        },
+        "Ghana": {
+            "Confirmed": 145052,
+            "Deaths": 1303
+        },
+        "Greece": {
+            "Confirmed": 1258495,
+            "Deaths": 20910
+        },
+        "Grenada": {
+            "Confirmed": 6306,
+            "Deaths": 200
+        },
+        "Guatemala": {
+            "Confirmed": 628695,
+            "Deaths": 16109
+        },
+        "Guinea": {
+            "Confirmed": 32671,
+            "Deaths": 391
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 6484,
+            "Deaths": 149
+        },
+        "Guyana": {
+            "Confirmed": 40060,
+            "Deaths": 1055
+        },
+        "Haiti": {
+            "Confirmed": 25985,
+            "Deaths": 766
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 379402,
+            "Deaths": 10433
+        },
+        "Hungary": {
+            "Confirmed": 1256415,
+            "Deaths": 39186
+        },
+        "Iceland": {
+            "Confirmed": 27059,
+            "Deaths": 37
+        },
+        "India": {
+            "Confirmed": 34922882,
+            "Deaths": 481893
+        },
+        "Indonesia": {
+            "Confirmed": 4263168,
+            "Deaths": 144097
+        },
+        "Iran": {
+            "Confirmed": 6196913,
+            "Deaths": 131680
+        },
+        "Iraq": {
+            "Confirmed": 2094097,
+            "Deaths": 24167
+        },
+        "Ireland": {
+            "Confirmed": 811840,
+            "Deaths": 5912
+        },
+        "Israel": {
+            "Confirmed": 1395113,
+            "Deaths": 8244
+        },
+        "Italy": {
+            "Confirmed": 6328076,
+            "Deaths": 137646
+        },
+        "Jamaica": {
+            "Confirmed": 95177,
+            "Deaths": 2476
+        },
+        "Japan": {
+            "Confirmed": 1733229,
+            "Deaths": 18391
+        },
+        "Jordan": {
+            "Confirmed": 1065571,
+            "Deaths": 12710
+        },
+        "Kazakhstan": {
+            "Confirmed": 1072999,
+            "Deaths": 18211
+        },
+        "Kenya": {
+            "Confirmed": 298509,
+            "Deaths": 5384
+        },
+        "Kiribati": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 642207,
+            "Deaths": 5730
+        },
+        "Kosovo": {
+            "Confirmed": 161560,
+            "Deaths": 2991
+        },
+        "Kuwait": {
+            "Confirmed": 418332,
+            "Deaths": 2468
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 184786,
+            "Deaths": 2804
+        },
+        "Laos": {
+            "Confirmed": 112767,
+            "Deaths": 380
+        },
+        "Latvia": {
+            "Confirmed": 277021,
+            "Deaths": 4579
+        },
+        "Lebanon": {
+            "Confirmed": 732733,
+            "Deaths": 9154
+        },
+        "Lesotho": {
+            "Confirmed": 29756,
+            "Deaths": 671
+        },
+        "Liberia": {
+            "Confirmed": 6278,
+            "Deaths": 287
+        },
+        "Libya": {
+            "Confirmed": 389650,
+            "Deaths": 5722
+        },
+        "Liechtenstein": {
+            "Confirmed": 6208,
+            "Deaths": 69
+        },
+        "Lithuania": {
+            "Confirmed": 527906,
+            "Deaths": 7432
+        },
+        "Luxembourg": {
+            "Confirmed": 103766,
+            "Deaths": 915
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 50279,
+            "Deaths": 1027
+        },
+        "Malawi": {
+            "Confirmed": 76066,
+            "Deaths": 2371
+        },
+        "Malaysia": {
+            "Confirmed": 2764354,
+            "Deaths": 31532
+        },
+        "Maldives": {
+            "Confirmed": 96052,
+            "Deaths": 262
+        },
+        "Mali": {
+            "Confirmed": 21549,
+            "Deaths": 668
+        },
+        "Malta": {
+            "Confirmed": 54250,
+            "Deaths": 479
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 42182,
+            "Deaths": 872
+        },
+        "Mauritius": {
+            "Confirmed": 68612,
+            "Deaths": 786
+        },
+        "Mexico": {
+            "Confirmed": 3990587,
+            "Deaths": 299544
+        },
+        "Micronesia": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Moldova": {
+            "Confirmed": 376602,
+            "Deaths": 10290
+        },
+        "Monaco": {
+            "Confirmed": 4985,
+            "Deaths": 39
+        },
+        "Mongolia": {
+            "Confirmed": 693546,
+            "Deaths": 2060
+        },
+        "Montenegro": {
+            "Confirmed": 173161,
+            "Deaths": 2416
+        },
+        "Morocco": {
+            "Confirmed": 966777,
+            "Deaths": 14855
+        },
+        "Mozambique": {
+            "Confirmed": 192453,
+            "Deaths": 2019
+        },
+        "Namibia": {
+            "Confirmed": 149478,
+            "Deaths": 3655
+        },
+        "Nepal": {
+            "Confirmed": 828986,
+            "Deaths": 11596
+        },
+        "Netherlands": {
+            "Confirmed": 3218604,
+            "Deaths": 21425
+        },
+        "New Zealand": {
+            "Confirmed": 14308,
+            "Deaths": 51
+        },
+        "Nicaragua": {
+            "Confirmed": 13563,
+            "Deaths": 217
+        },
+        "Niger": {
+            "Confirmed": 7438,
+            "Deaths": 276
+        },
+        "Nigeria": {
+            "Confirmed": 242877,
+            "Deaths": 3033
+        },
+        "North Macedonia": {
+            "Confirmed": 225730,
+            "Deaths": 7975
+        },
+        "Norway": {
+            "Confirmed": 399318,
+            "Deaths": 1305
+        },
+        "Oman": {
+            "Confirmed": 305832,
+            "Deaths": 4117
+        },
+        "Pakistan": {
+            "Confirmed": 1297235,
+            "Deaths": 28943
+        },
+        "Palau": {
+            "Confirmed": 13,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 498785,
+            "Deaths": 7433
+        },
+        "Papua New Guinea": {
+            "Confirmed": 36190,
+            "Deaths": 590
+        },
+        "Paraguay": {
+            "Confirmed": 466101,
+            "Deaths": 16624
+        },
+        "Peru": {
+            "Confirmed": 2302678,
+            "Deaths": 202782
+        },
+        "Philippines": {
+            "Confirmed": 2851931,
+            "Deaths": 51570
+        },
+        "Poland": {
+            "Confirmed": 4127428,
+            "Deaths": 97592
+        },
+        "Portugal": {
+            "Confirmed": 1424016,
+            "Deaths": 18990
+        },
+        "Qatar": {
+            "Confirmed": 252359,
+            "Deaths": 618
+        },
+        "Romania": {
+            "Confirmed": 1811300,
+            "Deaths": 58796
+        },
+        "Russia": {
+            "Confirmed": 10358099,
+            "Deaths": 304284
+        },
+        "Rwanda": {
+            "Confirmed": 113582,
+            "Deaths": 1355
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 3193,
+            "Deaths": 28
+        },
+        "Saint Lucia": {
+            "Confirmed": 13732,
+            "Deaths": 301
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 5952,
+            "Deaths": 83
+        },
+        "Samoa": {
+            "Confirmed": 3,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 8202,
+            "Deaths": 100
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 3912,
+            "Deaths": 57
+        },
+        "Saudi Arabia": {
+            "Confirmed": 558106,
+            "Deaths": 8879
+        },
+        "Senegal": {
+            "Confirmed": 75671,
+            "Deaths": 1890
+        },
+        "Serbia": {
+            "Confirmed": 1302856,
+            "Deaths": 12760
+        },
+        "Seychelles": {
+            "Confirmed": 24788,
+            "Deaths": 134
+        },
+        "Sierra Leone": {
+            "Confirmed": 7179,
+            "Deaths": 123
+        },
+        "Singapore": {
+            "Confirmed": 280290,
+            "Deaths": 829
+        },
+        "Slovakia": {
+            "Confirmed": 1374850,
+            "Deaths": 16701
+        },
+        "Slovenia": {
+            "Confirmed": 466554,
+            "Deaths": 5603
+        },
+        "Solomon Islands": {
+            "Confirmed": 24,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 23532,
+            "Deaths": 1333
+        },
+        "South Africa": {
+            "Confirmed": 3472436,
+            "Deaths": 91228
+        },
+        "South Sudan": {
+            "Confirmed": 15242,
+            "Deaths": 135
+        },
+        "Spain": {
+            "Confirmed": 6294745,
+            "Deaths": 89405
+        },
+        "Sri Lanka": {
+            "Confirmed": 587935,
+            "Deaths": 15019
+        },
+        "Sudan": {
+            "Confirmed": 46518,
+            "Deaths": 3331
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 865,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 52895,
+            "Deaths": 1190
+        },
+        "Sweden": {
+            "Confirmed": 1314784,
+            "Deaths": 15310
+        },
+        "Switzerland": {
+            "Confirmed": 1332615,
+            "Deaths": 12227
+        },
+        "Syria": {
+            "Confirmed": 50337,
+            "Deaths": 2905
+        },
+        "Taiwan*": {
+            "Confirmed": 17070,
+            "Deaths": 850
+        },
+        "Tajikistan": {
+            "Confirmed": 17493,
+            "Deaths": 125
+        },
+        "Tanzania": {
+            "Confirmed": 29306,
+            "Deaths": 737
+        },
+        "Thailand": {
+            "Confirmed": 2229558,
+            "Deaths": 21720
+        },
+        "Timor-Leste": {
+            "Confirmed": 19839,
+            "Deaths": 122
+        },
+        "Togo": {
+            "Confirmed": 31165,
+            "Deaths": 248
+        },
+        "Tonga": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 92659,
+            "Deaths": 2914
+        },
+        "Tunisia": {
+            "Confirmed": 728260,
+            "Deaths": 25586
+        },
+        "Turkey": {
+            "Confirmed": 9552801,
+            "Deaths": 82635
+        },
+        "US": {
+            "Confirmed": 55310161,
+            "Deaths": 826749
+        },
+        "Uganda": {
+            "Confirmed": 144540,
+            "Deaths": 3302
+        },
+        "Ukraine": {
+            "Confirmed": 3854405,
+            "Deaths": 102421
+        },
+        "United Arab Emirates": {
+            "Confirmed": 767093,
+            "Deaths": 2168
+        },
+        "United Kingdom": {
+            "Confirmed": 13310224,
+            "Deaths": 149324
+        },
+        "Uruguay": {
+            "Confirmed": 415249,
+            "Deaths": 6175
+        },
+        "Uzbekistan": {
+            "Confirmed": 199118,
+            "Deaths": 1485
+        },
+        "Vanuatu": {
+            "Confirmed": 7,
+            "Deaths": 1
+        },
+        "Venezuela": {
+            "Confirmed": 444972,
+            "Deaths": 5333
+        },
+        "Vietnam": {
+            "Confirmed": 1763040,
+            "Deaths": 32831
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 469748,
+            "Deaths": 4919
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 10130,
+            "Deaths": 1984
+        },
+        "Zambia": {
+            "Confirmed": 259677,
+            "Deaths": 3743
+        },
+        "Zimbabwe": {
+            "Confirmed": 214214,
+            "Deaths": 5017
+        }
+    },
+    "01-03-2021": {
+        "Afghanistan": {
+            "Confirmed": 52709,
+            "Deaths": 2221
+        },
+        "Albania": {
+            "Confirmed": 59438,
+            "Deaths": 1193
+        },
+        "Algeria": {
+            "Confirmed": 100408,
+            "Deaths": 2772
+        },
+        "Andorra": {
+            "Confirmed": 8192,
+            "Deaths": 84
+        },
+        "Angola": {
+            "Confirmed": 17642,
+            "Deaths": 408
+        },
+        "Antarctica": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 160,
+            "Deaths": 5
+        },
+        "Argentina": {
+            "Confirmed": 1640718,
+            "Deaths": 43482
+        },
+        "Armenia": {
+            "Confirmed": 160027,
+            "Deaths": 2850
+        },
+        "Australia": {
+            "Confirmed": 28504,
+            "Deaths": 909
+        },
+        "Austria": {
+            "Confirmed": 362368,
+            "Deaths": 7706
+        },
+        "Azerbaijan": {
+            "Confirmed": 220265,
+            "Deaths": 2733
+        },
+        "Bahamas": {
+            "Confirmed": 7914,
+            "Deaths": 175
+        },
+        "Bahrain": {
+            "Confirmed": 93478,
+            "Deaths": 352
+        },
+        "Bangladesh": {
+            "Confirmed": 516019,
+            "Deaths": 7626
+        },
+        "Barbados": {
+            "Confirmed": 556,
+            "Deaths": 7
+        },
+        "Belarus": {
+            "Confirmed": 199962,
+            "Deaths": 1451
+        },
+        "Belgium": {
+            "Confirmed": 650011,
+            "Deaths": 19701
+        },
+        "Belize": {
+            "Confirmed": 10901,
+            "Deaths": 250
+        },
+        "Benin": {
+            "Confirmed": 3251,
+            "Deaths": 44
+        },
+        "Bhutan": {
+            "Confirmed": 716,
+            "Deaths": 0
+        },
+        "Bolivia": {
+            "Confirmed": 162661,
+            "Deaths": 9201
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 112645,
+            "Deaths": 4131
+        },
+        "Botswana": {
+            "Confirmed": 14805,
+            "Deaths": 42
+        },
+        "Brazil": {
+            "Confirmed": 7736514,
+            "Deaths": 196145
+        },
+        "Brunei": {
+            "Confirmed": 172,
+            "Deaths": 3
+        },
+        "Bulgaria": {
+            "Confirmed": 203051,
+            "Deaths": 7678
+        },
+        "Burkina Faso": {
+            "Confirmed": 7051,
+            "Deaths": 86
+        },
+        "Burma": {
+            "Confirmed": 126345,
+            "Deaths": 2728
+        },
+        "Burundi": {
+            "Confirmed": 833,
+            "Deaths": 2
+        },
+        "Cabo Verde": {
+            "Confirmed": 11920,
+            "Deaths": 113
+        },
+        "Cambodia": {
+            "Confirmed": 382,
+            "Deaths": 0
+        },
+        "Cameroon": {
+            "Confirmed": 26848,
+            "Deaths": 448
+        },
+        "Canada": {
+            "Confirmed": 612021,
+            "Deaths": 16998
+        },
+        "Central African Republic": {
+            "Confirmed": 4963,
+            "Deaths": 63
+        },
+        "Chad": {
+            "Confirmed": 2213,
+            "Deaths": 104
+        },
+        "Chile": {
+            "Confirmed": 618191,
+            "Deaths": 16767
+        },
+        "China": {
+            "Confirmed": 102808,
+            "Deaths": 4784
+        },
+        "Colombia": {
+            "Confirmed": 1675820,
+            "Deaths": 43965
+        },
+        "Comoros": {
+            "Confirmed": 864,
+            "Deaths": 13
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 7107,
+            "Deaths": 108
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 18102,
+            "Deaths": 596
+        },
+        "Costa Rica": {
+            "Confirmed": 169321,
+            "Deaths": 2185
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 22648,
+            "Deaths": 138
+        },
+        "Croatia": {
+            "Confirmed": 212958,
+            "Deaths": 4072
+        },
+        "Cuba": {
+            "Confirmed": 12424,
+            "Deaths": 147
+        },
+        "Cyprus": {
+            "Confirmed": 23902,
+            "Deaths": 130
+        },
+        "Czechia": {
+            "Confirmed": 740481,
+            "Deaths": 11960
+        },
+        "Denmark": {
+            "Confirmed": 169358,
+            "Deaths": 1374
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 5842,
+            "Deaths": 61
+        },
+        "Dominica": {
+            "Confirmed": 88,
+            "Deaths": 0
+        },
+        "Dominican Republic": {
+            "Confirmed": 173331,
+            "Deaths": 2418
+        },
+        "Ecuador": {
+            "Confirmed": 214614,
+            "Deaths": 14059
+        },
+        "Egypt": {
+            "Confirmed": 142187,
+            "Deaths": 7805
+        },
+        "El Salvador": {
+            "Confirmed": 46803,
+            "Deaths": 1358
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 5277,
+            "Deaths": 86
+        },
+        "Eritrea": {
+            "Confirmed": 1320,
+            "Deaths": 3
+        },
+        "Estonia": {
+            "Confirmed": 29131,
+            "Deaths": 244
+        },
+        "Eswatini": {
+            "Confirmed": 9943,
+            "Deaths": 231
+        },
+        "Ethiopia": {
+            "Confirmed": 125622,
+            "Deaths": 1948
+        },
+        "Fiji": {
+            "Confirmed": 49,
+            "Deaths": 2
+        },
+        "Finland": {
+            "Confirmed": 37009,
+            "Deaths": 605
+        },
+        "France": {
+            "Confirmed": 2712975,
+            "Deaths": 65163
+        },
+        "Gabon": {
+            "Confirmed": 9571,
+            "Deaths": 64
+        },
+        "Gambia": {
+            "Confirmed": 3800,
+            "Deaths": 124
+        },
+        "Georgia": {
+            "Confirmed": 229169,
+            "Deaths": 2603
+        },
+        "Germany": {
+            "Confirmed": 1783896,
+            "Deaths": 34791
+        },
+        "Ghana": {
+            "Confirmed": 55168,
+            "Deaths": 335
+        },
+        "Greece": {
+            "Confirmed": 140099,
+            "Deaths": 4957
+        },
+        "Grenada": {
+            "Confirmed": 127,
+            "Deaths": 1
+        },
+        "Guatemala": {
+            "Confirmed": 138475,
+            "Deaths": 4833
+        },
+        "Guinea": {
+            "Confirmed": 13784,
+            "Deaths": 81
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 2455,
+            "Deaths": 45
+        },
+        "Guyana": {
+            "Confirmed": 6358,
+            "Deaths": 164
+        },
+        "Haiti": {
+            "Confirmed": 10077,
+            "Deaths": 236
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 123369,
+            "Deaths": 3180
+        },
+        "Hungary": {
+            "Confirmed": 327995,
+            "Deaths": 9884
+        },
+        "Iceland": {
+            "Confirmed": 5754,
+            "Deaths": 29
+        },
+        "India": {
+            "Confirmed": 10340469,
+            "Deaths": 149649
+        },
+        "Indonesia": {
+            "Confirmed": 765350,
+            "Deaths": 22734
+        },
+        "Iran": {
+            "Confirmed": 1243434,
+            "Deaths": 55540
+        },
+        "Iraq": {
+            "Confirmed": 597774,
+            "Deaths": 12834
+        },
+        "Ireland": {
+            "Confirmed": 101887,
+            "Deaths": 2259
+        },
+        "Israel": {
+            "Confirmed": 441542,
+            "Deaths": 3416
+        },
+        "Italy": {
+            "Confirmed": 2155446,
+            "Deaths": 75332
+        },
+        "Jamaica": {
+            "Confirmed": 13049,
+            "Deaths": 304
+        },
+        "Japan": {
+            "Confirmed": 245242,
+            "Deaths": 3632
+        },
+        "Jordan": {
+            "Confirmed": 298208,
+            "Deaths": 3903
+        },
+        "Kazakhstan": {
+            "Confirmed": 203563,
+            "Deaths": 2845
+        },
+        "Kenya": {
+            "Confirmed": 96802,
+            "Deaths": 1685
+        },
+        "Kiribati": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 64264,
+            "Deaths": 981
+        },
+        "Kosovo": {
+            "Confirmed": 51965,
+            "Deaths": 1344
+        },
+        "Kuwait": {
+            "Confirmed": 151343,
+            "Deaths": 937
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 81388,
+            "Deaths": 1360
+        },
+        "Laos": {
+            "Confirmed": 41,
+            "Deaths": 0
+        },
+        "Latvia": {
+            "Confirmed": 42497,
+            "Deaths": 680
+        },
+        "Lebanon": {
+            "Confirmed": 189278,
+            "Deaths": 1499
+        },
+        "Lesotho": {
+            "Confirmed": 3206,
+            "Deaths": 65
+        },
+        "Liberia": {
+            "Confirmed": 1800,
+            "Deaths": 83
+        },
+        "Libya": {
+            "Confirmed": 101414,
+            "Deaths": 1510
+        },
+        "Liechtenstein": {
+            "Confirmed": 2282,
+            "Deaths": 44
+        },
+        "Lithuania": {
+            "Confirmed": 150529,
+            "Deaths": 1943
+        },
+        "Luxembourg": {
+            "Confirmed": 46415,
+            "Deaths": 495
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 17767,
+            "Deaths": 262
+        },
+        "Malawi": {
+            "Confirmed": 6844,
+            "Deaths": 195
+        },
+        "Malaysia": {
+            "Confirmed": 119077,
+            "Deaths": 494
+        },
+        "Maldives": {
+            "Confirmed": 13867,
+            "Deaths": 48
+        },
+        "Mali": {
+            "Confirmed": 7253,
+            "Deaths": 278
+        },
+        "Malta": {
+            "Confirmed": 13082,
+            "Deaths": 220
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 14794,
+            "Deaths": 358
+        },
+        "Mauritius": {
+            "Confirmed": 527,
+            "Deaths": 10
+        },
+        "Mexico": {
+            "Confirmed": 1448755,
+            "Deaths": 127213
+        },
+        "Moldova": {
+            "Confirmed": 145873,
+            "Deaths": 3037
+        },
+        "Monaco": {
+            "Confirmed": 907,
+            "Deaths": 3
+        },
+        "Mongolia": {
+            "Confirmed": 1263,
+            "Deaths": 1
+        },
+        "Montenegro": {
+            "Confirmed": 49195,
+            "Deaths": 689
+        },
+        "Morocco": {
+            "Confirmed": 443146,
+            "Deaths": 7485
+        },
+        "Mozambique": {
+            "Confirmed": 19309,
+            "Deaths": 169
+        },
+        "Namibia": {
+            "Confirmed": 25116,
+            "Deaths": 215
+        },
+        "Nepal": {
+            "Confirmed": 261859,
+            "Deaths": 1878
+        },
+        "Netherlands": {
+            "Confirmed": 832702,
+            "Deaths": 11707
+        },
+        "New Zealand": {
+            "Confirmed": 2181,
+            "Deaths": 25
+        },
+        "Nicaragua": {
+            "Confirmed": 4829,
+            "Deaths": 165
+        },
+        "Niger": {
+            "Confirmed": 3465,
+            "Deaths": 110
+        },
+        "Nigeria": {
+            "Confirmed": 90080,
+            "Deaths": 1311
+        },
+        "North Macedonia": {
+            "Confirmed": 84024,
+            "Deaths": 2530
+        },
+        "Norway": {
+            "Confirmed": 50716,
+            "Deaths": 436
+        },
+        "Oman": {
+            "Confirmed": 129404,
+            "Deaths": 1501
+        },
+        "Pakistan": {
+            "Confirmed": 488529,
+            "Deaths": 10350
+        },
+        "Palau": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 253736,
+            "Deaths": 4140
+        },
+        "Papua New Guinea": {
+            "Confirmed": 799,
+            "Deaths": 9
+        },
+        "Paraguay": {
+            "Confirmed": 109073,
+            "Deaths": 2292
+        },
+        "Peru": {
+            "Confirmed": 1018099,
+            "Deaths": 93575
+        },
+        "Philippines": {
+            "Confirmed": 477807,
+            "Deaths": 9257
+        },
+        "Poland": {
+            "Confirmed": 1318562,
+            "Deaths": 29119
+        },
+        "Portugal": {
+            "Confirmed": 427254,
+            "Deaths": 7118
+        },
+        "Qatar": {
+            "Confirmed": 144437,
+            "Deaths": 245
+        },
+        "Romania": {
+            "Confirmed": 640429,
+            "Deaths": 15979
+        },
+        "Russia": {
+            "Confirmed": 3203743,
+            "Deaths": 57730
+        },
+        "Rwanda": {
+            "Confirmed": 8676,
+            "Deaths": 101
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 33,
+            "Deaths": 0
+        },
+        "Saint Lucia": {
+            "Confirmed": 353,
+            "Deaths": 5
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 124,
+            "Deaths": 0
+        },
+        "Samoa": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 2463,
+            "Deaths": 61
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 1024,
+            "Deaths": 17
+        },
+        "Saudi Arabia": {
+            "Confirmed": 363061,
+            "Deaths": 6246
+        },
+        "Senegal": {
+            "Confirmed": 19697,
+            "Deaths": 421
+        },
+        "Serbia": {
+            "Confirmed": 343870,
+            "Deaths": 3325
+        },
+        "Seychelles": {
+            "Confirmed": 284,
+            "Deaths": 0
+        },
+        "Sierra Leone": {
+            "Confirmed": 2673,
+            "Deaths": 76
+        },
+        "Singapore": {
+            "Confirmed": 58697,
+            "Deaths": 29
+        },
+        "Slovakia": {
+            "Confirmed": 289150,
+            "Deaths": 2317
+        },
+        "Slovenia": {
+            "Confirmed": 125086,
+            "Deaths": 2803
+        },
+        "Solomon Islands": {
+            "Confirmed": 17,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 4714,
+            "Deaths": 130
+        },
+        "South Africa": {
+            "Confirmed": 1100748,
+            "Deaths": 29577
+        },
+        "South Sudan": {
+            "Confirmed": 3558,
+            "Deaths": 63
+        },
+        "Spain": {
+            "Confirmed": 1928265,
+            "Deaths": 50837
+        },
+        "Sri Lanka": {
+            "Confirmed": 44774,
+            "Deaths": 211
+        },
+        "Sudan": {
+            "Confirmed": 26039,
+            "Deaths": 1468
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 6393,
+            "Deaths": 123
+        },
+        "Sweden": {
+            "Confirmed": 437379,
+            "Deaths": 8727
+        },
+        "Switzerland": {
+            "Confirmed": 452296,
+            "Deaths": 8085
+        },
+        "Syria": {
+            "Confirmed": 11710,
+            "Deaths": 729
+        },
+        "Taiwan*": {
+            "Confirmed": 812,
+            "Deaths": 7
+        },
+        "Tajikistan": {
+            "Confirmed": 13674,
+            "Deaths": 91
+        },
+        "Tanzania": {
+            "Confirmed": 509,
+            "Deaths": 21
+        },
+        "Thailand": {
+            "Confirmed": 7694,
+            "Deaths": 64
+        },
+        "Timor-Leste": {
+            "Confirmed": 46,
+            "Deaths": 0
+        },
+        "Togo": {
+            "Confirmed": 3702,
+            "Deaths": 68
+        },
+        "Tonga": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 7168,
+            "Deaths": 127
+        },
+        "Tunisia": {
+            "Confirmed": 143544,
+            "Deaths": 4800
+        },
+        "Turkey": {
+            "Confirmed": 2241912,
+            "Deaths": 21488
+        },
+        "US": {
+            "Confirmed": 20845879,
+            "Deaths": 357443
+        },
+        "Uganda": {
+            "Confirmed": 35922,
+            "Deaths": 274
+        },
+        "Ukraine": {
+            "Confirmed": 1107137,
+            "Deaths": 19630
+        },
+        "United Arab Emirates": {
+            "Confirmed": 213231,
+            "Deaths": 679
+        },
+        "United Kingdom": {
+            "Confirmed": 2662664,
+            "Deaths": 75137
+        },
+        "Uruguay": {
+            "Confirmed": 20823,
+            "Deaths": 204
+        },
+        "Uzbekistan": {
+            "Confirmed": 77258,
+            "Deaths": 614
+        },
+        "Vanuatu": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Venezuela": {
+            "Confirmed": 114230,
+            "Deaths": 1034
+        },
+        "Vietnam": {
+            "Confirmed": 1494,
+            "Deaths": 35
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 141219,
+            "Deaths": 1470
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 2101,
+            "Deaths": 610
+        },
+        "Zambia": {
+            "Confirmed": 21582,
+            "Deaths": 394
+        },
+        "Zimbabwe": {
+            "Confirmed": 15265,
+            "Deaths": 380
+        }
+    },
+    "01-03-2022": {
+        "Afghanistan": {
+            "Confirmed": 158183,
+            "Deaths": 7364
+        },
+        "Albania": {
+            "Confirmed": 210885,
+            "Deaths": 3220
+        },
+        "Algeria": {
+            "Confirmed": 219532,
+            "Deaths": 6298
+        },
+        "Andorra": {
+            "Confirmed": 24502,
+            "Deaths": 140
+        },
+        "Angola": {
+            "Confirmed": 83764,
+            "Deaths": 1775
+        },
+        "Antarctica": {
+            "Confirmed": 11,
+            "Deaths": 0
+        },
+        "Antigua and Barbuda": {
+            "Confirmed": 4283,
+            "Deaths": 119
+        },
+        "Argentina": {
+            "Confirmed": 5739326,
+            "Deaths": 117245
+        },
+        "Armenia": {
+            "Confirmed": 345036,
+            "Deaths": 7983
+        },
+        "Australia": {
+            "Confirmed": 537308,
+            "Deaths": 2270
+        },
+        "Austria": {
+            "Confirmed": 1281328,
+            "Deaths": 16867
+        },
+        "Azerbaijan": {
+            "Confirmed": 617952,
+            "Deaths": 8383
+        },
+        "Bahamas": {
+            "Confirmed": 25534,
+            "Deaths": 717
+        },
+        "Bahrain": {
+            "Confirmed": 284224,
+            "Deaths": 1395
+        },
+        "Bangladesh": {
+            "Confirmed": 1587140,
+            "Deaths": 28081
+        },
+        "Barbados": {
+            "Confirmed": 29160,
+            "Deaths": 262
+        },
+        "Belarus": {
+            "Confirmed": 701699,
+            "Deaths": 5624
+        },
+        "Belgium": {
+            "Confirmed": 2133284,
+            "Deaths": 28385
+        },
+        "Belize": {
+            "Confirmed": 33457,
+            "Deaths": 605
+        },
+        "Benin": {
+            "Confirmed": 24935,
+            "Deaths": 161
+        },
+        "Bhutan": {
+            "Confirmed": 2664,
+            "Deaths": 3
+        },
+        "Bolivia": {
+            "Confirmed": 622312,
+            "Deaths": 19763
+        },
+        "Bosnia and Herzegovina": {
+            "Confirmed": 291313,
+            "Deaths": 13442
+        },
+        "Botswana": {
+            "Confirmed": 222053,
+            "Deaths": 2452
+        },
+        "Brazil": {
+            "Confirmed": 22309081,
+            "Deaths": 619473
+        },
+        "Brunei": {
+            "Confirmed": 15506,
+            "Deaths": 98
+        },
+        "Bulgaria": {
+            "Confirmed": 751458,
+            "Deaths": 31080
+        },
+        "Burkina Faso": {
+            "Confirmed": 17632,
+            "Deaths": 318
+        },
+        "Burma": {
+            "Confirmed": 531155,
+            "Deaths": 19277
+        },
+        "Burundi": {
+            "Confirmed": 27366,
+            "Deaths": 38
+        },
+        "Cabo Verde": {
+            "Confirmed": 43567,
+            "Deaths": 352
+        },
+        "Cambodia": {
+            "Confirmed": 120516,
+            "Deaths": 3014
+        },
+        "Cameroon": {
+            "Confirmed": 109367,
+            "Deaths": 1851
+        },
+        "Canada": {
+            "Confirmed": 2323056,
+            "Deaths": 30749
+        },
+        "Central African Republic": {
+            "Confirmed": 12163,
+            "Deaths": 101
+        },
+        "Chad": {
+            "Confirmed": 6183,
+            "Deaths": 184
+        },
+        "Chile": {
+            "Confirmed": 1811297,
+            "Deaths": 39173
+        },
+        "China": {
+            "Confirmed": 128596,
+            "Deaths": 4849
+        },
+        "Colombia": {
+            "Confirmed": 5191021,
+            "Deaths": 130061
+        },
+        "Comoros": {
+            "Confirmed": 6907,
+            "Deaths": 158
+        },
+        "Congo (Brazzaville)": {
+            "Confirmed": 21277,
+            "Deaths": 369
+        },
+        "Congo (Kinshasa)": {
+            "Confirmed": 74793,
+            "Deaths": 1205
+        },
+        "Costa Rica": {
+            "Confirmed": 570556,
+            "Deaths": 7353
+        },
+        "Cote d'Ivoire": {
+            "Confirmed": 72352,
+            "Deaths": 720
+        },
+        "Croatia": {
+            "Confirmed": 722054,
+            "Deaths": 12653
+        },
+        "Cuba": {
+            "Confirmed": 967498,
+            "Deaths": 8324
+        },
+        "Cyprus": {
+            "Confirmed": 177721,
+            "Deaths": 641
+        },
+        "Czechia": {
+            "Confirmed": 2483762,
+            "Deaths": 36255
+        },
+        "Denmark": {
+            "Confirmed": 849334,
+            "Deaths": 3308
+        },
+        "Diamond Princess": {
+            "Confirmed": 712,
+            "Deaths": 13
+        },
+        "Djibouti": {
+            "Confirmed": 13723,
+            "Deaths": 189
+        },
+        "Dominica": {
+            "Confirmed": 6862,
+            "Deaths": 47
+        },
+        "Dominican Republic": {
+            "Confirmed": 424809,
+            "Deaths": 4251
+        },
+        "Ecuador": {
+            "Confirmed": 553201,
+            "Deaths": 33686
+        },
+        "Egypt": {
+            "Confirmed": 387882,
+            "Deaths": 21817
+        },
+        "El Salvador": {
+            "Confirmed": 122063,
+            "Deaths": 3826
+        },
+        "Equatorial Guinea": {
+            "Confirmed": 13710,
+            "Deaths": 175
+        },
+        "Eritrea": {
+            "Confirmed": 8063,
+            "Deaths": 76
+        },
+        "Estonia": {
+            "Confirmed": 243236,
+            "Deaths": 1939
+        },
+        "Eswatini": {
+            "Confirmed": 66441,
+            "Deaths": 1315
+        },
+        "Ethiopia": {
+            "Confirmed": 428796,
+            "Deaths": 6969
+        },
+        "Fiji": {
+            "Confirmed": 55009,
+            "Deaths": 702
+        },
+        "Finland": {
+            "Confirmed": 286679,
+            "Deaths": 1751
+        },
+        "France": {
+            "Confirmed": 10422830,
+            "Deaths": 125200
+        },
+        "Gabon": {
+            "Confirmed": 42640,
+            "Deaths": 290
+        },
+        "Gambia": {
+            "Confirmed": 10170,
+            "Deaths": 343
+        },
+        "Georgia": {
+            "Confirmed": 938583,
+            "Deaths": 13942
+        },
+        "Germany": {
+            "Confirmed": 7258803,
+            "Deaths": 112584
+        },
+        "Ghana": {
+            "Confirmed": 146119,
+            "Deaths": 1306
+        },
+        "Greece": {
+            "Confirmed": 1294741,
+            "Deaths": 20990
+        },
+        "Grenada": {
+            "Confirmed": 6338,
+            "Deaths": 200
+        },
+        "Guatemala": {
+            "Confirmed": 628804,
+            "Deaths": 16110
+        },
+        "Guinea": {
+            "Confirmed": 32867,
+            "Deaths": 391
+        },
+        "Guinea-Bissau": {
+            "Confirmed": 6499,
+            "Deaths": 149
+        },
+        "Guyana": {
+            "Confirmed": 40154,
+            "Deaths": 1056
+        },
+        "Haiti": {
+            "Confirmed": 26056,
+            "Deaths": 766
+        },
+        "Holy See": {
+            "Confirmed": 27,
+            "Deaths": 0
+        },
+        "Honduras": {
+            "Confirmed": 379402,
+            "Deaths": 10433
+        },
+        "Hungary": {
+            "Confirmed": 1262280,
+            "Deaths": 39434
+        },
+        "Iceland": {
+            "Confirmed": 31070,
+            "Deaths": 38
+        },
+        "India": {
+            "Confirmed": 34960261,
+            "Deaths": 482017
+        },
+        "Indonesia": {
+            "Confirmed": 4263433,
+            "Deaths": 144102
+        },
+        "Iran": {
+            "Confirmed": 6198590,
+            "Deaths": 131702
+        },
+        "Iraq": {
+            "Confirmed": 2094349,
+            "Deaths": 24174
+        },
+        "Ireland": {
+            "Confirmed": 845897,
+            "Deaths": 5912
+        },
+        "Israel": {
+            "Confirmed": 1404916,
+            "Deaths": 8247
+        },
+        "Italy": {
+            "Confirmed": 6396110,
+            "Deaths": 137786
+        },
+        "Jamaica": {
+            "Confirmed": 95946,
+            "Deaths": 2477
+        },
+        "Japan": {
+            "Confirmed": 1733901,
+            "Deaths": 18392
+        },
+        "Jordan": {
+            "Confirmed": 1067253,
+            "Deaths": 12742
+        },
+        "Kazakhstan": {
+            "Confirmed": 1073786,
+            "Deaths": 18211
+        },
+        "Kenya": {
+            "Confirmed": 299732,
+            "Deaths": 5394
+        },
+        "Kiribati": {
+            "Confirmed": 2,
+            "Deaths": 0
+        },
+        "Korea, North": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Korea, South": {
+            "Confirmed": 645226,
+            "Deaths": 5781
+        },
+        "Kosovo": {
+            "Confirmed": 161598,
+            "Deaths": 2991
+        },
+        "Kuwait": {
+            "Confirmed": 419314,
+            "Deaths": 2468
+        },
+        "Kyrgyzstan": {
+            "Confirmed": 184827,
+            "Deaths": 2805
+        },
+        "Laos": {
+            "Confirmed": 113432,
+            "Deaths": 391
+        },
+        "Latvia": {
+            "Confirmed": 277692,
+            "Deaths": 4594
+        },
+        "Lebanon": {
+            "Confirmed": 735727,
+            "Deaths": 9174
+        },
+        "Lesotho": {
+            "Confirmed": 29999,
+            "Deaths": 673
+        },
+        "Liberia": {
+            "Confirmed": 6278,
+            "Deaths": 287
+        },
+        "Libya": {
+            "Confirmed": 390284,
+            "Deaths": 5727
+        },
+        "Liechtenstein": {
+            "Confirmed": 6236,
+            "Deaths": 71
+        },
+        "Lithuania": {
+            "Confirmed": 529212,
+            "Deaths": 7452
+        },
+        "Luxembourg": {
+            "Confirmed": 105358,
+            "Deaths": 917
+        },
+        "MS Zaandam": {
+            "Confirmed": 9,
+            "Deaths": 2
+        },
+        "Madagascar": {
+            "Confirmed": 50279,
+            "Deaths": 1027
+        },
+        "Malawi": {
+            "Confirmed": 76295,
+            "Deaths": 2378
+        },
+        "Malaysia": {
+            "Confirmed": 2767044,
+            "Deaths": 31560
+        },
+        "Maldives": {
+            "Confirmed": 96294,
+            "Deaths": 262
+        },
+        "Mali": {
+            "Confirmed": 21806,
+            "Deaths": 668
+        },
+        "Malta": {
+            "Confirmed": 55062,
+            "Deaths": 479
+        },
+        "Marshall Islands": {
+            "Confirmed": 4,
+            "Deaths": 0
+        },
+        "Mauritania": {
+            "Confirmed": 42672,
+            "Deaths": 872
+        },
+        "Mauritius": {
+            "Confirmed": 68661,
+            "Deaths": 786
+        },
+        "Mexico": {
+            "Confirmed": 3993464,
+            "Deaths": 299581
+        },
+        "Micronesia": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Moldova": {
+            "Confirmed": 376844,
+            "Deaths": 10306
+        },
+        "Monaco": {
+            "Confirmed": 4985,
+            "Deaths": 39
+        },
+        "Mongolia": {
+            "Confirmed": 693849,
+            "Deaths": 2062
+        },
+        "Montenegro": {
+            "Confirmed": 174865,
+            "Deaths": 2420
+        },
+        "Morocco": {
+            "Confirmed": 967662,
+            "Deaths": 14862
+        },
+        "Mozambique": {
+            "Confirmed": 193371,
+            "Deaths": 2031
+        },
+        "Namibia": {
+            "Confirmed": 149741,
+            "Deaths": 3656
+        },
+        "Nepal": {
+            "Confirmed": 829277,
+            "Deaths": 11598
+        },
+        "Netherlands": {
+            "Confirmed": 3234143,
+            "Deaths": 21439
+        },
+        "New Zealand": {
+            "Confirmed": 14367,
+            "Deaths": 51
+        },
+        "Nicaragua": {
+            "Confirmed": 13563,
+            "Deaths": 217
+        },
+        "Niger": {
+            "Confirmed": 7508,
+            "Deaths": 277
+        },
+        "Nigeria": {
+            "Confirmed": 244120,
+            "Deaths": 3045
+        },
+        "North Macedonia": {
+            "Confirmed": 225972,
+            "Deaths": 7981
+        },
+        "Norway": {
+            "Confirmed": 404551,
+            "Deaths": 1305
+        },
+        "Oman": {
+            "Confirmed": 306008,
+            "Deaths": 4117
+        },
+        "Pakistan": {
+            "Confirmed": 1297865,
+            "Deaths": 28945
+        },
+        "Palau": {
+            "Confirmed": 13,
+            "Deaths": 0
+        },
+        "Panama": {
+            "Confirmed": 500148,
+            "Deaths": 7440
+        },
+        "Papua New Guinea": {
+            "Confirmed": 36192,
+            "Deaths": 590
+        },
+        "Paraguay": {
+            "Confirmed": 469523,
+            "Deaths": 16642
+        },
+        "Peru": {
+            "Confirmed": 2304674,
+            "Deaths": 202818
+        },
+        "Philippines": {
+            "Confirmed": 2855819,
+            "Deaths": 51586
+        },
+        "Poland": {
+            "Confirmed": 4133851,
+            "Deaths": 97601
+        },
+        "Portugal": {
+            "Confirmed": 1434570,
+            "Deaths": 19000
+        },
+        "Qatar": {
+            "Confirmed": 253536,
+            "Deaths": 618
+        },
+        "Romania": {
+            "Confirmed": 1813056,
+            "Deaths": 58814
+        },
+        "Russia": {
+            "Confirmed": 10374292,
+            "Deaths": 305096
+        },
+        "Rwanda": {
+            "Confirmed": 114580,
+            "Deaths": 1357
+        },
+        "Saint Kitts and Nevis": {
+            "Confirmed": 3252,
+            "Deaths": 28
+        },
+        "Saint Lucia": {
+            "Confirmed": 13816,
+            "Deaths": 301
+        },
+        "Saint Vincent and the Grenadines": {
+            "Confirmed": 5991,
+            "Deaths": 83
+        },
+        "Samoa": {
+            "Confirmed": 3,
+            "Deaths": 0
+        },
+        "San Marino": {
+            "Confirmed": 8487,
+            "Deaths": 102
+        },
+        "Sao Tome and Principe": {
+            "Confirmed": 3945,
+            "Deaths": 58
+        },
+        "Saudi Arabia": {
+            "Confirmed": 559852,
+            "Deaths": 8881
+        },
+        "Senegal": {
+            "Confirmed": 75959,
+            "Deaths": 1890
+        },
+        "Serbia": {
+            "Confirmed": 1305621,
+            "Deaths": 12787
+        },
+        "Seychelles": {
+            "Confirmed": 24788,
+            "Deaths": 134
+        },
+        "Sierra Leone": {
+            "Confirmed": 7220,
+            "Deaths": 123
+        },
+        "Singapore": {
+            "Confirmed": 280754,
+            "Deaths": 829
+        },
+        "Slovakia": {
+            "Confirmed": 1376559,
+            "Deaths": 16740
+        },
+        "Slovenia": {
+            "Confirmed": 467565,
+            "Deaths": 5614
+        },
+        "Solomon Islands": {
+            "Confirmed": 24,
+            "Deaths": 0
+        },
+        "Somalia": {
+            "Confirmed": 23532,
+            "Deaths": 1333
+        },
+        "South Africa": {
+            "Confirmed": 3475512,
+            "Deaths": 91312
+        },
+        "South Sudan": {
+            "Confirmed": 15242,
+            "Deaths": 135
+        },
+        "Spain": {
+            "Confirmed": 6667511,
+            "Deaths": 89573
+        },
+        "Sri Lanka": {
+            "Confirmed": 588300,
+            "Deaths": 15037
+        },
+        "Sudan": {
+            "Confirmed": 46518,
+            "Deaths": 3331
+        },
+        "Summer Olympics 2020": {
+            "Confirmed": 865,
+            "Deaths": 0
+        },
+        "Suriname": {
+            "Confirmed": 53640,
+            "Deaths": 1190
+        },
+        "Sweden": {
+            "Confirmed": 1314784,
+            "Deaths": 15310
+        },
+        "Switzerland": {
+            "Confirmed": 1371062,
+            "Deaths": 12268
+        },
+        "Syria": {
+            "Confirmed": 50364,
+            "Deaths": 2908
+        },
+        "Taiwan*": {
+            "Confirmed": 17095,
+            "Deaths": 850
+        },
+        "Tajikistan": {
+            "Confirmed": 17493,
+            "Deaths": 125
+        },
+        "Tanzania": {
+            "Confirmed": 29306,
+            "Deaths": 737
+        },
+        "Thailand": {
+            "Confirmed": 2232485,
+            "Deaths": 21738
+        },
+        "Timor-Leste": {
+            "Confirmed": 19842,
+            "Deaths": 122
+        },
+        "Togo": {
+            "Confirmed": 31390,
+            "Deaths": 250
+        },
+        "Tonga": {
+            "Confirmed": 1,
+            "Deaths": 0
+        },
+        "Trinidad and Tobago": {
+            "Confirmed": 92997,
+            "Deaths": 2936
+        },
+        "Tunisia": {
+            "Confirmed": 728802,
+            "Deaths": 25588
+        },
+        "Turkey": {
+            "Confirmed": 9597670,
+            "Deaths": 82795
+        },
+        "US": {
+            "Confirmed": 56355126,
+            "Deaths": 828578
+        },
+        "Uganda": {
+            "Confirmed": 145963,
+            "Deaths": 3306
+        },
+        "Ukraine": {
+            "Confirmed": 3856359,
+            "Deaths": 102558
+        },
+        "United Arab Emirates": {
+            "Confirmed": 769608,
+            "Deaths": 2169
+        },
+        "United Kingdom": {
+            "Confirmed": 13498751,
+            "Deaths": 149367
+        },
+        "Uruguay": {
+            "Confirmed": 416970,
+            "Deaths": 6177
+        },
+        "Uzbekistan": {
+            "Confirmed": 199182,
+            "Deaths": 1485
+        },
+        "Vanuatu": {
+            "Confirmed": 7,
+            "Deaths": 1
+        },
+        "Venezuela": {
+            "Confirmed": 445082,
+            "Deaths": 5335
+        },
+        "Vietnam": {
+            "Confirmed": 1778976,
+            "Deaths": 33021
+        },
+        "West Bank and Gaza": {
+            "Confirmed": 469748,
+            "Deaths": 4919
+        },
+        "Winter Olympics 2022": {
+            "Confirmed": 0,
+            "Deaths": 0
+        },
+        "Yemen": {
+            "Confirmed": 10138,
+            "Deaths": 1984
+        },
+        "Zambia": {
+            "Confirmed": 261221,
+            "Deaths": 3753
+        },
+        "Zimbabwe": {
+            "Confirmed": 216087,
+            "Deaths": 5047
+        }
+    }
+}
