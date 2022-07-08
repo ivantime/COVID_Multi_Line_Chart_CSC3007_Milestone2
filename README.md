@@ -26,7 +26,7 @@ Added to Repo:
 </ul>
 <ul>
 <li>
-8 July 2022 - Added to (Python) Jupyter Notebook to transform CSV previously compiled of Country World Regions @ https://meta.wikimedia.org/wiki/List_of_countries_by_regional_classification into 1 json file (country_regions.json)
+8 July 2022 (Update 1) - Added to (Python) Jupyter Notebook to transform CSV previously compiled of Country World Regions @ https://meta.wikimedia.org/wiki/List_of_countries_by_regional_classification into 1 json file (country_regions.json)
 </li>
 <ul>
 <li>
@@ -36,6 +36,24 @@ Added to Repo:
 <ul>
 <li>
 'country_regions.json' containing Dictionary of Country Regions consisting of the Respective Countries Within them
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+
+<ul>
+<li>
+8 July 2022 (Update 2) - Added JS Base Code Work (Axis,Color Scale,etc before plotting of line charts) with final(tentative) data transformation using JS (i.e. combining/mapping world regions with Country's Dataset Stats into 1 usable dataset for plotting with the JSON data type.
+</li>
+<ul>
+<li>
+<b>
+Temp Changes to Repo <i>(For Testing)</i>:
+</b>
+<ul>
+<li>
+Current "data" Folder Contain Subset of Entire Country Stats Dataset for Testing Purposes. Complete (Cleaned) Country's Stats Dataset found in 'data.zip' containing Previously combined JSON datasets (country_regions,country_data).
 </li>
 </ul>
 </li>
