@@ -90,7 +90,7 @@ Guatemala,South/Latin America,Global South
 Guam,Asia & Pacific,Global South
 Guinea-Bissau,Africa,Global South
 Guyana,South/Latin America,Global South
-Hong Kong,Asia & Pacific,Global South
+Hong Kong SAR,Asia & Pacific,Global South
 Heard Island and McDonald Islands,Asia & Pacific,Global South
 Honduras,South/Latin America,Global South
 Croatia,Europe,Global North
@@ -102,7 +102,7 @@ Israel,Middle east,Global North
 India,Asia & Pacific,Global South
 British Indian Ocean Territory,Asia & Pacific,Global South
 Iraq,Middle east,Global South
-"Iran, Islamic Republic of",Middle east,Global South
+Iran (Islamic Republic of),Middle east,Global South
 Iceland,Europe,Global North
 Italy,Europe,Global North
 Jamaica,South/Latin America,Global South
@@ -114,8 +114,7 @@ Cambodia,Asia & Pacific,Global South
 Kiribati,Asia & Pacific,Global South
 Comoros,Arab States,Global South
 Saint Kitts and Nevis,South/Latin America,Global South
-"Korea, Democratic People's Republic of",Asia & Pacific,Global South
-"Korea, Republic of",Asia & Pacific,Global North
+Republic of Korea,Asia & Pacific,Global North
 Kuwait,Middle east,Global South
 Cayman Islands,South/Latin America,Global South
 Kazakhstan,Asia & Pacific,Global North
@@ -174,7 +173,7 @@ Poland,Europe,Global North
 Saint Pierre and Miquelon,North America,Global North
 Pitcairn Islands,Asia & Pacific,Global South
 Puerto Rico,South/Latin America,Global South
-Palestinian Territory,Arab States,Global South
+Palestine,Arab States,Global South
 Portugal,Europe,Global North
 Palau,Asia & Pacific,Global South
 Paraguay,South/Latin America,Global South
@@ -217,7 +216,7 @@ Timor-Leste,Asia & Pacific,Global South
 Turkey,Europe,Global North
 Trinidad and Tobago,South/Latin America,Global South
 Tuvalu,Asia & Pacific,Global South
-Taiwan,Asia & Pacific,Global North
+Taipei and environs,Asia & Pacific,Global North
 "Tanzania, United Republic of",Africa,Global South
 Ukraine,Europe,Global North
 Uganda,Africa,Global South
@@ -225,7 +224,7 @@ United States Minor Outlying Islands,Asia & Pacific,Global South
 United States,North America,Global North
 Uruguay,South/Latin America,Global South
 Uzbekistan,Asia & Pacific,Global South
-Holy See (Vatican City State),Europe,Global North
+Vatican City,Europe,Global North
 Saint Vincent and the Grenadines,South/Latin America,Global South
 Venezuela,South/Latin America,Global South
 "Virgin Islands, British",South/Latin America,Global South
@@ -246,4 +245,6 @@ Guernsey,Europe,Global North
 Isle of Man,Europe,Global North
 Jersey,Europe,Global North
 Saint Barthelemy,South/Latin America,Global South
-Saint Martin,South/Latin America,Global South
+St. Martin,South/Latin America,Global South
+Ivory Coast,Africa,Global South
+Others,Others,Global South

@@ -2,6 +2,9 @@
 
 <br>
 <br>
+<li>
+<h2> Original Graph From John Hopkins University @ https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/#cases-since</h2>
+</li>
 <br>
 <u><b>
 Logs:
@@ -44,7 +47,7 @@ Added to Repo:
 
 <ul>
 <li>
-8 July 2022 (Update 2) - Added JS Base Code Work (Axis,Color Scale,etc before plotting of line charts) with final(tentative) data transformation using JS (i.e. combining/mapping world regions with Country's Dataset Stats into 1 usable dataset for plotting with the JSON data type.
+8 July 2022 (Update 2) - Added JS Base Code Work (Axis,Color Scale,etc before plotting of line charts) with final(tentative) data transformation using JS (i.e. combining/mapping world regions with Country's Dataset Stats into 1 usable dataset for plotting with the JSON data type
 </li>
 <ul>
 <li>
@@ -53,7 +56,29 @@ Temp Changes to Repo <i>(For Testing)</i>:
 </b>
 <ul>
 <li>
-Current "data" Folder Contain Subset of Entire Country Stats Dataset for Testing Purposes. Complete (Cleaned) Country's Stats Dataset found in 'data.zip' containing Previously combined JSON datasets (country_regions,country_data).
+Current "data" Folder Contain Subset of Entire Country Stats Dataset for Testing Purposes. Complete (Cleaned) Country's Stats Dataset found in 'data.zip' containing Previously combined JSON datasets (country_regions,country_data)
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+
+
+<ul>
+<li>
+10 July 2022 - Re-Transformed 'country_regions.json' and 'country_data.json' via Updated Jupyter Notebook Code Work. All Country Lines drawn (on 1st Chart for All Countries) via JS and HTML with Drawing Animations.
+</li>
+<ul>
+<li>
+<b>
+Repo Changes:
+</b>
+<ul>
+<li>
+Updated "data" Folder Containing Entire Country Stats ('country_regions.json','country_data.json') Dataset, removed Testing Dataset.
+</li>
+<li>
+Updated Jupyter Notebook Code Work for Removing Empty Countries/World-Regions
 </li>
 </ul>
 </li>
