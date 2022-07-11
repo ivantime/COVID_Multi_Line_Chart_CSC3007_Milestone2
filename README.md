@@ -84,6 +84,15 @@ Updated Jupyter Notebook Code Work for Removing Empty Countries/World-Regions
 </li>
 </ul>
 </ul>
+
+
+<ul>
+<li>
+11 July 2022 - Updated script.js by Adding a Table (legend) for all Countries graph. By Hovering Over/Out on Legend that Country would be highlighted within the graph (while the remaining Countries are diminished in the Background). Opactity was set to 0
+as with opacity>0 results in the respectively dim colors to still overtake the perception of the bright but low contrast colours of specifically selected lines/Countries".
+</li>
+</ul>
+
 </ul>
 <br>
 <br>
