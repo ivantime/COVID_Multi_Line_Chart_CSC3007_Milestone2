@@ -31,62 +31,94 @@
     </style>
 </head>
 
-<body>
+<body style="margin-left: 0.2%;">
+    <div>
+        <b>View By:</b>
+        <input id="myCheckbox" type="checkbox">
+    </div>
+    <style>
+        select {
+            visibility: hidden;
+        }
 
-    <form>
-        <div>
-            <b>View By:</b>
-            <input id="myCheckbox" type="checkbox">
-        </div>
+        #levelLabel {
+            visibility: hidden;
+        }
+
+        input[type=checkbox] {
+            appearance: none;
+            width: 140px;
+            padding-left: 33px;
+            margin: 10;
+            border-radius: 16px;
+            background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) palevioletred;
+            transition: 0.3s ease-in-out;
+            background-position: -55px;
+        }
+
+        input[type=checkbox]::before {
+            content: "By Countries";
+            font: bold 12px/32px Verdana;
+            color: white;
+            text-shadow: 0 1px black;
+        }
+
+        input[type=checkbox]:checked {
+            padding-left: 28px;
+            background-color: dodgerBlue;
+            background-position: 55px;
+        }
+
+        input[type=checkbox]:checked::before {
+            content: "By Region";
+        }
+    </style>
+
+    <div id="lineChart1" style="height: 50%; width:80%; float: left;">
+    </div>
+
+    <div class="tableDiv" style="height: 50%; width:20%; float: left;visibility:hidden;">
+        <table id="dummyHead" style=" text-align:left;visibility:hidden;">
+            <!-- border-top: 1px solid black; border-left: 1px solid black; "> -->
+            <thead>
+                <tr>
+                    <th>Color |</th>
+                    <th>Country Name</th>
+                </tr>
+            </thead>
+        </table>
+        <table id="line1Table" style="text-align: left;border:1px solid black;">
+            <thead style="width:10%;">
+                <tr style="visibility: collapse;">
+                    <th>Color |</th>
+                    <th>Country Name</th>
+                </tr>
+            </thead>
+            <tbody style="width:90%;"></tbody>
+        </table>
         <style>
-            select {
-                visibility: hidden;
+            .tableDiv {
+                overflow-x: auto;
+                overflow-y: scroll;
+                white-space: nowrap;
+                /* width: 30%;
+                height: 50%;
+                display: block; */
             }
 
-            #levelLabel {
-                visibility: hidden;
+            td {
+                border-bottom: 1px solid black;
             }
 
-            input[type=checkbox] {
-                appearance: none;
-                width: 140px;
-                padding-left: 33px;
-                margin: 10;
-                border-radius: 16px;
-                background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) palevioletred;
-                transition: 0.3s ease-in-out;
-                background-position: -55px;
-            }
-
-            input[type=checkbox]::before {
-                content: "By Countries";
-                font: bold 12px/32px Verdana;
-                color: white;
-                text-shadow: 0 1px black;
-            }
-
-            input[type=checkbox]:checked {
-                padding-left: 28px;
-                background-color: dodgerBlue;
-                background-position: 55px;
-            }
-
-            input[type=checkbox]:checked::before {
-                content: "By Region";
+            tr {
+                height: 30px
             }
         </style>
-    </form>
-    <script>
-
-        //on change year via slider (update the following)
-        // year.addEventListener("input", function (e) {
-        //     slider_selected_year.value = this.value;
-        // });
-    </script>
-    </form>
-    <div id="lineChart1">
     </div>
-    <div id="lineChart2">
+    <div id="lineChart2" style="height: 50%; width:70%; float: left;">
+    </div>
+    <div style="height: 50%; width:30%; float: right;">
+        asd
     </div>
     <script src="script.js"></script>
 </body>
