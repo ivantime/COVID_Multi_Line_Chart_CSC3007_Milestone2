@@ -20,8 +20,8 @@ var svg1 = d3.select('#lineChart1')
 
 var svg2 = d3.select('#lineChart2')
     .append('svg')
-    .attr('width', width)
-    .attr('height', height)
+    .attr('width', "100%")
+    .attr('height', "100%")
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.right + ')');
 
@@ -62,7 +62,7 @@ switchValue = "country";
 
 
 //LineChart 1
-function perpData(country_data) {
+function prepData(country_data) {
     var data = [];
 
     //sort string dates with help with date type sort (append to array)
@@ -81,7 +81,6 @@ function perpData(country_data) {
     inner_country.forEach(function (country) {
         temp_dict[country] = {}
     })
-    console.log(temp_dict)
 
     //Create dictionary to contain Country Stats (as value) and day (as JSON key)
     inner_country.forEach(function (country) {
@@ -125,7 +124,19 @@ function perpData(country_data) {
         temp_dict2 = { "name": temp_country, dataz: country_data }
         json2array.push(temp_dict2)
     }
-    return json2array;
+    // allCasesByDay = []
+    // for (var i = 0; i < json2array.length; i++) {
+    //     var currCountry = json2array[i];
+    //     casesByDay = []
+    //     for (var j = 0; j < currCountry.dataz.length; j++) {
+    //         if (j != 0) {
+    //             casesByDay[j] = currCountry.dataz[j].Confirmed;
+    //         }
+    //     }
+    //     allCasesByDay.push([casesByDay])
+    // }
+    // console.log(allCasesByDay[allCasesByDay.length - 1])
+    return [json2array, temp_dict];
 }
 
 
@@ -138,18 +149,43 @@ async function getJson(url) {
 
 async function main() {
     let country_data = await getJson('/data/country_data.json')
-    var jsonAllCountries = perpData(country_data);
-    prepLineChart1(jsonAllCountries);
+    var getData = prepData(country_data);
+    var jsonAllCountries = getData[0];
+    var dictAllCountries = getData[1];
+    var table1tooltip = prepTooltip("table1tooltip");
+    prepLineChart1(jsonAllCountries, dictAllCountries, table1tooltip);
+    if (switchValue === "country") {
+        d3.select('#secondChartTable')
+            .style("background", "grey")
+        // .html("Not Available for \"Sort by Countries\" Selection")
+    }
+
 }
 
-function prepLineChart1(jsonData) {
+function prepTooltip(tooltipClass) {
+    var div = d3.select("body").append("div")
+        .attr("class", tooltipClass)
+        .style("opacity", 0)
+        .style('position', 'absolute')
+        .style('z-index', '10')
+        .style('padding', '10px')
+        .style('background', 'rgba(0,0,0,0.6)')
+        .style('border-radius', '4px')
+        .style('color', '#fff');
+    return div;
+}
+
+//Code from: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript#answer-2901298
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function prepLineChart1(jsonData, dictAllCountries, table1tooltip) {
 
     //set Countrys' hue colors range (for later d3's interpolateViridis)
     let color_scale = d3.scaleLinear()
         .domain([0, height])
         .range([0, 100]);
-
-
 
     var line1 = svg1.selectAll("g.line1")
         .data(jsonData)
@@ -184,17 +220,15 @@ function prepLineChart1(jsonData) {
                 .attr("class", "line")
                 .attr("fill", "none")
                 .attr("stroke-width", "1.5px")
-                .attr("id", function (d) { return d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,""); })
+                .attr("id", function (d) { return d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""); })
                 .attr("d", function (d) {
                     return countryLine(d.dataz);
                 })
                 .style("stroke", function (d) {
-                    return colorScaleCountry(d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,""));
+                    return colorScaleCountry(d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                 })
                 .call(transition);
         })
-
-
 
 
     svg1.select('.x.axis')
@@ -216,14 +250,100 @@ function prepLineChart1(jsonData) {
         .data(line1tableData)
         .enter()
         .append("tr")
-        .attr("id", function (d) { return d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,""); })
+        .attr("id", function (d) { return d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""); })
         .attr("border", "1px solid black;")
         .on('mousemove', (event, d) => {
-            svg1.selectAll("path").attr("opacity", 0)
-            svg1.selectAll(".country").select("#" + d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,"")).attr("opacity", 1)
+            svg1.selectAll(".country").selectAll("path").attr("opacity", 0)
+            svg1.selectAll(".country").select("#" + d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, "")).attr("opacity", 1)
+
+            var currCountry = dictAllCountries[d.name];
+            var totalCasesArray = Object.values(currCountry)
+            var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed
+
+            table1tooltip
+                .style("opacity", .9)
+                .style("left", (event.pageX - 70) + "px")
+                .style("top", (event.pageY + 20) + "px")
+                .html("<b><u>" + d.name + "</u></b>" +
+                    "<br>No. of Confirmed Cases (on Day <u>" + totalCasesArray.length + ")</u>: </br><b>" + numberWithCommas(totalCases) + "<b>")
+
+            svg1.select(".max-svg1mouse-line")
+                .style("opacity", 1)
+                .attr("d", function () {
+                    var maxPoint = y_scale(totalCases)
+                    var d = "M" + 0 + "," + maxPoint;
+                    d += " " + width + "," + maxPoint;
+                    return d;
+                });
         })
         .on('mouseout', (event, d) => {
-            svg1.selectAll("path").attr("opacity", 1)
+            svg1.selectAll(".country").selectAll("path").attr("opacity", 1)
+
+            table1tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+
+            svg1.select(".max-svg1mouse-line")
+                .style("opacity", 0)
+        })
+
+    var dottedLine = svg1.append("g")
+        .attr("class", "mouse-over-dotted-line");
+
+    //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
+    dottedLine.append("path")
+        .attr("class", "svg1mouse-line")
+        .style("stroke", "black")
+        .style("stroke-width", "1px")
+        .style("stroke-line-cap", "butt")
+        .style("stroke-linejoin", "round")
+        .style("stroke-dasharray", "10,10")
+        .style("opacity", "0");
+
+    var dottedMaxLine = svg1.append("g")
+        .attr("class", "max-mouse-over-dotted-line");
+
+    //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
+    dottedMaxLine.append("path")
+        .attr("class", "max-svg1mouse-line")
+        .style("stroke", "grey")
+        .style("stroke-width", "1px")
+        .style("stroke-line-cap", "butt")
+        .style("stroke-linejoin", "round")
+        .style("stroke-dasharray", "10,10")
+        .style("opacity", "0");
+
+
+    var chart1tooltip = prepTooltip("svg1Tooltip")
+
+    // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
+    // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
+    svg1
+        .on("mousemove", function (event) {
+            const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
+            const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
+
+            chart1tooltip
+                .style("opacity", .9)
+                .style("left", (event.pageX) + "px")
+                .style("top", (event.pageY - 40) + "px")
+                .html("<b>Day " + currentDate + "<b>")
+
+            svg1.select(".svg1mouse-line")
+                .style("opacity", 1)
+                .attr("d", function () {
+                    var d = "M" + mousePosition[0] + "," + height;
+                    d += " " + mousePosition[0] + "," + 0;
+                    return d;
+                });
+        })
+        .on("mouseout", function (event) {
+            chart1tooltip
+                .style("opacity", 0)
+
+            svg1.select(".svg1mouse-line")
+                .style("opacity", 0)
+
         })
 
     var tableLinePathDrawn = d3.line()([[1, 1], [35, 1]])
