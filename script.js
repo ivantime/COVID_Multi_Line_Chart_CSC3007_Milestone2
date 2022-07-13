@@ -26,21 +26,20 @@ function prepData(country_data, region_data) {
     var chart1Region = {}
 
     //sort string dates with help with date type sort (append to array)
-    let raw_dates = Object.keys(country_data)
+    let raw_dates = Object.keys(country_data[0])
     for (index = 0; index < raw_dates.length; index++) {
-
         let dArray = raw_dates[index].split("-")
-        let rec = [country_data[raw_dates[index]], new Date(dArray[2] + "-" + dArray[0] + "-" + dArray[1])];
+        let rec = [country_data[0][raw_dates[index]], new Date(dArray[2] + "-" + dArray[0] + "-" + dArray[1])];
         data.push(rec)
     }
     //sort date type by ascending order
     data.sort((a, b) => a[1].getTime() - b[1].getTime());
 
-    let inner_country = Object.keys(Object.values(Object.entries(country_data)[0])[1]);
+    let inner_country = Object.keys(Object.values(country_data[0])[0]);
     inner_country.forEach(function (country) {
         temp_dict[country] = {}
     })
-    
+
     //Create dictionary to contain Country Stats (as value) and day (as JSON key)
     inner_country.forEach(function (country) {
         day_count = 1
@@ -50,15 +49,14 @@ function prepData(country_data, region_data) {
                 var country_stat = data[i][0][country]
                 country_stat["date"] = date
                 country_stat["day"] = day_count
-                
-                var regionOfCountry = Object.keys(region_data).find(key => region_data[key].includes(country))
+                var regionStats = region_data[0]
+                regionOfCountry = Object.keys(regionStats).find(key =>regionStats[key].includes(country))
                 country_stat["region"] = regionOfCountry;
                 temp_dict[country][day_count] = country_stat
             }
             day_count += 1
         }
     })
-    // console.log(temp_dict)
 
     //Shared with "By Region" and "By Country" Functions
     var countries = Object.keys(temp_dict)
@@ -132,7 +130,7 @@ function prepData(country_data, region_data) {
             chart1Region[regionKeys[j]] = currRegion
 
             //Prepare for Array Version 
-            json2Array.push({[regionKeys[j]]: currRegion })
+            json2Array.push({ [regionKeys[j]]: currRegion })
 
         }
         //Clear temp_dict of previous Country Stats (as no longer needed to filter by Region-Countries)
@@ -169,13 +167,13 @@ function prepData(country_data, region_data) {
                     var country_stat = data[i][0][country]
                     country_stat["date"] = date
                     country_stat["day"] = day_count
-
-                    var regionOfCountry = Object.keys(region_data).find(key => region_data[key].includes(country))
+                    var regionOfCountry = Object.keys(region_data[0]).find(key => Object.keys(region_data[0]).includes(country))
                     country_stat["region"] = regionOfCountry;
                     temp_dict[country][day_count] = country_stat
                     day_count += 1
                 }
             }
+            
         })
 
         for (var i = 0; i < countries.length; i++) {
@@ -189,46 +187,46 @@ function prepData(country_data, region_data) {
 }
 
 // Code for JSON parsing getJson()/main() functions Reference: https://stackoverflow.com/questions/61228241/how-do-i-get-fetch-result-from-api-to-store-as-a-global-variable#answer-61228364
-async function getJson(url) {
-    let response = await fetch(url);
-    let data = await response.json()
-    return data;
+async function getJson() {
+    let country_data = await fetch('');
+    let country_regions = await fetch('/data/country_regions.json');
+    var asda = await country_data.json()
+    var asda1 = await country_regions.json()
+    return [jsonData];
 }
 
-async function getJsonDatas() {
-    let country_data = await getJson('/data/country_data.json')
-    let region_data = await getJson('/data/country_regions.json')
-    return [country_data, region_data]
-}
+function byCountries() {
 
-async function byCountries() {
     //get Country Stats/Data & Regions (JSON format)
-    var dataz = await getJsonDatas();
+    Promise.all([d3.json("/data/country_data.json")]).then(country_data => {
+        Promise.all([d3.json("/data/country_regions.json")]).then(array_data2 => {
 
-    //prepare Data according to Line Charts (1&2) and Tables (1&2)
-    var getData = prepData(dataz[0], dataz[1]);
+            //prepare Data according to Line Charts (1&2) and Tables (1&2)
+            var getData = prepData(country_data, array_data2);
 
-    //get prepared Json Data of all Countries
-    var jsonAllCountries = getData[0];
+            //get prepared Json Data of all Countries
+            var jsonAllCountries = getData[0];
 
-    //get prepared Dictionary Data of all Countries
-    var dictAllCountries = getData[1];
+            //get prepared Dictionary Data of all Countries
+            var dictAllCountries = getData[1];
 
-    //prepare Tooltip for Table 1 (Hover-Over/Out)
-    var table1tooltip = prepTooltip("table1tooltip");
+            //prepare Tooltip for Table 1 (Hover-Over/Out)
+            var table1tooltip = prepTooltip("table1tooltip");
 
-    //Prepare Line Chart 1
-    prepLineChart1(jsonAllCountries, dictAllCountries, table1tooltip, dataz[0]);
+            //Prepare Line Chart 1
+            prepLineChart1(jsonAllCountries, dictAllCountries, table1tooltip, country_data);
 
-    //Since By Country Switch is Selected, Grey Out Second (Lower) Line Chart 2 Since Not Needed
-    d3.select('#secondChartTable')
-        .style("background", "grey")
+            //Since By Country Switch is Selected, Grey Out Second (Lower) Line Chart 2 Since Not Needed
+            d3.select('#secondChartTable')
+                .style("background", "grey")
+        })
+    })
+
 }
 
 async function byRegions() {
     //get Country Stats/Data & Regions (JSON format)
     var dataz = await getJsonDatas();
-
     //prepare Data according to Line Chart 1,2 and Table 1,2's Needs
     var getData = prepData(dataz[0], dataz[1]);
 
@@ -338,14 +336,11 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
     let color_scale = d3.scaleLinear()
         .domain([0, height])
         .range([0, 100]);
-
     var line1 = svg1.selectAll("g.line1")
         .data(data)
         .enter()
         .append("g")
         .attr("class", "country");
-
-    ////ADDDD LEGEND
 
     var countryLine = d3.line()
         .x(function (d) {
@@ -408,7 +403,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
                     if (switchValue === "country") {
                         return colorScaleCountry(d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                     }
-                    else{
+                    else {
                         return colorScaleCountry(Object.keys(d).toString().replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                     }
                 })
