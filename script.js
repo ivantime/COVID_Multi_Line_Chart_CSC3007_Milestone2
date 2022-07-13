@@ -14,6 +14,8 @@ var margin = {
 switchValue = "country";
 
 
+width = width - margin.left - margin.right;
+height = height - margin.top - margin.bottom;
 
 
 //LineChart 1
@@ -23,7 +25,7 @@ function prepData(country_data, region_data) {
     var temp_dict = {}
 
     //Only For Chart 1 Region
-    var chart1Region = {}
+    var chart1Region = []
 
     //sort string dates with help with date type sort (append to array)
     let raw_dates = Object.keys(country_data[0])
@@ -50,7 +52,7 @@ function prepData(country_data, region_data) {
                 country_stat["date"] = date
                 country_stat["day"] = day_count
                 var regionStats = region_data[0]
-                regionOfCountry = Object.keys(regionStats).find(key =>regionStats[key].includes(country))
+                regionOfCountry = Object.keys(regionStats).find(key => regionStats[key].includes(country))
                 country_stat["region"] = regionOfCountry;
                 temp_dict[country][day_count] = country_stat
             }
@@ -65,7 +67,7 @@ function prepData(country_data, region_data) {
         //set Line Chart 1 According to Regions
 
         //get region Keys (Region Names)
-        var regionKeys = Object.keys(region_data);
+        var regionKeys = Object.keys(region_data[0]);
 
         //Store Dictionary Order Region>[Total Cases] & Countries>Countries Stats (to replace 'temp_dict' later)
         temp_dict1 = {}
@@ -93,51 +95,62 @@ function prepData(country_data, region_data) {
                 }
             }
 
-            //Move Total Cases per Region into the temp_dict for return value (Chart2 -Lower) 
+
+            //Move Total Cases per Region into the temp_dict for return value (Chart1 -Upper) 
             // Dictionary Order: Region>Country>Country Stats
             temp_dict1[regionKeys[j]] = { "Country": arrayCountryRegion, "totalCases": totalCases }
 
 
 
-            // !!!!!!!!!!!!!!KIV
-            // !!!!!!!!!!!!!!KIV
-            // !!!!!!!!!!!!!!KIV
-            // !!!!!!!!!!!!!!KIV
-            // !!!!!!!!!!!!!!KIV
-            // !!!!!!!!!!!!!!KIV
-            // //Prepare for Array Version 
-            // var dictToStore = {}
-            // dictToStore[regionKeys[j]] = { "Country": arrayCountryRegion, "totalCases": totalCases }
-            // json2Array.push(dictToStore)
+
+            // var str_days
+            // if (switchValue === "country") {
+            //     str_days = Object.keys(Object.values(dictAllCountries)[0])
+            // }
+            // else {
+            //     var currCountryStat = Object.values(Object.values(Object.values(dictAllCountries)[0]["Country"])[0])
+            //     var arrayDays = []
+            //     currCountryStat.forEach(function (countryStat) {
+            //         arrayDays.push(countryStat.day)
+            //     })
+            //     str_days = arrayDays
+            // }
+
+
 
 
             // Dictionary Order: Region>[Day Count]>[Accumulated Cases for Region on That Day]
 
             //Reset Current Region, Containing the Day(Key) and the Number of Cases (Value)
-            var currRegion = {}
+            var currRegion = []
             //Group Each Day to Each Country with the Same Region (Chart1 - Upper) with Combined Total Cases per Region
             var totalValueCount = Object.values(country_values[0]).length
-            for (var i = 1; i < totalValueCount + 1; i++) {
+            for (var i = 0; i < totalValueCount; i++) {
                 //Per Day
-                currRegion[i] = 0
+                var currRegionJson = {}
+                var currDayCount = 0
                 for (var k = 0; k < countries.length; k++) {
                     var temp_country = countries[k]
                     if (regionKeys[j] === temp_dict[temp_country][1].region) {
-                        currRegion[i] = currRegion[i] + temp_dict[temp_country][i].Confirmed
+                        currDayCount = currDayCount + temp_dict[temp_country][i + 1].Confirmed
+                        currRegionJson = {
+                            "day": i + 1,
+                            "Confirmed": currDayCount
+                        }
                     }
                 }
+                currRegion.push(currRegionJson)
             }
-            chart1Region[regionKeys[j]] = currRegion
+            chart1Region.push({ "region": regionKeys[j], "dataz": currRegion })
 
             //Prepare for Array Version 
-            json2Array.push({ [regionKeys[j]]: currRegion })
+            json2Array.push({ "region": regionKeys[j], "dataz": currRegion })
 
         }
         //Clear temp_dict of previous Country Stats (as no longer needed to filter by Region-Countries)
         //and replace data of it with temp_dict1
         temp_dict = {}
         temp_dict = temp_dict1
-
     }
     else {
         //set Line Chart 1 According to Countries
@@ -173,7 +186,7 @@ function prepData(country_data, region_data) {
                     day_count += 1
                 }
             }
-            
+
         })
 
         for (var i = 0; i < countries.length; i++) {
@@ -186,23 +199,15 @@ function prepData(country_data, region_data) {
     return [json2Array, temp_dict, chart1Region];
 }
 
-// Code for JSON parsing getJson()/main() functions Reference: https://stackoverflow.com/questions/61228241/how-do-i-get-fetch-result-from-api-to-store-as-a-global-variable#answer-61228364
-async function getJson() {
-    let country_data = await fetch('');
-    let country_regions = await fetch('/data/country_regions.json');
-    var asda = await country_data.json()
-    var asda1 = await country_regions.json()
-    return [jsonData];
-}
 
 function byCountries() {
 
     //get Country Stats/Data & Regions (JSON format)
     Promise.all([d3.json("/data/country_data.json")]).then(country_data => {
-        Promise.all([d3.json("/data/country_regions.json")]).then(array_data2 => {
+        Promise.all([d3.json("/data/country_regions.json")]).then(region_data => {
 
             //prepare Data according to Line Charts (1&2) and Tables (1&2)
-            var getData = prepData(country_data, array_data2);
+            var getData = prepData(country_data, region_data);
 
             //get prepared Json Data of all Countries
             var jsonAllCountries = getData[0];
@@ -224,30 +229,35 @@ function byCountries() {
 
 }
 
-async function byRegions() {
+function byRegions() {
+
+
     //get Country Stats/Data & Regions (JSON format)
-    var dataz = await getJsonDatas();
-    //prepare Data according to Line Chart 1,2 and Table 1,2's Needs
-    var getData = prepData(dataz[0], dataz[1]);
+    Promise.all([d3.json("/data/country_data.json")]).then(country_data => {
+        Promise.all([d3.json("/data/country_regions.json")]).then(region_data => {
+            //prepare Data according to Line Charts (1&2) and Tables (1&2)
+            var getData = prepData(country_data, region_data);
 
-    //get prepared Json Data of all Countries
-    var arrayAllRegions = getData[0];
+            //get prepared Json Data of all Countries
+            var arrayAllRegions = getData[0];
 
-    //get prepared Dictionary Data of all Countries (For Line Chart 2)
-    var dictAllRegions = getData[1];
+            //get prepared Dictionary Data of all Countries (For Line Chart 2)
+            var dictAllRegions = getData[1];
 
-    //get prepared Dictionary Data of Chart 1 (Country-Regions)
-    var dictRegions = getData[2];
+            //get prepared Dictionary Data of Chart 1 (Country-Regions)
+            var dictRegions = getData[2];
 
-    //prepare Tooltip for Table 1 (Hover-Over/Out)
-    var table1tooltip = prepTooltip("table1tooltip");
+            //prepare Tooltip for Table 1 (Hover-Over/Out)
+            var table1tooltip = prepTooltip("table1tooltip");
 
-    // var table1tooltip = prepTooltip("table2tooltip");
-    prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
-    if (switchValue === "country") {
-        d3.select('#secondChartTable')
-            .style("background", "grey")
-    }
+            // var table1tooltip = prepTooltip("table2tooltip");
+            prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
+            if (switchValue === "country") {
+                d3.select('#secondChartTable')
+                    .style("background", "grey")
+            }
+        })
+    })
 }
 
 function prepTooltip(tooltipClass) {
@@ -279,8 +289,6 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.right + ')');
 
-    width = width - margin.left - margin.right;
-    height = height - margin.top - margin.bottom;
 
     var x_scale = d3.scaleLinear()
         .rangeRound([0, width]);
@@ -290,7 +298,19 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
         .range([height, 0])
 
     //set x scale by Days
-    var str_days = Object.keys(Object.values(dictAllCountries)[0])
+    var str_days
+    if (switchValue === "country") {
+        str_days = Object.keys(Object.values(dictAllCountries)[0])
+    }
+    else {
+        var currCountryStat = Object.values(Object.values(Object.values(dictAllCountries)[0]["Country"])[0])
+        var arrayDays = []
+        currCountryStat.forEach(function (countryStat) {
+            arrayDays.push(countryStat.day)
+        })
+        str_days = arrayDays
+    }
+
     var int_days = str_days.map(Number);
     //Code Reference for X Scale's tick spread (nice) from:https://observablehq.com/@d3/scale-ticks
     x_scale.domain(d3.extent(int_days)).nice().ticks()
@@ -305,15 +325,13 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
     }
     else {
         //Transform for Region Purposes
-        Object.keys(dictAllCountries).forEach(function (region) {
-            var totalCases = dictAllCountries[region]
-            all_cases.push(totalCases);
+        data.forEach(function (object) {
+            all_cases.push(Object.values(object.dataz)[str_days.length - 1]["Confirmed"])
         })
     }
 
     //fnd Maximum cases for Y Axis Domain
     var max_cases = d3.max(all_cases)
-
     //enable clamp for countries with 0 Number of Cases referenced from: https://stackoverflow.com/questions/11322651/how-to-avoid-log-zero-in-graph-using-d3-js#answer-11322824
     y_scale.domain([1, max_cases]).clamp(true).nice();
 
@@ -344,20 +362,14 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
 
     var countryLine = d3.line()
         .x(function (d) {
-            if (switchValue === "country") {
-                return x_scale(d.day);
-            }
-            else {
-                return x_scale(Object.keys(d));
-            }
+            // console.log(d.day)
+            // console.log(x_scale(d.day))
+            return x_scale(d.day);
         })
         .y(function (d) {
-            if (switchValue === "country") {
-                return y_scale(d.Confirmed);
-            }
-            else {
-                return y_scale(Object.values(d));
-            }
+            // console.log(d.Confirmed)
+            // console.log(y_scale(d.Confirmed))
+            return y_scale(d.Confirmed);
         });
 
     var colorScaleCountry = d3.scaleOrdinal(d3.schemeAccent);
@@ -391,20 +403,15 @@ function prepLineChart1(data, dictAllCountries, table1tooltip, country_data) {
                     }
                 })
                 .attr("d", function (d) {
-                    if (switchValue === "country") {
-                        return countryLine(d.dataz)
-                    }
-                    else {
-                        return countryLine(Object.values(d)[0])
-                    }
-
+                    //Same Dataset Layout for Both Region and Countries (Switch)
+                    return countryLine(d.dataz)
                 })
                 .style("stroke", function (d) {
                     if (switchValue === "country") {
                         return colorScaleCountry(d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                     }
                     else {
-                        return colorScaleCountry(Object.keys(d).toString().replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
+                        return colorScaleCountry(d.region.toString().replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                     }
                 })
                 .call(transition);
@@ -611,6 +618,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
                     return countryLine(d.dataz);
                 })
                 .style("stroke", function (d) {
+                    console.log(d)
                     return colorScaleCountry(d.name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g, ""));
                 })
                 .call(transition);
