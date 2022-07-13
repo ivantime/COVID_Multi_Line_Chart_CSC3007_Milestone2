@@ -95,6 +95,13 @@ Hover-Out Dismisses the mentioned Guidline as well.
 </li>
 </ul>
 
+
+<ul>
+<li>
+13 July 2022 - Fixed Json Country Dataset ('Cases' values) where rising cases reach 0 (Zero) in Value on subsequent days. Json Dataset will remain at last Case No. should the Json Dataset have Missing Case Values after specific Days - Fixed in Jupyter Notebook
+</li>
+</ul>
+
 </ul>
 <br>
 <br>
