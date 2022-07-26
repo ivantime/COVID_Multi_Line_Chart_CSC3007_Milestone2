@@ -19,6 +19,7 @@ function prepData(country_data, region_data) {
   var data = [];
   var json2Array = [];
   var temp_dict = {};
+  var allCountries = {};
 
   //Only For Chart 1 Region
   var chart1Region = [];
@@ -104,19 +105,7 @@ function prepData(country_data, region_data) {
         totalCases: totalCases,
       };
 
-      // var str_days
-      // if (switchValue === "country") {
-      //     str_days = Object.keys(Object.values(dictAllCountries)[0])
-      // }
-      // else {
-      //     var currCountryStat = Object.values(Object.values(Object.values(dictAllCountries)[0]["Country"])[0])
-      //     var arrayDays = []
-      //     currCountryStat.forEach(function (countryStat) {
-      //         arrayDays.push(countryStat.day)
-      //     })
-      //     str_days = arrayDays
-      // }
-
+      allCountries = temp_dict;
       // Dictionary Order: Region>[Day Count]>[Accumulated Cases for Region on That Day]
 
       //Reset Current Region, Containing the Day(Key) and the Number of Cases (Value)
@@ -202,7 +191,7 @@ function prepData(country_data, region_data) {
       json2Array.push(temp_dict2);
     }
   }
-  return [json2Array, temp_dict]; //, chart1Region];
+  return [json2Array, temp_dict, allCountries]; //, chart1Region];
 }
 
 function byCountries() {
@@ -242,7 +231,7 @@ function byCountries() {
   });
 }
 
-function byRegions() {
+function byRegions(updated) {
   //get Country Stats/Data & Regions (JSON format)
   Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
     Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
@@ -255,28 +244,36 @@ function byRegions() {
       //get prepared Dictionary Data of all Countries (For Line Chart 2)
       var dictAllRegions = getData[1];
 
+      //   //get prepared Dictionary Data of all Countries (For Line Chart 2)
+      //   var allCountries = getData[2];
+
       //prepare Tooltip for Table 1 (Hover-Over/Out)
       var table1tooltip = prepTooltip("table1tooltip");
+      //prepare Tooltip for Table 2 (Hover-Over/Out)
+      var table2tooltip = prepTooltip("table2tooltip");
 
-      //prepare Table 1 (Upper)
-      d3.select("#dummyHead").html(
-        "<thead><tr><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead>"
-      );
-      d3.select("#line1Table").html(
-        '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
-      );
-      //Prepare Line Chart 1
-      prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
-      if (switchValue === "region") {
-        d3.select("#secondChartTable").style("background", "none");
+      //update all charts if fresh reset
+      if (updated !== true) {
+        //prepare Table 1 (Upper)
+        d3.select("#dummyHead").html(
+          "<thead><tr><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead>"
+        );
+        d3.select("#line1Table").html(
+          '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
+        );
+        //Prepare Line Chart 1
+        prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
+        if (switchValue === "region") {
+          d3.select("#secondChartTable").style("background", "none");
+        }
       }
-
-      // prepLineChart2(lineChart2)
+      prepLineChart2(dictAllRegions, table2tooltip);
     });
   });
 }
 
 function prepTooltip(tooltipClass) {
+  d3.selectAll("tooltipClass").remove();
   var div = d3
     .select("body")
     .append("div")
@@ -506,7 +503,10 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
         );
       }
     })
-    .attr("border", "1px solid black;")
+    .attr("border", "1px solid black;");
+
+  d3.select("#line1Table tbody")
+    .selectAll("tr")
     .on("mousemove", (event, d) => {
       svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
       var totalCases;
@@ -728,43 +728,113 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
   });
   d3.select("#dummyHead").style("visibility", "visible");
   d3.select(".tableDiv").style("visibility", "visible");
+
+  d3.selectAll("input[name='radioBtnName']").on("change", function () {
+    byRegions(true);
+  });
 }
 
-if (
-  d3.select("#myCheckbox").on("click", function (d) {
-    var check = this.checked;
-    if (check) {
-      switchValue = "region";
-      console.log("By Region");
-      byRegions();
-    } else {
-      switchValue = "country";
-      console.log("By Country");
-      byCountries();
-    }
-  })
-);
+d3.select("#myCheckbox").on("click", function (d) {
+  var check = this.checked;
+  if (check) {
+    switchValue = "region";
+    console.log("By Region");
+    byRegions(false);
+  } else {
+    switchValue = "country";
+    console.log("By Country");
+    byCountries();
+  }
+});
 
-function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
+function prepLineChart2(dictAllCountries, table2tooltip) {
+  d3.select("#lineChart2").html("");
   //set Countrys' hue colors range (for later d3's interpolateViridis)
   let color_scale = d3.scaleLinear().domain([0, height]).range([0, 100]);
 
-  var line1 = svg1
-    .selectAll("g.line1")
-    .data(arrayData)
+  valuez = "";
+  //   try { CONTINUE
+  valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
+
+  var currCountry = Object.keys(dictAllCountries[valuez]["Country"]);
+
+  var sortedlineChart2Array = [];
+  for (i = 0; i < currCountry.length; i++) {
+    sortedlineChart2Array.push({
+      name: currCountry[i],
+      dataz: dictAllCountries[valuez]["Country"][currCountry[i]],
+    });
+  }
+
+  var svg2 = d3
+    .select("#lineChart2")
+    .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
+
+  var width2 = document.getElementById("lineChart2").clientWidth;
+  var height2 = document.getElementById("lineChart2").clientHeight - 40;
+
+  var x_scale2 = d3.scaleLinear().rangeRound([0, width2]);
+
+  var y_scale2 = d3.scaleLog().base(2).range([height2, 0]);
+
+  //set x scale by Days
+  var str_days;
+  var currCountryStat = Object.values(
+    Object.values(Object.values(dictAllCountries)[0]["Country"])[0]
+  );
+
+  var arrayDays = [];
+  currCountryStat.forEach(function (countryStat) {
+    arrayDays.push(countryStat.day);
+  });
+  str_days = arrayDays;
+
+  var int_days = str_days.map(Number);
+  //Code Reference for X Scale's tick spread (nice) from:https://observablehq.com/@d3/scale-ticks
+  x_scale2.domain(d3.extent(int_days)).nice().ticks();
+
+  //get Max Cases for each Country
+  var all_cases = [];
+
+  sortedlineChart2Array.forEach(function (object) {
+    all_cases.push(
+      Object.values(object.dataz)[str_days.length - 1]["Confirmed"]
+    );
+  });
+
+  //fnd Maximum cases for Y Axis Domain
+  var max_cases = d3.max(all_cases);
+  //enable clamp for countries with 0 Number of Cases referenced from: https://stackoverflow.com/questions/11322651/how-to-avoid-log-zero-in-graph-using-d3-js#answer-11322824
+  y_scale2.domain([1, max_cases]).clamp(true).nice();
+
+  var y_axis2 = d3.axisLeft(y_scale2);
+  var x_axis2 = d3.axisBottom(x_scale2);
+
+  svg2
+    .append("g")
+    .attr("class", "x axis2")
+    .attr("transform", "translate(0," + height2 + ")");
+
+  svg2.append("g").attr("class", "y axis2");
+
+  var line2 = svg2
+    .selectAll("g.line2")
+    .data(sortedlineChart2Array)
     .enter()
     .append("g")
     .attr("class", "countryRegion");
 
-  ////ADDDD LEGEND
-
   var countryLine = d3
     .line()
     .x(function (d) {
-      return x_scale(d.day);
+      return x_scale2(d.day);
     })
     .y(function (d) {
-      return y_scale(d.Confirmed);
+      return y_scale2(d.Confirmed);
     });
 
   var colorScaleCountry = d3.scaleOrdinal(d3.schemeAccent);
@@ -781,7 +851,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
     };
   }
 
-  line1.each(function (d, i) {
+  line2.each(function (d, i) {
     d3.select(this)
       .append("path")
       .attr("class", "line")
@@ -794,7 +864,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
         );
       })
       .attr("d", function (d) {
-        return countryLine(d.dataz);
+        return countryLine(Object.values(d.dataz));
       })
       .style("stroke", function (d) {
         return colorScaleCountry(
@@ -807,26 +877,29 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
       .call(transition);
   });
 
-  svg1.select(".x.axis").call(x_axis);
+  svg2.select(".x.axis2").call(x_axis2);
 
-  svg1.select(".y.axis").transition().duration(500).call(y_axis);
+  svg2.select(".y.axis2").transition().duration(500).call(y_axis2);
 
-  line1tableData = [];
-  var line1table_tr = svg1
+  line2tableData = [];
+  var line1table_tr = svg2
     .selectAll("g.countryRegion")
     .select("path")
     .each(function (d, i) {
-      line1tableData.push({
+      line2tableData.push({
+        checked: true,
         name: d.name,
         color: d3.select(this).style("stroke"),
         region: d.region,
       });
     });
   //code Reference for Dict to table (with svg plot) from: https://stackoverflow.com/questions/54935575/d3-js-nested-data-update-line-plot-in-html-table#answer-54936178
-  var line1table = d3
-    .select("#line1Table tbody")
+
+  d3.select("#line2Table tbody").html("");
+  var line2table = d3
+    .select("#line2Table tbody")
     .selectAll("tr")
-    .data(line1tableData)
+    .data(line2tableData)
     .enter()
     .append("tr")
     .attr("id", function (d) {
@@ -840,12 +913,11 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
       valuez = "";
       try {
         valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
-        console.log(valuez);
       } catch (e) {}
 
       if (valuez !== "") {
-        svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
-        svg1
+        svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
+        svg2
           .selectAll(".countryRegion")
           .select(
             "#" +
@@ -861,7 +933,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
       var totalCasesArray = Object.values(currCountry);
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
-      table1tooltip
+      table2tooltip
         .style("opacity", 0.9)
         .style("left", event.pageX - 70 + "px")
         .style("top", event.pageY + 20 + "px")
@@ -878,7 +950,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
             "<b>"
         );
 
-      svg1
+      svg2
         .select(".max-svg1mouse-line")
         .style("opacity", 1)
         .attr("d", function () {
@@ -892,13 +964,12 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
       valuez = "";
       try {
         valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
-        console.log(valuez);
       } catch (e) {}
 
       if (valuez !== "") {
         var pathClassName = "#" + this.value;
-        svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
-        svg1
+        svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
+        svg2
           .selectAll(".countryRegion")
           .select(
             pathClassName.replace(
@@ -908,15 +979,15 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
           )
           .attr("opacity", 1);
 
-        svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
+        svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
 
-        table1tooltip.transition().duration(500).style("opacity", 0);
+        table2tooltip.transition().duration(500).style("opacity", 0);
 
-        svg1.select(".max-svg1mouse-line").style("opacity", 0);
+        svg2.select(".max-svg1mouse-line").style("opacity", 0);
       }
     });
 
-  var dottedLine = svg1.append("g").attr("class", "mouse-over-dotted-line");
+  var dottedLine = svg2.append("g").attr("class", "mouse-over-dotted-line");
 
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedLine
@@ -929,7 +1000,7 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
     .style("stroke-dasharray", "10,10")
     .style("opacity", "0");
 
-  var dottedMaxLine = svg1
+  var dottedMaxLine = svg2
     .append("g")
     .attr("class", "max-mouse-over-dotted-line");
 
@@ -944,22 +1015,22 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
     .style("stroke-dasharray", "10,10")
     .style("opacity", "0");
 
-  var chart1tooltip = prepTooltip("svg1Tooltip");
+  var chart2tooltip = prepTooltip("svg1Tooltip");
 
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
-  svg1
+  d3.select("#lineChart2")
     .on("mousemove", function (event) {
-      const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
-      const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
+      const mousePosition = d3.pointer(event, svg2.node()); // gets [x,y]
+      const currentDate = Math.round(x_scale2.invert(mousePosition[0])); // converts x to date
 
-      chart1tooltip
+      chart2tooltip
         .style("opacity", 0.9)
         .style("left", event.pageX + "px")
         .style("top", event.pageY - 40 + "px")
         .html("<b>Day " + currentDate + "<b>");
 
-      svg1
+      svg2
         .select(".svg1mouse-line")
         .style("opacity", 1)
         .attr("d", function () {
@@ -969,16 +1040,16 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
         });
     })
     .on("mouseout", function (event) {
-      chart1tooltip.style("opacity", 0);
+      chart2tooltip.style("opacity", 0);
 
-      svg1.select(".svg1mouse-line").style("opacity", 0);
+      svg2.select(".svg1mouse-line").style("opacity", 0);
     });
 
   var tableLinePathDrawn = d3.line()([
     [1, 1],
     [35, 1],
   ]);
-  line1table
+  line2table
     .append("td")
     .append("svg")
     .attr("class", "spark-svg")
@@ -994,27 +1065,26 @@ function prepLineChart2(arrayData, dictAllCountries, table1tooltip) {
     })
     .attr("stroke-width", 5);
 
-  var pathLine = line1table.append("td").text(function (d) {
+  var pathLine = line2table.append("td").text(function (d) {
     return d.name;
   });
-  d3.select("#dummyHead").style("visibility", "visible");
-  d3.select(".tableDiv").style("visibility", "visible");
+  d3.select("#dummyHead2").style("visibility", "visible");
+  d3.select(".tableDiv2").style("visibility", "visible");
+  //   } catch (e) {} CONTINUE
 }
 
-if (
-  d3.select("#myCheckbox").on("click", function (d) {
-    var check = this.checked;
-    if (check) {
-      switchValue = "region";
-      console.log("By Region");
-      byRegions();
-    } else {
-      switchValue = "country";
-      console.log("By Country");
-      byCountries();
-    }
-  })
-);
+d3.select("#myCheckbox").on("click", function (d) {
+  var check = this.checked;
+  if (check) {
+    switchValue = "region";
+    console.log("By Region");
+    byRegions(false);
+  } else {
+    switchValue = "country";
+    console.log("By Country");
+    byCountries();
+  }
+});
 
 //prepare the Axis, SVG for both LineCharts & their Color
 //by default set as By Country
