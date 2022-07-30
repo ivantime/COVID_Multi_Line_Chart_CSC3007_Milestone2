@@ -196,8 +196,11 @@ function prepData(country_data, region_data) {
 
 function byCountries() {
   //get Country Stats/Data & Regions (JSON format)
-  Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
-    Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
+  // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
+  //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
+    
+  Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
+    Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
       //prepare Data according to Line Charts (1&2) and Tables (1&2)
       var getData = prepData(country_data, region_data);
 
@@ -231,8 +234,10 @@ function byCountries() {
 
 function byRegions(updated) {
   //get Country Stats/Data & Regions (JSON format)
-  Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
-    Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
+  Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
+    Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
+  // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
+  //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
       //prepare Data according to Line Charts (1&2) and Tables (1&2)
       var getData = prepData(country_data, region_data);
 

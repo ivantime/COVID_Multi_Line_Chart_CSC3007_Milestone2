@@ -3,7 +3,10 @@
 <br>
 <br>
 <li>
-<h2> Original Graph From John Hopkins University @ https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/#cases-since</h2>
+<h3> Available on GitPages: https://ivantime.github.io/COVID_Multi_Line_Chart_CSC3007_Milestone2/</h3>
+</li>
+<li>
+<h4> Original Graph From John Hopkins University : https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/#cases-since</h4>
 </li>
 <br>
 <u><b>
@@ -105,7 +108,7 @@ Hover-Out Dismisses the mentioned Guidline as well.
 <ul>
 <li>
 30 July 2022 - Added Second Multi-Line Chart for "By Regions" Switch Selection with Table 2 (Bottom) showing the Countries present in the Selected Region in Table 1 (Top), with Hover Over on Table 1 and 2 to show the Country/Region Total Case No.<br>
-Also added checkbox to Table 2 (Bottom) with On Check/Uncheck Filtered the Multi-Line Chart 2 (Bottom)
+Also added checkbox to Table 2 (Bottom) with On Check/Uncheck to Filter Countries in Selected Region the Multi-Line Chart 2 (Bottom)
 </li>
 </ul>
 
