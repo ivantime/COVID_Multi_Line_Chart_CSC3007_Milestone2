@@ -928,9 +928,11 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
           .attr("opacity", 1);
       }
 
-      console.log(dictAllCountries)
-      
-      var currCountry = dictAllCountries[d.name];
+      valuez = "";
+      try {
+        valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
+      } catch (e) {}
+      var currCountry = dictAllCountries[valuez]["Country"][d.name];
       var totalCasesArray = Object.values(currCountry);
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
@@ -953,7 +955,7 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
         .select(".max-svg1mouse-line")
         .style("opacity", 1)
         .attr("d", function () {
-          var maxPoint = y_scale(totalCases);
+          var maxPoint = y_scale2(totalCases);
           var d = "M" + 0 + "," + maxPoint;
           d += " " + width + "," + maxPoint;
           return d;
