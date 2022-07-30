@@ -261,8 +261,17 @@ function byRegions(updated) {
         );
         //Prepare Line Chart 1
         prepLineChart1(arrayAllRegions, dictAllRegions);
+      } else if (
+        d3.select('input[name="radioBtnName"]:checked').node().value !==
+        "All Regions"
+      ) {
+        prepLineChart2(dictAllRegions);
+      } else {
+        d3.select("#lineChart2").html("");
+        d3.select("#line2Table tbody").html("");
+        d3.select("#dummyHead2").style("visibility", "hidden");
+        d3.select(".tableDiv2").style("visibility", "hidden");
       }
-      prepLineChart2(dictAllRegions);
     });
   });
 }
@@ -756,8 +765,16 @@ function prepLineChart1(data, dictAllCountries) {
           region: d.region,
         });
       } else {
+        if (line1tableData.length === 0) {
+          line1tableData.push({
+            checked: true,
+            name: "All Regions",
+            color: "#FFFFFF",
+            region: "All Regions",
+          });
+        }
         line1tableData.push({
-          checked: true,
+          checked: false,
           name: d.region,
           color: d3.select(this).style("stroke"),
           region: d.region,
@@ -829,7 +846,7 @@ function prepLineChart1(data, dictAllCountries) {
               numberWithCommas(totalCases) +
               "<b>"
           );
-      } else if (switchValue !== "country" && valuez !== "") {
+      } else if (switchValue !== "country") {
         svg1
           .selectAll(".countryRegion")
           .select(
@@ -840,27 +857,31 @@ function prepLineChart1(data, dictAllCountries) {
               )
           )
           .attr("opacity", 1);
-        var currCountryRegion = dictAllCountries[d.region];
-        totalCases = dictAllCountries[d.region].totalCases;
+        if (d.region !== "All Regions") {
+          var currCountryRegion = dictAllCountries[d.region];
+          totalCases = dictAllCountries[d.region].totalCases;
 
-        var days = Object.values(
-          Object.values(dictAllCountries[d.region].Country)[0]
-        ).slice(-1).day;
-        d3.select(".table1tooltip")
-          .attr("display", "block !important;")
-          .style("opacity", 0.9)
-          .style("left", event.pageX - 70 + "px")
-          .style("top", event.pageY + 20 + "px")
-          .html(
-            "<b><u>" +
-              d.region.toString().toUpperCase() +
-              "</u></b>" +
-              "<br>No. of Confirmed Cases (on Day <u>" +
-              days +
-              ")</u>: </br><b>" +
-              numberWithCommas(totalCases) +
-              "<b>"
-          );
+          var days = Object.values(
+            Object.values(dictAllCountries[d.region].Country)[0]
+          ).slice(-1).day;
+          d3.select(".table1tooltip")
+            .attr("display", "block !important;")
+            .style("opacity", 0.9)
+            .style("left", event.pageX - 70 + "px")
+            .style("top", event.pageY + 20 + "px")
+            .html(
+              "<b><u>" +
+                d.region.toString().toUpperCase() +
+                "</u></b>" +
+                "<br>No. of Confirmed Cases (on Day <u>" +
+                days +
+                ")</u>: </br><b>" +
+                numberWithCommas(totalCases) +
+                "<b>"
+            );
+        } else {
+          svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
+        }
       } else {
       }
 
@@ -887,7 +908,7 @@ function prepLineChart1(data, dictAllCountries) {
           .select(".max-svg1mouse-line")
           .attr("display", "none !important;")
           .style("opacity", 0);
-      } else {
+      } else if (valuez !== "All Regions") {
         svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
         svg1
           .selectAll(".countryRegion")
@@ -911,6 +932,8 @@ function prepLineChart1(data, dictAllCountries) {
             d += " " + width + "," + maxPoint;
             return d;
           });
+      } else {
+        svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
       }
       d3.select(".table1tooltip")
         .transition()
@@ -1006,7 +1029,11 @@ function prepLineChart1(data, dictAllCountries) {
       .attr("value", function (d) {
         return d.region;
       })
-      .attr("checked", false);
+      .attr("checked", function (d) {
+        if (d.region === "All Regions") {
+          return true;
+        }
+      });
   } else {
     line1table.append("td").attr("pointer-events", "none");
   }
@@ -1301,19 +1328,18 @@ function prepLineChart2(dictAllCountries) {
       } catch (e) {}
 
       if (valuez !== "") {
-        
         svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
         d3.selectAll("input.chart2Checkbox:checked").each(function () {
           svg2
-          .selectAll(".countryRegion")
-          .select(
-            "#" +
-            this.id.replace(
-              /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-              ""
+            .selectAll(".countryRegion")
+            .select(
+              "#" +
+                this.id.replace(
+                  /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+                  ""
+                )
             )
-          )
-          .attr("opacity", 1);
+            .attr("opacity", 1);
         });
 
         d3.select(".table2tooltip")
@@ -1417,18 +1443,24 @@ function prepLineChart2(dictAllCountries) {
       if (this.checked) {
         svg2
           .selectAll(".countryRegion")
-          .select("#" + this.id.replace(
-            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-            ""
-          ))
+          .select(
+            "#" +
+              this.id.replace(
+                /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+                ""
+              )
+          )
           .attr("opacity", 1);
       } else {
         svg2
           .selectAll(".countryRegion")
-          .select("#" + this.id.replace(
-            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-            ""
-          ))
+          .select(
+            "#" +
+              this.id.replace(
+                /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+                ""
+              )
+          )
           .attr("opacity", 0);
       }
     });
@@ -1439,7 +1471,7 @@ function prepLineChart2(dictAllCountries) {
     .append("svg")
     .attr("pointer-events", "none")
     .attr("class", "spark-svg")
-    .attr("width", 15)
+    .attr("width", 25)
     .attr("height", 10)
     .append("path")
     .attr("pointer-events", "none")
