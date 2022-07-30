@@ -208,7 +208,7 @@ function byCountries() {
       var dictAllCountries = getData[1];
 
       //prepare Tooltip for Table 1 (Hover-Over/Out)
-      var table1tooltip = prepTooltip("table1tooltip");
+      prepTooltip("table1tooltip");
 
       //prepare Table 1 (Upper)
       d3.select("#dummyHead").html(
@@ -221,12 +221,14 @@ function byCountries() {
       prepLineChart1(
         jsonAllCountries,
         dictAllCountries,
-        table1tooltip,
         country_data
       );
 
       //Since By Country Switch is Selected, Grey Out Second (Lower) Line Chart 2 Since Not Needed
-      d3.select("#secondChartTable").style("background", "grey");
+      d3.select("#lineChart2").html("");
+
+      d3.select("#dummyHead2").style("visibility", "collapse");
+      d3.select(".tableDiv2").style("visibility", "collapse");
     });
   });
 }
@@ -248,9 +250,9 @@ function byRegions(updated) {
       //   var allCountries = getData[2];
 
       //prepare Tooltip for Table 1 (Hover-Over/Out)
-      var table1tooltip = prepTooltip("table1tooltip");
+      prepTooltip("table1tooltip");
       //prepare Tooltip for Table 2 (Hover-Over/Out)
-      var table2tooltip = prepTooltip("table2tooltip");
+      prepTooltip("table2tooltip");
 
       //update all charts if fresh reset
       if (updated !== true) {
@@ -262,18 +264,15 @@ function byRegions(updated) {
           '<thead style="width:100%;"><tr style="visibility: collapse;"><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
         );
         //Prepare Line Chart 1
-        prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
-        if (switchValue === "region") {
-          d3.select("#secondChartTable").style("background", "none");
-        }
+        prepLineChart1(arrayAllRegions, dictAllRegions);
       }
-      prepLineChart2(dictAllRegions, table2tooltip);
+      prepLineChart2(dictAllRegions);
     });
   });
 }
 
 function prepTooltip(tooltipClass) {
-  d3.selectAll("tooltipClass").remove();
+  d3.selectAll("." + tooltipClass).remove();
   var div = d3
     .select("body")
     .append("div")
@@ -293,7 +292,7 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function prepLineChart1(data, dictAllCountries, table1tooltip) {
+function prepLineChart1(data, dictAllCountries) {
   //First Clear of Any Previous Plots on Line Chart
   d3.select("#lineChart1").html("");
 
@@ -352,22 +351,6 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
   //enable clamp for countries with 0 Number of Cases referenced from: https://stackoverflow.com/questions/11322651/how-to-avoid-log-zero-in-graph-using-d3-js#answer-11322824
   y_scale.domain([1, max_cases]).clamp(true).nice();
 
-  var colour_scaleRegion = d3
-    .scaleQuantile()
-    .range([
-      "#FA985C",
-      "#8291DB",
-      "#CBF24B",
-      "#DB3941",
-      "#42E7FF",
-      "#5C93FA",
-      "#DB958B",
-      "#CBF24B",
-      "#397FDB",
-    ]);
-
-  var blues = d3.scaleOrdinal(d3.schemeBlues[9]);
-
   var y_axis = d3.axisLeft(y_scale);
   var x_axis = d3.axisBottom(x_scale);
 
@@ -378,8 +361,6 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
 
   svg1.append("g").attr("class", "y axis");
 
-  //set Countrys' hue colors range (for later d3's interpolateViridis)
-  let color_scale = d3.scaleLinear().domain([0, height]).range([0, 100]);
   var line1 = svg1
     .selectAll("g.line1")
     .data(data)
@@ -390,17 +371,318 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
   var countryLine = d3
     .line()
     .x(function (d) {
-      // console.log(d.day)
-      // console.log(x_scale(d.day))
       return x_scale(d.day);
     })
     .y(function (d) {
-      // console.log(d.Confirmed)
-      // console.log(y_scale(d.Confirmed))
       return y_scale(d.Confirmed);
     });
 
-  var colorScaleCountry = d3.scaleOrdinal(d3.schemeAccent);
+  //color scale range adapted from: http://jnnnnn.github.io/category-colors-constrained.html
+  //return range used "J > 30 && J < 80;" due to inbetween light and dark colors (not too light/dark colors)
+  var colorScaleCountry = d3
+    .scaleOrdinal()
+    .range([
+      "#1316ef",
+      "#ffa505",
+      "#fe17fe",
+      "#115301",
+      "#2cd5ea",
+      "#940207",
+      "#08df34",
+      "#7a7380",
+      "#750375",
+      "#ff5864",
+      "#c4b1fe",
+      "#906407",
+      "#01996f",
+      "#933dff",
+      "#bbbbaa",
+      "#058ef7",
+      "#024f5a",
+      "#593c31",
+      "#c8037f",
+      "#f99acc",
+      "#759705",
+      "#51457f",
+      "#a35755",
+      "#088395",
+      "#6ad5a4",
+      "#bac557",
+      "#a95dac",
+      "#89a2bb",
+      "#cf8b68",
+      "#596b4d",
+      "#d35203",
+      "#909264",
+      "#8d85d9",
+      "#2063a6",
+      "#b193b4",
+      "#7b2441",
+      "#d00938",
+      "#574b05",
+      "#cf78ff",
+      "#02800b",
+      "#b98e0b",
+      "#ce6e93",
+      "#774b6f",
+      "#7b06ba",
+      "#803c06",
+      "#4e5057",
+      "#5549fc",
+      "#7daa9b",
+      "#026e5d",
+      "#55b8fe",
+      "#fc37ae",
+      "#23b552",
+      "#2f4c39",
+      "#c704fc",
+      "#0cacb3",
+      "#fd1105",
+      "#fb7b24",
+      "#5606ca",
+      "#656d02",
+      "#7863a3",
+      "#dcb574",
+      "#aa03a6",
+      "#627ea6",
+      "#bdbbce",
+      "#886d53",
+      "#e5abaa",
+      "#60837c",
+      "#989695",
+      "#88b477",
+      "#9fc6ca",
+      "#da75cc",
+      "#a97b7f",
+      "#5a884a",
+      "#83bd0f",
+      "#466679",
+      "#a34c7a",
+      "#e89ff6",
+      "#ad3b1b",
+      "#254774",
+      "#a70b47",
+      "#fe8893",
+      "#af6738",
+      "#96036c",
+      "#d233b9",
+      "#ef206e",
+      "#8fa7fe",
+      "#6e5758",
+      "#216c38",
+      "#3e99c2",
+      "#00bb9d",
+      "#a1c1eb",
+      "#fea16e",
+      "#cd6a61",
+      "#513c57",
+      "#9344bf",
+      "#6274fe",
+      "#cb7504",
+      "#7ed470",
+      "#8c89a8",
+      "#7e3f38",
+      "#6f5331",
+      "#6847be",
+      "#8b8126",
+      "#a469e1",
+      "#c44966",
+      "#d7afce",
+      "#9ea542",
+      "#d5af03",
+      "#5f5d7a",
+      "#976b89",
+      "#67337d",
+      "#5b67b7",
+      "#3a48aa",
+      "#1ed9c6",
+      "#606a6a",
+      "#cd8fa2",
+      "#b69f81",
+      "#fe70af",
+      "#066fe8",
+      "#7c7e75",
+      "#139c00",
+      "#027fb7",
+      "#b192db",
+      "#515141",
+      "#a98142",
+      "#772312",
+      "#119087",
+      "#698e9d",
+      "#f4795e",
+      "#d89542",
+      "#d9473d",
+      "#7294d1",
+      "#9cc5ab",
+      "#662d56",
+      "#425828",
+      "#9f7ab1",
+      "#b6c38b",
+      "#3d5b5a",
+      "#6d9576",
+      "#fe5728",
+      "#6bb6d2",
+      "#baa6ad",
+      "#5f3b0d",
+      "#736a32",
+      "#54ae7b",
+      "#a7a9d5",
+      "#396700",
+      "#86388a",
+      "#c81202",
+      "#407d5e",
+      "#9facae",
+      "#fa77fe",
+      "#8e5331",
+      "#d356e4",
+      "#9f363c",
+      "#40435d",
+      "#693f4d",
+      "#0fd17a",
+      "#592596",
+      "#884f5e",
+      "#d44792",
+      "#6aa250",
+      "#1fbe05",
+      "#99a68d",
+      "#65bebc",
+      "#0150e1",
+      "#b875a9",
+      "#860127",
+      "#035c7c",
+      "#026971",
+      "#8b696d",
+      "#1a9746",
+      "#9b8470",
+      "#d5703c",
+      "#875992",
+      "#7b65de",
+      "#b79d58",
+      "#a64f06",
+      "#f51740",
+      "#784f02",
+      "#968393",
+      "#a19faf",
+      "#d594ca",
+      "#465686",
+      "#973659",
+      "#818890",
+      "#eb5785",
+      "#6a4f83",
+      "#637784",
+      "#568510",
+      "#757c58",
+      "#fe56da",
+      "#0b552c",
+      "#ad6378",
+      "#74a6ae",
+      "#491bf4",
+      "#af0726",
+      "#6c675a",
+      "#748fff",
+      "#bc76ce",
+      "#c8a6dd",
+      "#b0ca11",
+      "#4d4146",
+      "#075349",
+      "#910eb1",
+      "#b43794",
+      "#b936c5",
+      "#db8582",
+      "#625162",
+      "#b182fe",
+      "#36614a",
+      "#747296",
+      "#4f7ccd",
+      "#81948d",
+      "#4da396",
+      "#daa786",
+      "#62cdfb",
+      "#3b5162",
+      "#84366b",
+      "#8611e7",
+      "#507235",
+      "#bd563b",
+      "#be9289",
+      "#515a00",
+      "#6c0bf7",
+      "#47706f",
+      "#53a2fe",
+      "#a91bf7",
+      "#790e56",
+      "#902e0b",
+      "#c5185c",
+      "#a86e5d",
+      "#71bc52",
+      "#abb106",
+      "#fa80d6",
+      "#7fd711",
+      "#394849",
+      "#454724",
+      "#68331c",
+      "#7442a2",
+      "#1b7090",
+      "#78617b",
+      "#278245",
+      "#b85999",
+      "#9a9101",
+      "#a1a970",
+      "#a69afe",
+      "#e184b2",
+      "#99cc8f",
+      "#5d5b33",
+      "#bd3c41",
+      "#7478bc",
+      "#ad6a0b",
+      "#849448",
+      "#e260af",
+      "#82abe0",
+      "#82cebe",
+      "#6d5d01",
+      "#4a6b95",
+      "#9465b6",
+      "#b355d6",
+      "#f512cf",
+      "#cd99fe",
+      "#c4b151",
+      "#fd9f93",
+      "#f4a955",
+      "#453594",
+      "#6a2f32",
+      "#a92a71",
+      "#85574f",
+      "#7644ff",
+      "#8c7844",
+      "#9670fa",
+      "#62ac1d",
+      "#f08b08",
+      "#73be9f",
+      "#a4b7cb",
+      "#f39db0",
+      "#8f0c85",
+      "#014d9c",
+      "#8e034c",
+      "#9c4991",
+      "#107c7b",
+      "#8354c8",
+      "#707c39",
+      "#897596",
+      "#24b0e0",
+      "#69c282",
+      "#710391",
+      "#5e5999",
+      "#3597a7",
+      "#8d94c6",
+      "#e36e7c",
+      "#aab7fc",
+      "#832a2f",
+      "#656168",
+      "#86612f",
+      "#4c87a5",
+      "#da380c",
+      "#a3790a",
+    ]);
 
   //Code Source for Line Transition and tweenDash from: https://bl.ocks.org/pjsier/28d1d410b64dcd74d9dab348514ed256
   function transition(path) {
@@ -477,7 +759,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
       } else {
         line1tableData.push({
           checked: true,
-          region: d.region,
+          name: d.region,
           color: d3.select(this).style("stroke"),
           region: d.region,
         });
@@ -530,7 +812,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
         var totalCasesArray = Object.values(currCountryRegion);
         totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
-        table1tooltip
+        d3.select(".table1tooltip")
           .style("opacity", 0.9)
           .style("left", event.pageX - 70 + "px")
           .style("top", event.pageY + 20 + "px")
@@ -547,6 +829,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
               "<b>"
           );
       } else if (switchValue !== "country" && valuez !== "") {
+        
         svg1
           .selectAll(".countryRegion")
           .select(
@@ -558,11 +841,10 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
           )
           .attr("opacity", 1);
         var currCountryRegion = dictAllCountries[d.region];
-        var totalCasesArray = Object.values(currCountryRegion);
         totalCases = dictAllCountries[d.region].totalCases;
 
-        var days = Object.values(Object.values(totalCasesArray[0])[0]);
-        table1tooltip
+        var days = Object.values(Object.values(dictAllCountries[d.region].Country)[0]).slice(-1).day
+        d3.select(".table1tooltip")
           .style("opacity", 0.9)
           .style("left", event.pageX - 70 + "px")
           .style("top", event.pageY + 20 + "px")
@@ -571,7 +853,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
               d.region.toString().toUpperCase() +
               "</u></b>" +
               "<br>No. of Confirmed Cases (on Day <u>" +
-              days[days.length - 1].day +
+              days +
               ")</u>: </br><b>" +
               numberWithCommas(totalCases) +
               "<b>"
@@ -624,7 +906,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
             return d;
           });
       }
-      table1tooltip.transition().duration(500).style("opacity", 0);
+      d3.select(".table1tooltip").transition().duration(500).style("opacity", 0);
     });
 
   var dottedLine = svg1.append("g").attr("class", "mouse-over-dotted-line");
@@ -655,7 +937,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
     .style("stroke-dasharray", "10,10")
     .style("opacity", "0");
 
-  var chart1tooltip = prepTooltip("svg1Tooltip");
+  prepTooltip("svg1Tooltip");
 
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
@@ -664,7 +946,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
       const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
       const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
 
-      chart1tooltip
+      d3.select(".svg1Tooltip")
         .style("opacity", 0.9)
         .style("left", event.pageX + "px")
         .style("top", event.pageY - 40 + "px")
@@ -680,7 +962,7 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
         });
     })
     .on("mouseout", function (event) {
-      chart1tooltip.style("opacity", 0);
+      d3.select(".svg1Tooltip").style("opacity", 0);
 
       svg1.select(".svg1mouse-line").style("opacity", 0);
     });
@@ -695,6 +977,9 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
       .append("input")
       .attr("name", "radioBtnName")
       .attr("type", "radio")
+      .attr("class", function (d) {
+        return d.color;
+      })
       .attr("value", function (d) {
         return d.region;
       })
@@ -746,14 +1031,15 @@ d3.select("#myCheckbox").on("click", function (d) {
   }
 });
 
-function prepLineChart2(dictAllCountries, table2tooltip) {
+function prepLineChart2(dictAllCountries) {
   d3.select("#lineChart2").html("");
-  //set Countrys' hue colors range (for later d3's interpolateViridis)
-  let color_scale = d3.scaleLinear().domain([0, height]).range([0, 100]);
+
+  //   try { CONTINUE
 
   valuez = "";
-  //   try { CONTINUE
-  valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
+  try {
+    valuez = d3.select('input[name="radioBtnName"]:checked').node().value;
+  } catch (e) {}
 
   var currCountry = Object.keys(dictAllCountries[valuez]["Country"]);
 
@@ -773,8 +1059,14 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
 
-  var width2 = document.getElementById("lineChart2").clientWidth - margin.left - margin.right;;
-  var height2 = document.getElementById("lineChart2").clientHeight - margin.left - margin.right;
+  var width2 =
+    document.getElementById("lineChart2").clientWidth -
+    margin.left -
+    margin.right;
+  var height2 =
+    document.getElementById("lineChart2").clientHeight -
+    margin.left -
+    margin.right;
 
   var x_scale2 = d3.scaleLinear().rangeRound([0, width2]);
 
@@ -836,7 +1128,22 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
       return y_scale2(d.Confirmed);
     });
 
-  var colorScaleCountry = d3.scaleOrdinal(d3.schemeAccent);
+  valuez = "";
+  try {
+    valuez = d3.select('input[name="radioBtnName"]:checked').node()
+      .attributes[2].nodeValue;
+    valuez = d3.color(valuez).formatHex();
+  } catch (e) {}
+
+  var obj = sortedlineChart2Array
+    .map((x) => x.dataz[int_days.slice(-1)[0]].Confirmed)
+    .sort();
+
+  var colorScaleCountry = d3
+    .scaleLinear()
+    .domain([d3.min(obj), d3.max(obj)])
+    .range([d3.color(valuez).brighter().formatHex(), valuez])
+    .interpolate(d3.interpolateRgb.gamma(1));
 
   //Code Source for Line Transition and tweenDash from: https://bl.ocks.org/pjsier/28d1d410b64dcd74d9dab348514ed256
   function transition(path) {
@@ -866,12 +1173,7 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
         return countryLine(Object.values(d.dataz));
       })
       .style("stroke", function (d) {
-        return colorScaleCountry(
-          d.name.replace(
-            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-            ""
-          )
-        );
+        return colorScaleCountry(d.dataz[int_days.slice(-1)].Confirmed);
       })
       .call(transition);
   });
@@ -936,7 +1238,7 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
       var totalCasesArray = Object.values(currCountry);
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
-      table2tooltip
+      d3.select(".table2tooltip")
         .style("opacity", 0.9)
         .style("left", event.pageX - 70 + "px")
         .style("top", event.pageY + 20 + "px")
@@ -982,7 +1284,7 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
 
         svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
 
-        table2tooltip.transition().duration(500).style("opacity", 0);
+        d3.select(".table2tooltip").transition().duration(500).style("opacity", 0);
 
         svg2.select(".max-svg1mouse-line").style("opacity", 0);
       }
