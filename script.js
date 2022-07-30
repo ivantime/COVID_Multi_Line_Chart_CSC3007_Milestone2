@@ -846,6 +846,16 @@ function prepLineChart1(data, dictAllCountries) {
               numberWithCommas(totalCases) +
               "<b>"
           );
+        d3.select("#lineChart1")
+          .select(".max-svg1mouse-line")
+          .attr("display", "block")
+          .style("opacity", 0.9)
+          .attr("d", function () {
+            var maxPoint = y_scale(totalCases);
+            var d = "M" + 0 + "," + maxPoint;
+            d += " " + width + "," + maxPoint;
+            return d;
+          });
       } else if (switchValue !== "country") {
         svg1
           .selectAll(".countryRegion")
@@ -879,22 +889,31 @@ function prepLineChart1(data, dictAllCountries) {
                 numberWithCommas(totalCases) +
                 "<b>"
             );
+          d3.select("#lineChart1")
+            .select(".max-svg1mouse-line")
+            .attr("display", "block")
+            .style("opacity", 0.9)
+            .attr("d", function () {
+              var maxPoint = y_scale(totalCases);
+              var d = "M" + 0 + "," + maxPoint;
+              d += " " + width + "," + maxPoint;
+              return d;
+            });
         } else {
+          d3.select("#lineChart1")
+            .select(".max-svg1mouse-line")
+            .attr("display", "block")
+            .style("opacity", 0.9)
+            .attr("d", function () {
+              var maxPoint = y_scale(max_cases);
+              var d = "M" + 0 + "," + maxPoint;
+              d += " " + width + "," + maxPoint;
+              return d;
+            });
           svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
         }
       } else {
       }
-
-      d3.select("#lineChart1")
-        .select(".max-svg1mouse-line")
-        .attr("display", "block")
-        .style("opacity", 0.9)
-        .attr("d", function () {
-          var maxPoint = y_scale(totalCases);
-          var d = "M" + 0 + "," + maxPoint;
-          d += " " + width + "," + maxPoint;
-          return d;
-        });
     })
     .on("mouseout", (event, d) => {
       valuez = "";
@@ -933,6 +952,10 @@ function prepLineChart1(data, dictAllCountries) {
             return d;
           });
       } else {
+        d3.select("#lineChart1")
+          .select(".max-svg1mouse-line")
+          .attr("display", "none !important;")
+          .style("opacity", 0);
         svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
       }
       d3.select(".table1tooltip")
@@ -1345,12 +1368,12 @@ function prepLineChart2(dictAllCountries) {
         d3.select(".table2tooltip")
           .transition()
           .duration(500)
-          .attr("display", "none")
+          .attr("display", "none !important;")
           .style("opacity", 0);
 
         svg2
           .select(".max-svg1mouse-line")
-          .attr("display", "none")
+          .attr("display", "none !important;")
           .style("opacity", 0);
       }
     });
@@ -1360,7 +1383,7 @@ function prepLineChart2(dictAllCountries) {
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedLine
     .append("path")
-    .attr("pointer-events", "none")
+    .attr("pointer-events", "none !important;")
     .attr("class", "svg1mouse-line")
     .style("stroke", "black")
     .style("stroke-width", "1px")
