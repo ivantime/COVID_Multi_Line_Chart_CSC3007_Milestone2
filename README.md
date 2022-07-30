@@ -102,6 +102,13 @@ Hover-Out Dismisses the mentioned Guidline as well.
 </li>
 </ul>
 
+<ul>
+<li>
+30 July 2022 - Added Second Multi-Line Chart for "By Regions" Switch Selection with Table 2 (Bottom) showing the Countries present in the Selected Region in Table 1 (Top), with Hover Over on Table 1 and 2 to show the Country/Region Total Case No.
+</li>
+</ul>
+
+</ul>
 </ul>
 <br>
 <br>

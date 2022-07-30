@@ -212,10 +212,10 @@ function byCountries() {
 
       //prepare Table 1 (Upper)
       d3.select("#dummyHead").html(
-        "<thead><tr><th>Color |</th><th>Country Name</th></tr></thead>"
+        "<thead><tr><th>Line|</th><th>Country Name</th></tr></thead>"
       );
       d3.select("#line1Table").html(
-        '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Color |</th><th>Country Name</th></tr></thead><tbody style="width:90%;"></tbody>'
+        '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Line|</th><th>Country Name</th></tr></thead><tbody style="width:90%;"></tbody>'
       );
       //Prepare Line Chart 1
       prepLineChart1(
@@ -256,10 +256,10 @@ function byRegions(updated) {
       if (updated !== true) {
         //prepare Table 1 (Upper)
         d3.select("#dummyHead").html(
-          "<thead><tr><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead>"
+          "<thead><tr><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead>"
         );
         d3.select("#line1Table").html(
-          '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Select |</th><th>Color |</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
+          '<thead style="width:100%;"><tr style="visibility: collapse;"><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
         );
         //Prepare Line Chart 1
         prepLineChart1(arrayAllRegions, dictAllRegions, table1tooltip);
@@ -702,12 +702,11 @@ function prepLineChart1(data, dictAllCountries, table1tooltip) {
   } else {
     line1table.append("td");
   }
-
   line1table
     .selectAll("td")
     .append("svg")
     .attr("class", "spark-svg")
-    .attr("width", 15)
+    .attr("width", 25)
     .attr("height", 10)
     .append("path")
     .attr("class", "spark-path")
@@ -774,8 +773,8 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
 
-  var width2 = document.getElementById("lineChart2").clientWidth;
-  var height2 = document.getElementById("lineChart2").clientHeight - 40;
+  var width2 = document.getElementById("lineChart2").clientWidth - margin.left - margin.right;;
+  var height2 = document.getElementById("lineChart2").clientHeight - margin.left - margin.right;
 
   var x_scale2 = d3.scaleLinear().rangeRound([0, width2]);
 
@@ -929,6 +928,8 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
           .attr("opacity", 1);
       }
 
+      console.log(dictAllCountries)
+      
       var currCountry = dictAllCountries[d.name];
       var totalCasesArray = Object.values(currCountry);
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
@@ -940,14 +941,12 @@ function prepLineChart2(dictAllCountries, table2tooltip) {
         .html(
           "<b><u>" +
             d.name +
-            "</u></b> <i>(" +
-            d.region.toString().toUpperCase() +
-            ")</i>" +
+            "</u></b>" +
             "<br>No. of Confirmed Cases (on Day <u>" +
             totalCasesArray.length +
             ")</u>: </br><b>" +
             numberWithCommas(totalCases) +
-            "<b>"
+            "</b>"
         );
 
       svg2
