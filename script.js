@@ -1007,22 +1007,34 @@ function prepLineChart1(data, dictAllCountries) {
       const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
       const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
 
-      d3.select(".svg1Tooltip")
-        .attr("display", "block !important;")
-        .style("opacity", 0.9)
-        .style("left", event.pageX + "px")
-        .style("top", event.pageY - 40 + "px")
-        .html("<b>Day " + currentDate + "<b>");
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0]+1) {
+        d3.select(".svg1Tooltip")
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .style("left", event.pageX + "px")
+          .style("top", event.pageY - 40 + "px")
+          .html("<b>Day " + currentDate + "<b>");
 
-      svg1
-        .select(".svg1mouse-line")
-        .attr("display", "block !important;")
-        .style("opacity", 0.9)
-        .attr("d", function () {
-          var d = "M" + mousePosition[0] + "," + height;
-          d += " " + mousePosition[0] + "," + 0;
-          return d;
-        });
+        svg1
+          .select(".svg1mouse-line")
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .attr("d", function () {
+            var d = "M" + mousePosition[0] + "," + height;
+            d += " " + mousePosition[0] + "," + 0;
+            return d;
+          });
+      }
+      else{
+        d3.select(".svg1Tooltip")
+          .attr("display", "none !important;")
+          .style("opacity", 0)
+        
+        svg1
+          .select(".svg1mouse-line")
+          .attr("display", "none !important;")
+          .style("opacity", 0)
+      }
     })
     .on("mouseout", function (event) {
       d3.select(".svg1Tooltip")
@@ -1334,7 +1346,7 @@ function prepLineChart2(dictAllCountries) {
         );
 
       svg2
-        .select(".max-svg1mouse-line")
+        .select(".max-svg2mouse-line")
         .attr("display", "block !important;")
         .style("opacity", 0.9)
         .attr("d", function () {
@@ -1372,7 +1384,7 @@ function prepLineChart2(dictAllCountries) {
           .style("opacity", 0);
 
         svg2
-          .select(".max-svg1mouse-line")
+          .select(".max-svg2mouse-line")
           .attr("display", "none !important;")
           .style("opacity", 0);
       }
@@ -1383,8 +1395,8 @@ function prepLineChart2(dictAllCountries) {
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedLine
     .append("path")
-    .attr("pointer-events", "none !important;")
-    .attr("class", "svg1mouse-line")
+    .attr("pointer-events", "none")
+    .attr("class", "svg2mouse-line")
     .style("stroke", "black")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
@@ -1395,13 +1407,14 @@ function prepLineChart2(dictAllCountries) {
 
   var dottedMaxLine = svg2
     .append("g")
+    .attr("pointer-events", "none")
     .attr("class", "max-mouse-over-dotted-line");
 
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedMaxLine
     .append("path")
     .attr("pointer-events", "none")
-    .attr("class", "max-svg1mouse-line")
+    .attr("class", "max-svg2mouse-line")
     .style("stroke", "grey")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
@@ -1410,8 +1423,7 @@ function prepLineChart2(dictAllCountries) {
     .attr("display", "none !important;")
     .style("opacity", 0);
 
-  var chart2tooltip = prepTooltip("svg1Tooltip");
-  chart2tooltip.attr("pointer-events", "none");
+  prepTooltip("svg2Tooltip");
 
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
@@ -1420,28 +1432,41 @@ function prepLineChart2(dictAllCountries) {
       const mousePosition = d3.pointer(event, svg2.node()); // gets [x,y]
       const currentDate = Math.round(x_scale2.invert(mousePosition[0])); // converts x to date
 
-      chart2tooltip
-        .attr("display", "block !important;")
-        .style("opacity", 0.9)
-        .style("left", event.pageX + "px")
-        .style("top", event.pageY - 40 + "px")
-        .html("<b>Day " + currentDate + "<b>");
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0]+1) {
+        d3.select(".svg2Tooltip")
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .style("left", event.pageX + "px")
+          .style("top", event.pageY - 40 + "px")
+          .html("<b>Day " + currentDate + "<b>");
 
-      svg2
-        .select(".svg1mouse-line")
-        .attr("display", "block !important;")
-        .style("opacity", 0.9)
-        .attr("d", function () {
-          var d = "M" + mousePosition[0] + "," + height;
-          d += " " + mousePosition[0] + "," + 0;
-          return d;
-        });
+        svg2
+          .select(".svg2mouse-line")
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .attr("d", function () {
+            var d = "M" + mousePosition[0] + "," + height;
+            d += " " + mousePosition[0] + "," + 0;
+            return d;
+          });
+      }
+      else{
+        d3.select(".svg2Tooltip")
+          .style("opacity", 0)
+        
+        svg2
+          .select(".svg2mouse-line")
+          .style("opacity", 0)
+      }
     })
     .on("mouseout", function (event) {
-      chart2tooltip.attr("display", "none !important;").style("opacity", 0);
+
+      d3.select(".svg2Tooltip")
+        .attr("display", "none !important;")
+        .style("opacity", 0);
 
       svg2
-        .select(".svg1mouse-line")
+        .select(".svg2mouse-line")
         .attr("display", "none !important;")
         .style("opacity", 0);
     });
