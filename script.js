@@ -215,7 +215,7 @@ function byCountries() {
         "<thead><tr><th>Line|</th><th>Country Name</th></tr></thead>"
       );
       d3.select("#line1Table").html(
-        '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Line|</th><th>Country Name</th></tr></thead><tbody style="width:90%;"></tbody>'
+        '<thead style="width:10%;"><tr style="visibility: collapse;"><th>Line|</th><th>Country Name</th></tr></thead><tbody style="width:70%;"></tbody>'
       );
       //Prepare Line Chart 1
       prepLineChart1(jsonAllCountries, dictAllCountries, country_data);
@@ -257,7 +257,7 @@ function byRegions(updated) {
           "<thead><tr><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead>"
         );
         d3.select("#line1Table").html(
-          '<thead style="width:100%;"><tr style="visibility: collapse;"><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead><tbody style="width:90%;"></tbody>'
+          '<thead style="width:10%;"><tr style="visibility: collapse;"><th>X|</th><th>Line|</th><th>Region Name</th></tr></thead><tbody style="width:70%;"></tbody>'
         );
         //Prepare Line Chart 1
         prepLineChart1(arrayAllRegions, dictAllRegions);
@@ -781,6 +781,7 @@ function prepLineChart1(data, dictAllCountries) {
         });
       }
     });
+    
   //code Reference for Dict to table (with svg plot) from: https://stackoverflow.com/questions/54935575/d3-js-nested-data-update-line-plot-in-html-table#answer-54936178
   var line1table = d3
     .select("#line1Table tbody")
@@ -794,14 +795,14 @@ function prepLineChart1(data, dictAllCountries) {
         return d.name.replace(
           /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
           ""
-        );
-      } else {
-        return d.region.replace(
-          /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-          ""
-        );
-      }
-    })
+          );
+        } else {
+          return d.region.replace(
+            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+            ""
+            );
+          }
+        })
     .attr("border", "1px solid black;");
 
   d3.select("#line1Table tbody")
@@ -1149,18 +1150,10 @@ function prepLineChart2(dictAllCountries) {
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
 
-  var width2 =
-    document.getElementById("lineChart2").clientWidth -
-    margin.left -
-    margin.right;
-  var height2 =
-    document.getElementById("lineChart2").clientHeight -
-    margin.left -
-    margin.right;
 
-  var x_scale2 = d3.scaleLinear().rangeRound([0, width2]);
+  var x_scale2 = d3.scaleLinear().rangeRound([0, width]);
 
-  var y_scale2 = d3.scaleLog().base(2).range([height2, 0]);
+  var y_scale2 = d3.scaleLog().base(2).range([height, 0]);
 
   //set x scale by Days
   var str_days;
@@ -1198,7 +1191,7 @@ function prepLineChart2(dictAllCountries) {
   svg2
     .append("g")
     .attr("class", "x axis2")
-    .attr("transform", "translate(0," + height2 + ")");
+    .attr("transform", "translate(0," + height + ")");
 
   svg2.append("g").attr("class", "y axis2");
 
