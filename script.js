@@ -218,17 +218,13 @@ function byCountries() {
         '<thead style="width:100%;"><tr style="visibility: collapse;"><th>Line|</th><th>Country Name</th></tr></thead><tbody style="width:90%;"></tbody>'
       );
       //Prepare Line Chart 1
-      prepLineChart1(
-        jsonAllCountries,
-        dictAllCountries,
-        country_data
-      );
+      prepLineChart1(jsonAllCountries, dictAllCountries, country_data);
 
       //Since By Country Switch is Selected, Grey Out Second (Lower) Line Chart 2 Since Not Needed
       d3.select("#lineChart2").html("");
 
-      d3.select("#dummyHead2").style("visibility", "collapse");
-      d3.select(".tableDiv2").style("visibility", "collapse");
+      d3.select("#dummyHead2").style("visibility", "hidden");
+      d3.select(".tableDiv2").style("visibility", "hidden");
     });
   });
 }
@@ -277,7 +273,9 @@ function prepTooltip(tooltipClass) {
     .select("body")
     .append("div")
     .attr("class", tooltipClass)
+    .attr("display", "none !important;")
     .style("opacity", 0)
+    .style("pointer-events", "none")
     .style("position", "absolute")
     .style("z-index", "10")
     .style("padding", "10px")
@@ -700,6 +698,7 @@ function prepLineChart1(data, dictAllCountries) {
     d3.select(this)
       .append("path")
       .attr("class", "line")
+      .attr("pointer-events", "none")
       .attr("fill", "none")
       .attr("stroke-width", "1.5px")
       .attr("id", function (d) {
@@ -772,6 +771,7 @@ function prepLineChart1(data, dictAllCountries) {
     .data(line1tableData)
     .enter()
     .append("tr")
+    .attr("pointer-events", "none")
     .attr("id", function (d) {
       if (switchValue === "country") {
         return d.name.replace(
@@ -813,6 +813,7 @@ function prepLineChart1(data, dictAllCountries) {
         totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
         d3.select(".table1tooltip")
+          .attr("display", "block !important;")
           .style("opacity", 0.9)
           .style("left", event.pageX - 70 + "px")
           .style("top", event.pageY + 20 + "px")
@@ -829,7 +830,6 @@ function prepLineChart1(data, dictAllCountries) {
               "<b>"
           );
       } else if (switchValue !== "country" && valuez !== "") {
-        
         svg1
           .selectAll(".countryRegion")
           .select(
@@ -843,8 +843,11 @@ function prepLineChart1(data, dictAllCountries) {
         var currCountryRegion = dictAllCountries[d.region];
         totalCases = dictAllCountries[d.region].totalCases;
 
-        var days = Object.values(Object.values(dictAllCountries[d.region].Country)[0]).slice(-1).day
+        var days = Object.values(
+          Object.values(dictAllCountries[d.region].Country)[0]
+        ).slice(-1).day;
         d3.select(".table1tooltip")
+          .attr("display", "block !important;")
           .style("opacity", 0.9)
           .style("left", event.pageX - 70 + "px")
           .style("top", event.pageY + 20 + "px")
@@ -863,7 +866,8 @@ function prepLineChart1(data, dictAllCountries) {
 
       d3.select("#lineChart1")
         .select(".max-svg1mouse-line")
-        .style("opacity", 1)
+        .attr("display", "block")
+        .style("opacity", 0.9)
         .attr("d", function () {
           var maxPoint = y_scale(totalCases);
           var d = "M" + 0 + "," + maxPoint;
@@ -881,6 +885,7 @@ function prepLineChart1(data, dictAllCountries) {
         svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
         d3.select("#lineChart1")
           .select(".max-svg1mouse-line")
+          .attr("display", "none !important;")
           .style("opacity", 0);
       } else {
         svg1.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
@@ -898,7 +903,8 @@ function prepLineChart1(data, dictAllCountries) {
         totalCases = dictAllCountries[valuez].totalCases;
         d3.select("#lineChart1")
           .select(".max-svg1mouse-line")
-          .style("opacity", 1)
+          .attr("display", "none !important;")
+          .style("opacity", 0)
           .attr("d", function () {
             var maxPoint = y_scale(totalCases);
             var d = "M" + 0 + "," + maxPoint;
@@ -906,7 +912,11 @@ function prepLineChart1(data, dictAllCountries) {
             return d;
           });
       }
-      d3.select(".table1tooltip").transition().duration(500).style("opacity", 0);
+      d3.select(".table1tooltip")
+        .transition()
+        .duration(500)
+        .attr("display", "none !important;")
+        .style("opacity", 0);
     });
 
   var dottedLine = svg1.append("g").attr("class", "mouse-over-dotted-line");
@@ -914,28 +924,33 @@ function prepLineChart1(data, dictAllCountries) {
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedLine
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "svg1mouse-line")
     .style("stroke", "black")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
     .style("stroke-linejoin", "round")
     .style("stroke-dasharray", "10,10")
-    .style("opacity", "0");
+    .attr("display", "none !important;")
+    .style("opacity", 0);
 
   var dottedMaxLine = svg1
     .append("g")
+    .attr("pointer-events", "none")
     .attr("class", "max-mouse-over-dotted-line");
 
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedMaxLine
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "max-svg1mouse-line")
     .style("stroke", "grey")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
     .style("stroke-linejoin", "round")
     .style("stroke-dasharray", "10,10")
-    .style("opacity", "0");
+    .attr("display", "none !important;")
+    .style("opacity", 0);
 
   prepTooltip("svg1Tooltip");
 
@@ -947,6 +962,7 @@ function prepLineChart1(data, dictAllCountries) {
       const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
 
       d3.select(".svg1Tooltip")
+        .attr("display", "block !important;")
         .style("opacity", 0.9)
         .style("left", event.pageX + "px")
         .style("top", event.pageY - 40 + "px")
@@ -954,7 +970,8 @@ function prepLineChart1(data, dictAllCountries) {
 
       svg1
         .select(".svg1mouse-line")
-        .style("opacity", 1)
+        .attr("display", "block !important;")
+        .style("opacity", 0.9)
         .attr("d", function () {
           var d = "M" + mousePosition[0] + "," + height;
           d += " " + mousePosition[0] + "," + 0;
@@ -962,9 +979,14 @@ function prepLineChart1(data, dictAllCountries) {
         });
     })
     .on("mouseout", function (event) {
-      d3.select(".svg1Tooltip").style("opacity", 0);
+      d3.select(".svg1Tooltip")
+        .attr("display", "none !important;")
+        .style("opacity", 0);
 
-      svg1.select(".svg1mouse-line").style("opacity", 0);
+      svg1
+        .select(".svg1mouse-line")
+        .attr("display", "none !important;")
+        .style("opacity", 0);
     });
 
   var tableLinePathDrawn = d3.line()([
@@ -974,6 +996,7 @@ function prepLineChart1(data, dictAllCountries) {
   if (switchValue === "region") {
     line1table
       .append("td")
+      .attr("pointer-events", "none")
       .append("input")
       .attr("name", "radioBtnName")
       .attr("type", "radio")
@@ -985,15 +1008,17 @@ function prepLineChart1(data, dictAllCountries) {
       })
       .attr("checked", false);
   } else {
-    line1table.append("td");
+    line1table.append("td").attr("pointer-events", "none");
   }
   line1table
     .selectAll("td")
     .append("svg")
     .attr("class", "spark-svg")
+    .attr("pointer-events", "none")
     .attr("width", 25)
     .attr("height", 10)
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "spark-path")
     .attr("d", function (d) {
       return tableLinePathDrawn;
@@ -1003,13 +1028,16 @@ function prepLineChart1(data, dictAllCountries) {
     })
     .attr("stroke-width", 5);
 
-  var pathLine = line1table.append("td").text(function (d) {
-    if (switchValue === "country") {
-      return d.name;
-    } else {
-      return d.region;
-    }
-  });
+  var pathLine = line1table
+    .append("td")
+    .text(function (d) {
+      if (switchValue === "country") {
+        return d.name;
+      } else {
+        return d.region;
+      }
+    })
+    .attr("pointer-events", "none");
   d3.select("#dummyHead").style("visibility", "visible");
   d3.select(".tableDiv").style("visibility", "visible");
 
@@ -1160,6 +1188,7 @@ function prepLineChart2(dictAllCountries) {
   line2.each(function (d, i) {
     d3.select(this)
       .append("path")
+      .attr("pointer-events", "none")
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke-width", "1.5px")
@@ -1239,6 +1268,7 @@ function prepLineChart2(dictAllCountries) {
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
       d3.select(".table2tooltip")
+        .attr("display", "block !important;")
         .style("opacity", 0.9)
         .style("left", event.pageX - 70 + "px")
         .style("top", event.pageY + 20 + "px")
@@ -1255,7 +1285,8 @@ function prepLineChart2(dictAllCountries) {
 
       svg2
         .select(".max-svg1mouse-line")
-        .style("opacity", 1)
+        .attr("display", "block !important;")
+        .style("opacity", 0.9)
         .attr("d", function () {
           var maxPoint = y_scale2(totalCases);
           var d = "M" + 0 + "," + maxPoint;
@@ -1270,23 +1301,31 @@ function prepLineChart2(dictAllCountries) {
       } catch (e) {}
 
       if (valuez !== "") {
-        var pathClassName = "#" + this.value;
+        
         svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 0);
-        svg2
+        d3.selectAll("input.chart2Checkbox:checked").each(function () {
+          svg2
           .selectAll(".countryRegion")
           .select(
-            pathClassName.replace(
+            "#" +
+            this.id.replace(
               /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
               ""
             )
           )
           .attr("opacity", 1);
+        });
 
-        svg2.selectAll(".countryRegion").selectAll("path").attr("opacity", 1);
+        d3.select(".table2tooltip")
+          .transition()
+          .duration(500)
+          .attr("display", "none")
+          .style("opacity", 0);
 
-        d3.select(".table2tooltip").transition().duration(500).style("opacity", 0);
-
-        svg2.select(".max-svg1mouse-line").style("opacity", 0);
+        svg2
+          .select(".max-svg1mouse-line")
+          .attr("display", "none")
+          .style("opacity", 0);
       }
     });
 
@@ -1295,13 +1334,15 @@ function prepLineChart2(dictAllCountries) {
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedLine
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "svg1mouse-line")
     .style("stroke", "black")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
     .style("stroke-linejoin", "round")
     .style("stroke-dasharray", "10,10")
-    .style("opacity", "0");
+    .attr("display", "none !important;")
+    .style("opacity", 0);
 
   var dottedMaxLine = svg2
     .append("g")
@@ -1310,15 +1351,18 @@ function prepLineChart2(dictAllCountries) {
   //Dotted Line Code adapted from: https://stackoverflow.com/questions/16447302/dashtype-line-in-svg-path#answer-16472453
   dottedMaxLine
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "max-svg1mouse-line")
     .style("stroke", "grey")
     .style("stroke-width", "1px")
     .style("stroke-line-cap", "butt")
     .style("stroke-linejoin", "round")
     .style("stroke-dasharray", "10,10")
-    .style("opacity", "0");
+    .attr("display", "none !important;")
+    .style("opacity", 0);
 
   var chart2tooltip = prepTooltip("svg1Tooltip");
+  chart2tooltip.attr("pointer-events", "none");
 
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
@@ -1328,6 +1372,7 @@ function prepLineChart2(dictAllCountries) {
       const currentDate = Math.round(x_scale2.invert(mousePosition[0])); // converts x to date
 
       chart2tooltip
+        .attr("display", "block !important;")
         .style("opacity", 0.9)
         .style("left", event.pageX + "px")
         .style("top", event.pageY - 40 + "px")
@@ -1335,7 +1380,8 @@ function prepLineChart2(dictAllCountries) {
 
       svg2
         .select(".svg1mouse-line")
-        .style("opacity", 1)
+        .attr("display", "block !important;")
+        .style("opacity", 0.9)
         .attr("d", function () {
           var d = "M" + mousePosition[0] + "," + height;
           d += " " + mousePosition[0] + "," + 0;
@@ -1343,22 +1389,54 @@ function prepLineChart2(dictAllCountries) {
         });
     })
     .on("mouseout", function (event) {
-      chart2tooltip.style("opacity", 0);
+      chart2tooltip.attr("display", "none !important;").style("opacity", 0);
 
-      svg2.select(".svg1mouse-line").style("opacity", 0);
+      svg2
+        .select(".svg1mouse-line")
+        .attr("display", "none !important;")
+        .style("opacity", 0);
     });
 
   var tableLinePathDrawn = d3.line()([
     [1, 1],
     [35, 1],
   ]);
+
   line2table
     .append("td")
+    .attr("pointer-events", "none")
+    .append("input")
+    .attr("pointer-events", "none")
+    .attr("checked", true)
+    .attr("type", "checkbox")
+    .attr("class", "chart2Checkbox")
+    .attr("id", function (d) {
+      return d.name;
+    })
+    .on("click", function () {
+      if (this.checked) {
+        svg2
+          .selectAll(".countryRegion")
+          .select("#" + this.id)
+          .attr("opacity", 1);
+      } else {
+        svg2
+          .selectAll(".countryRegion")
+          .select("#" + this.id)
+          .attr("opacity", 0);
+      }
+    });
+
+  line2table
+    .append("td")
+    .attr("pointer-events", "none")
     .append("svg")
+    .attr("pointer-events", "none")
     .attr("class", "spark-svg")
     .attr("width", 15)
     .attr("height", 10)
     .append("path")
+    .attr("pointer-events", "none")
     .attr("class", "spark-path")
     .attr("d", function (d) {
       return tableLinePathDrawn;
@@ -1368,9 +1446,12 @@ function prepLineChart2(dictAllCountries) {
     })
     .attr("stroke-width", 5);
 
-  var pathLine = line2table.append("td").text(function (d) {
-    return d.name;
-  });
+  var pathLine = line2table
+    .append("td")
+    .text(function (d) {
+      return d.name;
+    })
+    .attr("pointer-events", "none");
   d3.select("#dummyHead2").style("visibility", "visible");
   d3.select(".tableDiv2").style("visibility", "visible");
   //   } catch (e) {} CONTINUE
