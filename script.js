@@ -1417,12 +1417,18 @@ function prepLineChart2(dictAllCountries) {
       if (this.checked) {
         svg2
           .selectAll(".countryRegion")
-          .select("#" + this.id)
+          .select("#" + this.id.replace(
+            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+            ""
+          ))
           .attr("opacity", 1);
       } else {
         svg2
           .selectAll(".countryRegion")
-          .select("#" + this.id)
+          .select("#" + this.id.replace(
+            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+            ""
+          ))
           .attr("opacity", 0);
       }
     });
