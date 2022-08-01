@@ -2,6 +2,8 @@
 var width = document.getElementById("lineChart1").clientWidth;
 var height = document.getElementById("lineChart1").clientHeight;
 
+var lineChart2LockedCountries = {};
+
 var margin = {
   top: 30,
   bottom: 30,
@@ -198,9 +200,8 @@ function byCountries() {
   //get Country Stats/Data & Regions (JSON format)
   // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
   //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
-    
-  Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
-    Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
+      Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
+        Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
       //prepare Data according to Line Charts (1&2) and Tables (1&2)
       var getData = prepData(country_data, region_data);
 
@@ -786,7 +787,7 @@ function prepLineChart1(data, dictAllCountries) {
         });
       }
     });
-    
+
   //code Reference for Dict to table (with svg plot) from: https://stackoverflow.com/questions/54935575/d3-js-nested-data-update-line-plot-in-html-table#answer-54936178
   var line1table = d3
     .select("#line1Table tbody")
@@ -800,14 +801,14 @@ function prepLineChart1(data, dictAllCountries) {
         return d.name.replace(
           /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
           ""
-          );
-        } else {
-          return d.region.replace(
-            /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
-            ""
-            );
-          }
-        })
+        );
+      } else {
+        return d.region.replace(
+          /([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&\\ '])/g,
+          ""
+        );
+      }
+    })
     .attr("border", "1px solid black;");
 
   d3.select("#line1Table tbody")
@@ -835,10 +836,28 @@ function prepLineChart1(data, dictAllCountries) {
         var totalCasesArray = Object.values(currCountryRegion);
         totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
+        var casesForNowDate = "";
+        try {
+          if (d3.select(".locked-svg1mouse-line").attr("opacity") != 0) {
+            var numberOfCasesNow =
+              totalCasesArray[
+                parseInt(d3.select(".locked-svg1mouse-line").attr("id"))
+              ].Confirmed;
+            casesForNowDate =
+              "<br>No. of Confirmed Cases (on Day <u>" +
+              d3.select(".locked-svg1mouse-line").attr("id").toString() +
+              ")</u>:<br><b>" +
+              numberWithCommas(numberOfCasesNow) +
+              "</b>" +
+              " <i>(" +
+              parseFloat((numberOfCasesNow / totalCases) * 100).toFixed(2) +
+              "% of Total Cases on Last Day)</i>";
+          }
+        } catch {}
         d3.select(".table1tooltip")
           .attr("display", "block !important;")
           .style("opacity", 0.9)
-          .style("left", event.pageX - 70 + "px")
+          .style("left", event.pageX - 150 + "px")
           .style("top", event.pageY + 20 + "px")
           .html(
             "<b><u>" +
@@ -850,7 +869,8 @@ function prepLineChart1(data, dictAllCountries) {
               totalCasesArray.length +
               ")</u>: </br><b>" +
               numberWithCommas(totalCases) +
-              "<b>"
+              "</b>" +
+              casesForNowDate
           );
         d3.select("#lineChart1")
           .select(".max-svg1mouse-line")
@@ -879,11 +899,39 @@ function prepLineChart1(data, dictAllCountries) {
 
           var days = Object.values(
             Object.values(dictAllCountries[d.region].Country)[0]
-          ).slice(-1).day;
+          ).slice(-1)[0].day;
+
+          var casesForNowDate = "";
+          try {
+            if (d3.select(".locked-svg1mouse-line").attr("opacity") != 0) {
+              var totalCasesNow = 0;
+              for (
+                i = 0;
+                i < Object.values(dictAllCountries[d.region].Country).length;
+                i++
+              ) {
+                totalCasesNow += Object.values(
+                  dictAllCountries[d.region].Country
+                )[i][parseInt(d3.select(".locked-svg1mouse-line").attr("id"))]
+                  .Confirmed;
+              }
+
+              casesForNowDate =
+                "<br>No. of Confirmed Cases (on Day <u>" +
+                d3.select(".locked-svg1mouse-line").attr("id").toString() +
+                ")</u>:<br><b>" +
+                numberWithCommas(totalCasesNow) +
+                "</b>" +
+                " <i>(" +
+                parseFloat((totalCasesNow / totalCases) * 100).toFixed(2) +
+                "% of Total Cases on Last Day)</i>";
+            }
+          } catch {}
+
           d3.select(".table1tooltip")
             .attr("display", "block !important;")
             .style("opacity", 0.9)
-            .style("left", event.pageX - 70 + "px")
+            .style("left", event.pageX - 150 + "px")
             .style("top", event.pageY + 20 + "px")
             .html(
               "<b><u>" +
@@ -893,7 +941,8 @@ function prepLineChart1(data, dictAllCountries) {
                 days +
                 ")</u>: </br><b>" +
                 numberWithCommas(totalCases) +
-                "<b>"
+                "</b>" +
+                casesForNowDate
             );
           d3.select("#lineChart1")
             .select(".max-svg1mouse-line")
@@ -1006,6 +1055,17 @@ function prepLineChart1(data, dictAllCountries) {
 
   prepTooltip("svg1Tooltip");
 
+  dottedLine
+    .append("path")
+    .attr("pointer-events", "none")
+    .attr("class", "locked-svg1mouse-line")
+    .style("stroke", "black")
+    .style("stroke-width", "1px")
+    .style("stroke-line-cap", "butt")
+    .style("stroke-linejoin", "round")
+    .style("stroke-dasharray", "10,10")
+    .attr("display", "none !important;")
+    .style("opacity", 0);
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
   d3.select("#lineChart1")
@@ -1013,7 +1073,7 @@ function prepLineChart1(data, dictAllCountries) {
       const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
       const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
 
-      if (currentDate > -1 && currentDate < int_days.slice(-1)[0]+1) {
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0] + 1) {
         d3.select(".svg1Tooltip")
           .attr("display", "block !important;")
           .style("opacity", 0.9)
@@ -1030,16 +1090,15 @@ function prepLineChart1(data, dictAllCountries) {
             d += " " + mousePosition[0] + "," + 0;
             return d;
           });
-      }
-      else{
+      } else {
         d3.select(".svg1Tooltip")
           .attr("display", "none !important;")
-          .style("opacity", 0)
-        
+          .style("opacity", 0);
+
         svg1
           .select(".svg1mouse-line")
           .attr("display", "none !important;")
-          .style("opacity", 0)
+          .style("opacity", 0);
       }
     })
     .on("mouseout", function (event) {
@@ -1051,6 +1110,23 @@ function prepLineChart1(data, dictAllCountries) {
         .select(".svg1mouse-line")
         .attr("display", "none !important;")
         .style("opacity", 0);
+    })
+    .on("click", function (event) {
+      const mousePosition = d3.pointer(event, svg1.node()); // gets [x,y]
+      const currentDate = Math.round(x_scale.invert(mousePosition[0])); // converts x to date
+
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0] + 1) {
+        svg1
+          .select(".locked-svg1mouse-line")
+          .attr("id", currentDate)
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .attr("d", function () {
+            var d = "M" + mousePosition[0] + "," + height;
+            d += " " + mousePosition[0] + "," + 0;
+            return d;
+          });
+      }
     });
 
   var tableLinePathDrawn = d3.line()([
@@ -1128,6 +1204,7 @@ d3.select("#myCheckbox").on("click", function (d) {
 });
 
 function prepLineChart2(dictAllCountries) {
+  lineChart2LockedCountries = {};
   d3.select("#lineChart2").html("");
 
   //   try { CONTINUE
@@ -1154,7 +1231,6 @@ function prepLineChart2(dictAllCountries) {
     .attr("height", "100%")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
-
 
   var x_scale2 = d3.scaleLinear().rangeRound([0, width]);
 
@@ -1327,20 +1403,41 @@ function prepLineChart2(dictAllCountries) {
       var totalCasesArray = Object.values(currCountry);
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
+      var casesForNowDate = "";
+      try {
+        if (d3.select(".locked-svg2mouse-line").attr("opacity") != 0) {
+          if (lineChart2LockedCountries != {}) {
+            var dataForNowCountry = lineChart2LockedCountries[d.name];
+            casesForNowDate =
+              "<br>No. of Confirmed Cases (on Day <u>" +
+              dataForNowCountry.currDay.toString() +
+              ")</u>:<br><b>" +
+              numberWithCommas(dataForNowCountry.casesNow) +
+              "</b>" +
+              casesForNowDate +
+              " <i>(" +
+              parseFloat(
+                (dataForNowCountry.casesNow / totalCases) * 100
+              ).toFixed(2) +
+              "% of Total Cases on Last Day)</i>";
+          }
+        }
+      } catch {}
       d3.select(".table2tooltip")
         .attr("display", "block !important;")
         .style("opacity", 0.9)
-        .style("left", event.pageX - 70 + "px")
+        .style("left", event.pageX - 150 + "px")
         .style("top", event.pageY + 20 + "px")
         .html(
           "<b><u>" +
             d.name +
             "</u></b>" +
-            "<br>No. of Confirmed Cases (on Day <u>" +
+            "<br>Total No. of Confirmed Cases (on Last Day <u>" +
             totalCasesArray.length +
             ")</u>: </br><b>" +
             numberWithCommas(totalCases) +
-            "</b>"
+            "</b>" +
+            casesForNowDate
         );
 
       svg2
@@ -1423,6 +1520,17 @@ function prepLineChart2(dictAllCountries) {
 
   prepTooltip("svg2Tooltip");
 
+  dottedLine
+    .append("path")
+    .attr("pointer-events", "none")
+    .attr("class", "locked-svg2mouse-line")
+    .style("stroke", "black")
+    .style("stroke-width", "1px")
+    .style("stroke-line-cap", "butt")
+    .style("stroke-linejoin", "round")
+    .style("stroke-dasharray", "10,10")
+    .attr("display", "none !important;")
+    .style("opacity", 0);
   // On Hover Over SVG (Line CHart) get Mouse Position and display Day Number currently hovered at Code from: https://stackoverflow.com/questions/67948959/d3-line-chart-doesnt-return-correct-value-on-ticks-mouse-over#answer-67953774
   // and from: https://bl.ocks.org/larsenmtl/e3b8b7c2ca4787f77d78f58d41c3da91
   d3.select("#lineChart2")
@@ -1430,7 +1538,7 @@ function prepLineChart2(dictAllCountries) {
       const mousePosition = d3.pointer(event, svg2.node()); // gets [x,y]
       const currentDate = Math.round(x_scale2.invert(mousePosition[0])); // converts x to date
 
-      if (currentDate > -1 && currentDate < int_days.slice(-1)[0]+1) {
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0] + 1) {
         d3.select(".svg2Tooltip")
           .attr("display", "block !important;")
           .style("opacity", 0.9)
@@ -1447,18 +1555,13 @@ function prepLineChart2(dictAllCountries) {
             d += " " + mousePosition[0] + "," + 0;
             return d;
           });
-      }
-      else{
-        d3.select(".svg2Tooltip")
-          .style("opacity", 0)
-        
-        svg2
-          .select(".svg2mouse-line")
-          .style("opacity", 0)
+      } else {
+        d3.select(".svg2Tooltip").style("opacity", 0);
+
+        svg2.select(".svg2mouse-line").style("opacity", 0);
       }
     })
     .on("mouseout", function (event) {
-
       d3.select(".svg2Tooltip")
         .attr("display", "none !important;")
         .style("opacity", 0);
@@ -1467,6 +1570,40 @@ function prepLineChart2(dictAllCountries) {
         .select(".svg2mouse-line")
         .attr("display", "none !important;")
         .style("opacity", 0);
+    })
+    .on("click", function (event) {
+      const mousePosition = d3.pointer(event, svg2.node()); // gets [x,y]
+      const currentDate = Math.round(x_scale2.invert(mousePosition[0])); // converts x to date
+
+      if (currentDate > -1 && currentDate < int_days.slice(-1)[0] + 1) {
+        svg2
+          .select(".locked-svg2mouse-line")
+          .attr("id", currentDate)
+          .attr("display", "block !important;")
+          .style("opacity", 0.9)
+          .attr("d", function () {
+            var d = "M" + mousePosition[0] + "," + height;
+            d += " " + mousePosition[0] + "," + 0;
+            return d;
+          });
+
+        d3.selectAll("input.chart2Checkbox:checked").each(function () {
+          var regionName = d3
+            .select('input[name="radioBtnName"]:checked')
+            .node().value;
+          if (regionName !== "All Regions") {
+            var thisCountry = dictAllCountries[regionName]["Country"][this.id];
+            lineChart2LockedCountries[this.id] = {
+              currDay: currentDate,
+              casesNow: thisCountry[currentDate].Confirmed,
+            };
+          } else {
+            d3.select(".svg2Tooltip").style("opacity", 0);
+
+            svg2.select(".svg2mouse-line").style("opacity", 0);
+          }
+        });
+      }
     });
 
   var tableLinePathDrawn = d3.line()([

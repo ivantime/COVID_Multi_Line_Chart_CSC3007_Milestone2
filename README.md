@@ -112,6 +112,11 @@ Also added checkbox to Table 2 (Bottom) with On Check/Uncheck to Filter Countrie
 </li>
 </ul>
 
+<ul>
+<li>
+1 August 2022 - Completed Multi-Line Charts 1 and 2, with Max Lines On Click for Line Chart 1 and 2 with Hover-Over Tooltips for Table Chart 1 and 2 with Added Case Numbers for that Clicked Day Selected with Percentage (of Total Cases to Last Day)
+</li>
+</ul>
 </ul>
 </ul>
 <br>
