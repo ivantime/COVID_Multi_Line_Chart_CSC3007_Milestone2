@@ -1404,7 +1404,13 @@ function prepLineChart2(dictAllCountries) {
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
       var casesForNowDate = "";
+      var totalCasesNow =0
       try {
+        d3.selectAll("input.chart2Checkbox:checked").each(function () {
+          totalCasesNow += lineChart2LockedCountries[this.id].casesNow
+        })
+        console.log(totalCasesNow)
+        // for (i=0;i<)
         if (d3.select(".locked-svg2mouse-line").attr("opacity") != 0) {
           if (lineChart2LockedCountries != {}) {
             var dataForNowCountry = lineChart2LockedCountries[d.name];
@@ -1414,12 +1420,22 @@ function prepLineChart2(dictAllCountries) {
               ")</u>:<br><b>" +
               numberWithCommas(dataForNowCountry.casesNow) +
               "</b>" +
-              casesForNowDate +
               " <i>(" +
               parseFloat(
                 (dataForNowCountry.casesNow / totalCases) * 100
               ).toFixed(2) +
-              "% of Total Cases on Last Day)</i>";
+              "% of Total Cases on Last Day)</i>"
+              +
+              "<br>No. of Confirmed Cases / SELECTED Countries (on Day <u>" +
+              dataForNowCountry.currDay.toString() +
+              ")</u>:<br><b>" +
+              numberWithCommas(dataForNowCountry.casesNow) +"/"+numberWithCommas(totalCasesNow)+
+              "</b>" +
+              " <i>(" +
+              parseFloat(
+                (dataForNowCountry.casesNow / totalCasesNow) * 100
+              ).toFixed(2) +
+              "%)</i>";
           }
         }
       } catch {}
