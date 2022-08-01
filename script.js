@@ -4,9 +4,18 @@ var height = document.getElementById("lineChart1").clientHeight;
 
 var lineChart2LockedCountries = {};
 
+function loading(loaded) {
+  if (loaded) {
+    d3.select("#gifLoad").style("opacity", 0);
+    d3.select("#mainDiv").style("opacity", 1);
+  } else {
+    d3.select("#gifLoad").style("opacity", 1);
+    d3.select("#mainDiv").style("opacity", 0);
+  }
+}
 var margin = {
-  top: 30,
-  bottom: 30,
+  top: 40,
+  bottom: 40,
   left: 70,
   right: 20,
 };
@@ -197,11 +206,21 @@ function prepData(country_data, region_data) {
 }
 
 function byCountries() {
+  loading(false);
+  setTimeout(function () {}, 500);
   //get Country Stats/Data & Regions (JSON format)
   // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
   //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
-      Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
-        Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
+  Promise.all([
+    d3.json(
+      "https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json"
+    ),
+  ]).then((country_data) => {
+    Promise.all([
+      d3.json(
+        "https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json"
+      ),
+    ]).then((region_data) => {
       //prepare Data according to Line Charts (1&2) and Tables (1&2)
       var getData = prepData(country_data, region_data);
 
@@ -229,16 +248,27 @@ function byCountries() {
 
       d3.select("#dummyHead2").style("visibility", "hidden");
       d3.select(".tableDiv2").style("visibility", "hidden");
+      loading(true);
     });
   });
 }
 
 function byRegions(updated) {
+  loading(false);
+  setTimeout(function () {}, 500);
   //get Country Stats/Data & Regions (JSON format)
-  Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json")]).then((country_data) => {
-    Promise.all([d3.json("https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json")]).then((region_data) => {
-  // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
-  //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
+  Promise.all([
+    d3.json(
+      "https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_data.json"
+    ),
+  ]).then((country_data) => {
+    Promise.all([
+      d3.json(
+        "https://raw.githubusercontent.com/ivantime/COVID_Multi_Line_Chart_CSC3007_Milestone2/main/data/country_regions.json"
+      ),
+    ]).then((region_data) => {
+      // Promise.all([d3.json("/data/country_data.json")]).then((country_data) => {
+      //   Promise.all([d3.json("/data/country_regions.json")]).then((region_data) => {
       //prepare Data according to Line Charts (1&2) and Tables (1&2)
       var getData = prepData(country_data, region_data);
 
@@ -280,12 +310,13 @@ function byRegions(updated) {
       }
     });
   });
+  loading(true);
 }
 
 function prepTooltip(tooltipClass) {
   d3.selectAll("." + tooltipClass).remove();
   var div = d3
-    .select("body")
+    .select("#mainDiv")
     .append("div")
     .attr("class", tooltipClass)
     .attr("display", "none !important;")
@@ -306,6 +337,7 @@ function numberWithCommas(x) {
 }
 
 function prepLineChart1(data, dictAllCountries) {
+  loading(false);
   //First Clear of Any Previous Plots on Line Chart
   d3.select("#lineChart1").html("");
 
@@ -796,6 +828,7 @@ function prepLineChart1(data, dictAllCountries) {
     .enter()
     .append("tr")
     .attr("pointer-events", "none")
+    .attr("transform", "translate(" + margin.left + "," + margin.right + ")")
     .attr("id", function (d) {
       if (switchValue === "country") {
         return d.name.replace(
@@ -931,7 +964,7 @@ function prepLineChart1(data, dictAllCountries) {
           d3.select(".table1tooltip")
             .attr("display", "block !important;")
             .style("opacity", 0.9)
-            .style("left", event.pageX - 150 + "px")
+            .style("left", function(d){console.log(event.pageX+"    "+d3.pointer(event)[0]); return event.pageX - 150 + "px"})
             .style("top", event.pageY + 20 + "px")
             .html(
               "<b><u>" +
@@ -1188,6 +1221,7 @@ function prepLineChart1(data, dictAllCountries) {
   d3.selectAll("input[name='radioBtnName']").on("change", function () {
     byRegions(true);
   });
+  loading(true);
 }
 
 d3.select("#myCheckbox").on("click", function (d) {
@@ -1204,6 +1238,7 @@ d3.select("#myCheckbox").on("click", function (d) {
 });
 
 function prepLineChart2(dictAllCountries) {
+  loading(false);
   lineChart2LockedCountries = {};
   d3.select("#lineChart2").html("");
 
@@ -1404,12 +1439,11 @@ function prepLineChart2(dictAllCountries) {
       var totalCases = totalCasesArray[totalCasesArray.length - 1].Confirmed;
 
       var casesForNowDate = "";
-      var totalCasesNow =0
+      var totalCasesNow = 0;
       try {
         d3.selectAll("input.chart2Checkbox:checked").each(function () {
-          totalCasesNow += lineChart2LockedCountries[this.id].casesNow
-        })
-        console.log(totalCasesNow)
+          totalCasesNow += lineChart2LockedCountries[this.id].casesNow;
+        });
         // for (i=0;i<)
         if (d3.select(".locked-svg2mouse-line").attr("opacity") != 0) {
           if (lineChart2LockedCountries != {}) {
@@ -1424,12 +1458,13 @@ function prepLineChart2(dictAllCountries) {
               parseFloat(
                 (dataForNowCountry.casesNow / totalCases) * 100
               ).toFixed(2) +
-              "% of Total Cases on Last Day)</i>"
-              +
+              "% of Total Cases on Last Day)</i>" +
               "<br>No. of Confirmed Cases / SELECTED Countries (on Day <u>" +
               dataForNowCountry.currDay.toString() +
               ")</u>:<br><b>" +
-              numberWithCommas(dataForNowCountry.casesNow) +"/"+numberWithCommas(totalCasesNow)+
+              numberWithCommas(dataForNowCountry.casesNow) +
+              "/" +
+              numberWithCommas(totalCasesNow) +
               "</b>" +
               " <i>(" +
               parseFloat(
@@ -1691,7 +1726,7 @@ function prepLineChart2(dictAllCountries) {
     .attr("pointer-events", "none");
   d3.select("#dummyHead2").style("visibility", "visible");
   d3.select(".tableDiv2").style("visibility", "visible");
-  //   } catch (e) {} CONTINUE
+  loading(true);
 }
 
 d3.select("#myCheckbox").on("click", function (d) {
