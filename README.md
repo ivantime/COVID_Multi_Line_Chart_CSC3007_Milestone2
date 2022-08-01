@@ -114,7 +114,7 @@ Also added checkbox to Table 2 (Bottom) with On Check/Uncheck to Filter Countrie
 
 <ul>
 <li>
-1 August 2022 - Completed Multi-Line Charts 1 and 2, with Max Lines On Click for Line Chart 1 and 2 with Hover-Over Tooltips for Table Chart 1 and 2 with Added Case Numbers for that Clicked Day Selected with Percentage (of Total Cases to Last Day) with Added Feature of Hover Over for Table 2 (Bottom) with Country's Total Number at that Selected Day divided by Total Cases of the Selected Countries via Checkbox with the Total Percentage of Selected Countries
+1 August 2022 - Completed Multi-Line Charts 1 and 2, with Max Lines On Click for Line Chart 1 and 2 with Hover-Over Tooltips for Table Chart 1 and 2 with Added Case Numbers for that Clicked Day Selected with Percentage (of Total Cases to Last Day) with Added Feature of Hover Over for Table 2 (Bottom) with Country's Total Number at that Selected Day divided by Total Cases of the Selected Countries via Checkbox with the Total Percentage of Selected Countries and added Loading Bar for Graph Switching, mainly "By Countries"
 </li>
 </ul>
 </ul>
